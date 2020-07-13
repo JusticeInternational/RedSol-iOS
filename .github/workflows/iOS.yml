@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@master
       - name: Build and test
         run: |
+          pwd
+          ls -altr
           cd RedSolApp
           xcodebuild clean test -project RedSolApp.xcodeproj -scheme RedSolApp -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
           bash <(curl -s https://codecov.io/bash)
