@@ -1,4 +1,8 @@
-on: pull_request
+on:	
+  push:	
+    branches: [ stable ]	
+  pull_request:	
+    branches: [ stable ]
 name: iOS Build
 jobs:
   test:
