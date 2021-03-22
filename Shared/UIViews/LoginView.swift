@@ -79,7 +79,7 @@ struct LoginScreen: View {
                     }
                         
                 }
-                Button(action: registrate()) {
+                Button(action: { registrate() }) {
                     
                     
                     Text("Registrate")
