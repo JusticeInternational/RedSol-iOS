@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6B3F016225C91D1500176504"
                BuildableName = "Carlos.app"
-               BlueprintName = "RedSolApp (iOS)"
+               BlueprintName = "RedSolApp "
                ReferencedContainer = "container:RedSolApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B3F016225C91D1500176504"
             BuildableName = "Carlos.app"
-            BlueprintName = "RedSolApp (iOS)"
+            BlueprintName = "RedSolApp "
             ReferencedContainer = "container:RedSolApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B3F016225C91D1500176504"
             BuildableName = "Carlos.app"
-            BlueprintName = "RedSolApp (iOS)"
+            BlueprintName = "RedSolApp "
             ReferencedContainer = "container:RedSolApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

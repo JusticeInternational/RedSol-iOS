@@ -192,9 +192,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6B3F016225C91D1500176504 /* RedSolApp (iOS) */ = {
+		6B3F016225C91D1500176504 /* RedSolApp  */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B3F017725C91D1500176504 /* Build configuration list for PBXNativeTarget "RedSolApp (iOS)" */;
+			buildConfigurationList = 6B3F017725C91D1500176504 /* Build configuration list for PBXNativeTarget "RedSolApp " */;
 			buildPhases = (
 				6B3F015F25C91D1500176504 /* Sources */,
 				6B3F016025C91D1500176504 /* Frameworks */,
@@ -204,7 +204,7 @@
 			);
 			dependencies = (
 			);
-			name = "RedSolApp (iOS)";
+			name = "RedSolApp ";
 			productName = "Carlos (iOS)";
 			productReference = 6B3F016325C91D1500176504 /* Carlos.app */;
 			productType = "com.apple.product-type.application";
@@ -256,7 +256,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B3F016225C91D1500176504 /* RedSolApp (iOS) */,
+				6B3F016225C91D1500176504 /* RedSolApp  */,
 				6B3F016A25C91D1500176504 /* RedSolApp (macOS) */,
 			);
 		};
@@ -554,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B3F017725C91D1500176504 /* Build configuration list for PBXNativeTarget "RedSolApp (iOS)" */ = {
+		6B3F017725C91D1500176504 /* Build configuration list for PBXNativeTarget "RedSolApp " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B3F017825C91D1500176504 /* Debug */,
