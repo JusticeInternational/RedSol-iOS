@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B3F016225C91D1500176504"
+               BlueprintIdentifier = "6B3F016A25C91D1500176504"
                BuildableName = "Carlos.app"
-               BlueprintName = "RedSolApp "
+               BlueprintName = "RedSolApp (macOS)"
                ReferencedContainer = "container:RedSolApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B3F016225C91D1500176504"
+            BlueprintIdentifier = "6B3F016A25C91D1500176504"
             BuildableName = "Carlos.app"
-            BlueprintName = "RedSolApp "
+            BlueprintName = "RedSolApp (macOS)"
             ReferencedContainer = "container:RedSolApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B3F016225C91D1500176504"
+            BlueprintIdentifier = "6B3F016A25C91D1500176504"
             BuildableName = "Carlos.app"
-            BlueprintName = "RedSolApp "
+            BlueprintName = "RedSolApp (macOS)"
             ReferencedContainer = "container:RedSolApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
