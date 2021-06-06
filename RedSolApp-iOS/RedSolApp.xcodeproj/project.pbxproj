@@ -45,15 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16F6C05B266D336000220E91 /* RedSolApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RedSolApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16F6C05B266D336000220E91 /* RedSolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedSolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F6C05E266D336000220E91 /* RedSolApp_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedSolApp_iOSApp.swift; sourceTree = "<group>"; };
 		16F6C062266D336100220E91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16F6C065266D336100220E91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16F6C067266D336100220E91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16F6C06C266D336100220E91 /* RedSolApp-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RedSolApp-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16F6C06C266D336100220E91 /* RedSolApp-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RedSolApp-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F6C070266D336100220E91 /* RedSolApp_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedSolApp_iOSTests.swift; sourceTree = "<group>"; };
 		16F6C072266D336100220E91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16F6C077266D336100220E91 /* RedSolApp-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RedSolApp-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16F6C077266D336100220E91 /* RedSolApp-UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RedSolApp-UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F6C07B266D336100220E91 /* RedSolApp_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedSolApp_iOSUITests.swift; sourceTree = "<group>"; };
 		16F6C07D266D336100220E91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16F6C090266D33BD00220E91 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
@@ -99,9 +99,9 @@
 		16F6C052266D336000220E91 = {
 			isa = PBXGroup;
 			children = (
-				16F6C05D266D336000220E91 /* RedSolApp-iOS */,
-				16F6C06F266D336100220E91 /* RedSolApp-iOSTests */,
-				16F6C07A266D336100220E91 /* RedSolApp-iOSUITests */,
+				16F6C05D266D336000220E91 /* RedSolApp */,
+				16F6C06F266D336100220E91 /* RedSolApp-Tests */,
+				16F6C07A266D336100220E91 /* RedSolApp-UITTests */,
 				16F6C05C266D336000220E91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,14 +109,14 @@
 		16F6C05C266D336000220E91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				16F6C05B266D336000220E91 /* RedSolApp-iOS.app */,
-				16F6C06C266D336100220E91 /* RedSolApp-iOSTests.xctest */,
-				16F6C077266D336100220E91 /* RedSolApp-iOSUITests.xctest */,
+				16F6C05B266D336000220E91 /* RedSolApp.app */,
+				16F6C06C266D336100220E91 /* RedSolApp-Tests.xctest */,
+				16F6C077266D336100220E91 /* RedSolApp-UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		16F6C05D266D336000220E91 /* RedSolApp-iOS */ = {
+		16F6C05D266D336000220E91 /* RedSolApp */ = {
 			isa = PBXGroup;
 			children = (
 				16F6C0DB266D35F700220E91 /* Databases */,
@@ -128,7 +128,7 @@
 				16F6C067266D336100220E91 /* Info.plist */,
 				16F6C064266D336100220E91 /* Preview Content */,
 			);
-			path = "RedSolApp-iOS";
+			path = RedSolApp;
 			sourceTree = "<group>";
 		};
 		16F6C064266D336100220E91 /* Preview Content */ = {
@@ -139,22 +139,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		16F6C06F266D336100220E91 /* RedSolApp-iOSTests */ = {
+		16F6C06F266D336100220E91 /* RedSolApp-Tests */ = {
 			isa = PBXGroup;
 			children = (
 				16F6C070266D336100220E91 /* RedSolApp_iOSTests.swift */,
 				16F6C072266D336100220E91 /* Info.plist */,
 			);
-			path = "RedSolApp-iOSTests";
+			path = "RedSolApp-Tests";
 			sourceTree = "<group>";
 		};
-		16F6C07A266D336100220E91 /* RedSolApp-iOSUITests */ = {
+		16F6C07A266D336100220E91 /* RedSolApp-UITTests */ = {
 			isa = PBXGroup;
 			children = (
 				16F6C07B266D336100220E91 /* RedSolApp_iOSUITests.swift */,
 				16F6C07D266D336100220E91 /* Info.plist */,
 			);
-			path = "RedSolApp-iOSUITests";
+			path = "RedSolApp-UITTests";
 			sourceTree = "<group>";
 		};
 		16F6C08F266D33A700220E91 /* TabbedViews */ = {
@@ -201,9 +201,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		16F6C05A266D336000220E91 /* RedSolApp-iOS */ = {
+		16F6C05A266D336000220E91 /* RedSolApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 16F6C080266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-iOS" */;
+			buildConfigurationList = 16F6C080266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp" */;
 			buildPhases = (
 				16F6C057266D336000220E91 /* Sources */,
 				16F6C058266D336000220E91 /* Frameworks */,
@@ -213,14 +213,14 @@
 			);
 			dependencies = (
 			);
-			name = "RedSolApp-iOS";
+			name = RedSolApp;
 			productName = "RedSolApp-iOS";
-			productReference = 16F6C05B266D336000220E91 /* RedSolApp-iOS.app */;
+			productReference = 16F6C05B266D336000220E91 /* RedSolApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		16F6C06B266D336100220E91 /* RedSolApp-iOSTests */ = {
+		16F6C06B266D336100220E91 /* RedSolApp-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 16F6C083266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-iOSTests" */;
+			buildConfigurationList = 16F6C083266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-Tests" */;
 			buildPhases = (
 				16F6C068266D336100220E91 /* Sources */,
 				16F6C069266D336100220E91 /* Frameworks */,
@@ -231,14 +231,14 @@
 			dependencies = (
 				16F6C06E266D336100220E91 /* PBXTargetDependency */,
 			);
-			name = "RedSolApp-iOSTests";
+			name = "RedSolApp-Tests";
 			productName = "RedSolApp-iOSTests";
-			productReference = 16F6C06C266D336100220E91 /* RedSolApp-iOSTests.xctest */;
+			productReference = 16F6C06C266D336100220E91 /* RedSolApp-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		16F6C076266D336100220E91 /* RedSolApp-iOSUITests */ = {
+		16F6C076266D336100220E91 /* RedSolApp-UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 16F6C086266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-iOSUITests" */;
+			buildConfigurationList = 16F6C086266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-UITests" */;
 			buildPhases = (
 				16F6C073266D336100220E91 /* Sources */,
 				16F6C074266D336100220E91 /* Frameworks */,
@@ -249,9 +249,9 @@
 			dependencies = (
 				16F6C079266D336100220E91 /* PBXTargetDependency */,
 			);
-			name = "RedSolApp-iOSUITests";
+			name = "RedSolApp-UITests";
 			productName = "RedSolApp-iOSUITests";
-			productReference = 16F6C077266D336100220E91 /* RedSolApp-iOSUITests.xctest */;
+			productReference = 16F6C077266D336100220E91 /* RedSolApp-UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -276,7 +276,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 16F6C056266D336000220E91 /* Build configuration list for PBXProject "RedSolApp-iOS" */;
+			buildConfigurationList = 16F6C056266D336000220E91 /* Build configuration list for PBXProject "RedSolApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -289,9 +289,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				16F6C05A266D336000220E91 /* RedSolApp-iOS */,
-				16F6C06B266D336100220E91 /* RedSolApp-iOSTests */,
-				16F6C076266D336100220E91 /* RedSolApp-iOSUITests */,
+				16F6C05A266D336000220E91 /* RedSolApp */,
+				16F6C06B266D336100220E91 /* RedSolApp-Tests */,
+				16F6C076266D336100220E91 /* RedSolApp-UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -365,12 +365,12 @@
 /* Begin PBXTargetDependency section */
 		16F6C06E266D336100220E91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 16F6C05A266D336000220E91 /* RedSolApp-iOS */;
+			target = 16F6C05A266D336000220E91 /* RedSolApp */;
 			targetProxy = 16F6C06D266D336100220E91 /* PBXContainerItemProxy */;
 		};
 		16F6C079266D336100220E91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 16F6C05A266D336000220E91 /* RedSolApp-iOS */;
+			target = 16F6C05A266D336000220E91 /* RedSolApp */;
 			targetProxy = 16F6C078266D336100220E91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -498,16 +498,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"RedSolApp-iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RedSolApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 3ZVXV95L56;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "RedSolApp-iOS/Info.plist";
+				INFOPLIST_FILE = RedSolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AshleyRaigosa.RedSolApp-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AshleyRaigosa.RedSolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,16 +520,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"RedSolApp-iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RedSolApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 3ZVXV95L56;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "RedSolApp-iOS/Info.plist";
+				INFOPLIST_FILE = RedSolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AshleyRaigosa.RedSolApp-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AshleyRaigosa.RedSolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -623,7 +623,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		16F6C056266D336000220E91 /* Build configuration list for PBXProject "RedSolApp-iOS" */ = {
+		16F6C056266D336000220E91 /* Build configuration list for PBXProject "RedSolApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				16F6C07E266D336100220E91 /* Debug */,
@@ -632,7 +632,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		16F6C080266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-iOS" */ = {
+		16F6C080266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				16F6C081266D336100220E91 /* Debug */,
@@ -641,7 +641,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		16F6C083266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-iOSTests" */ = {
+		16F6C083266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				16F6C084266D336100220E91 /* Debug */,
@@ -650,7 +650,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		16F6C086266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-iOSUITests" */ = {
+		16F6C086266D336100220E91 /* Build configuration list for PBXNativeTarget "RedSolApp-UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				16F6C087266D336100220E91 /* Debug */,
