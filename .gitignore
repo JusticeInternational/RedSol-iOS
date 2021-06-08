@@ -51,7 +51,12 @@ playground.xcworkspace
 .build/
 
 # CocoaPods
-#
+
+RedSolApp/Pods/Apollo/scripts/*
+RedSolApp/Pods/Apollo/scripts/apollo.tar.gz
+RedSolApp/Pods/Apollo/scripts/apollo/
+
+
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
