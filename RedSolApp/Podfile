@@ -1,18 +1,20 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
 
-target 'RedSolApp-iOS' do
+target 'RedSolApp' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  # use_frameworks!
+   use_modular_headers!
+  # Pods for RedSolApp
 
-  # Pods for RedSolApp-iOS
+   pod 'Apollo'
 
-  target 'RedSolApp-iOSTests' do
+
+  target 'RedSolApp-Tests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'RedSolApp-iOSUITests' do
+  target 'RedSolApp-UITests' do
     inherit! :search_paths
     # Pods for testing
   end

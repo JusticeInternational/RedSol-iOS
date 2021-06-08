@@ -1,0 +1,6 @@
+module Pods_RedSolApp {
+  umbrella header "Pods-RedSolApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
