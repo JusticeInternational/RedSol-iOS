@@ -16,7 +16,8 @@ jobs:
         uses: actions/checkout@master
       - name: Build on ${destination}
         run: |
-        ## note that -workspace is for a .xcworkspace while -project is for a .xcodeproj
+          # note that -workspace is for a .xcworkspace while -project is for a .xcodeproj
+          
           xcodebuild clean build -workspace RedSolApp/RedSolApp.xcworkspace -scheme RedSolApp -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
           bash <(curl -s https://codecov.io/bash)
         env: 
