@@ -45,7 +45,7 @@ struct LoginScreen: View {
                             switch result {
                             case .success(let graphQLResult):
                                 DispatchQueue.main.async {
-                                    if let category = graphQLResult.data?.usedCategories?[0]?.icon {
+                                    if let category = graphQLResult.data?.usedCategories?[0]?.name {
                                         self.category = category
                                     }
                                 }

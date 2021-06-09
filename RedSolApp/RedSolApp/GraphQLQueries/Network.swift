@@ -12,6 +12,6 @@ import Apollo
 class Network {
 
     static let shared = Network()
-    lazy var apollo = ApolloClient(url: URL(fileURLWithPath: "http://localhost:8080/graphql"))
+    lazy var apollo = ApolloClient(url: URL(string: "http://redsol.eastus.cloudapp.azure.com/backend")!)
     
 }
