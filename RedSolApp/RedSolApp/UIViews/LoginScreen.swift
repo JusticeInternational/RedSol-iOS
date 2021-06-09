@@ -18,14 +18,15 @@ struct LoginScreen: View {
     @State var loading = false
     @State var error = false
     
+    // GraphQL
+    @State var category = ""
+    
     func signUp() {
         print("signed up")
     }
     
     func registrate() {
         print ("registrate")
-        query()
-
     }
     
     func facebookLogIn() {
@@ -34,23 +35,27 @@ struct LoginScreen: View {
     func googleLogIn() {
         print("Log in w/ google")
     }
-    func query() {
-//        Network.shared.apollo.fetch(query: LaunchListQuery()) { result in
-//              switch result {
-//              case .success(let graphQLResult):
-//                print("Success! Result: \(graphQLResult)")
-//              case .failure(let error):
-//                print("Failure! Error: \(error)")
-//              }
-//            }
-        
-    }
     
 
     var body: some View {
             //MARK: - UITextFields
                 VStack(spacing: 110) {
-                        Text("Hello World!")
+                    Text(category).onAppear(perform: {
+                        Network.shared.apollo.fetch(query: LoadUsedCategoriesQuery()) { result in
+                            switch result {
+                            case .success(let graphQLResult):
+                                DispatchQueue.main.async {
+                                    if let category = graphQLResult.data?.usedCategories?[0]?.icon {
+                                        self.category = category
+                                    }
+                                }
+                            case .failure(let error):
+                                print("Error: \(error)")
+                            }
+                        }
+                            
+                        
+                    })
                         Text("Red Solidaria")
                             .font(.largeTitle)
                             .foregroundColor(.primary)

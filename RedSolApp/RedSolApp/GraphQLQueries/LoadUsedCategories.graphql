@@ -1,23 +1,11 @@
-fragment CategoryDetails on Category {
-	id
-	name
-	icon
+query LoadUsedCategories {
+    usedCategories(orderBy: name_asc) {
+        id
+        name
+        icon
+    }
 }
 
-query loadUsedCategories {
-	usedCategories(orderBy: name_asc) {
-		...CategoryDetails
-	}
-}
-
-#query loadUsedCategories {
-#    usedCategories(orderBy: name_asc) {
-#        id
-#        name
-#        icon
-#    }
-#}
-#
 #query loadTotalServedCategory($id: ID, $orgID: ID) {
 #    totalAtentionCategory(id: $id, orgID: $orgID)
 #}

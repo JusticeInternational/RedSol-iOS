@@ -8,17 +8,17 @@ public final class LoadUsedCategoriesQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query loadUsedCategories {
+    query LoadUsedCategories {
       usedCategories(orderBy: name_asc) {
         __typename
-        ...CategoryDetails
+        id
+        name
+        icon
       }
     }
     """
 
-  public let operationName: String = "loadUsedCategories"
-
-  public var queryDocument: String { return operationDefinition.appending("\n" + CategoryDetails.fragmentDefinition) }
+  public let operationName: String = "LoadUsedCategories"
 
   public init() {
   }
@@ -57,7 +57,9 @@ public final class LoadUsedCategoriesQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLFragmentSpread(CategoryDetails.self),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("icon", type: .nonNull(.scalar(String.self))),
         ]
       }
 
@@ -67,8 +69,8 @@ public final class LoadUsedCategoriesQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init() {
-        self.init(unsafeResultMap: ["__typename": "ServiceCategory"])
+      public init(id: GraphQLID, name: String, icon: String) {
+        self.init(unsafeResultMap: ["__typename": "ServiceCategory", "id": id, "name": name, "icon": icon])
       }
 
       public var __typename: String {
@@ -80,103 +82,32 @@ public final class LoadUsedCategoriesQuery: GraphQLQuery {
         }
       }
 
-      public var fragments: Fragments {
+      public var id: GraphQLID {
         get {
-          return Fragments(unsafeResultMap: resultMap)
+          return resultMap["id"]! as! GraphQLID
         }
         set {
-          resultMap += newValue.resultMap
+          resultMap.updateValue(newValue, forKey: "id")
         }
       }
 
-      public struct Fragments {
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
+      public var name: String {
+        get {
+          return resultMap["name"]! as! String
         }
-
-        public var categoryDetails: CategoryDetails? {
-          get {
-            if !CategoryDetails.possibleTypes.contains(resultMap["__typename"]! as! String) { return nil }
-            return CategoryDetails(unsafeResultMap: resultMap)
-          }
-          set {
-            guard let newValue = newValue else { return }
-            resultMap += newValue.resultMap
-          }
+        set {
+          resultMap.updateValue(newValue, forKey: "name")
         }
       }
-    }
-  }
-}
 
-public struct CategoryDetails: GraphQLFragment {
-  /// The raw GraphQL definition of this fragment.
-  public static let fragmentDefinition: String =
-    """
-    fragment CategoryDetails on Category {
-      __typename
-      id
-      name
-      icon
-    }
-    """
-
-  public static let possibleTypes: [String] = ["Category"]
-
-  public static var selections: [GraphQLSelection] {
-    return [
-      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-      GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-      GraphQLField("name", type: .nonNull(.scalar(String.self))),
-      GraphQLField("icon", type: .nonNull(.scalar(String.self))),
-    ]
-  }
-
-  public private(set) var resultMap: ResultMap
-
-  public init(unsafeResultMap: ResultMap) {
-    self.resultMap = unsafeResultMap
-  }
-
-  public init(id: GraphQLID, name: String, icon: String) {
-    self.init(unsafeResultMap: ["__typename": "Category", "id": id, "name": name, "icon": icon])
-  }
-
-  public var __typename: String {
-    get {
-      return resultMap["__typename"]! as! String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "__typename")
-    }
-  }
-
-  public var id: GraphQLID {
-    get {
-      return resultMap["id"]! as! GraphQLID
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "id")
-    }
-  }
-
-  public var name: String {
-    get {
-      return resultMap["name"]! as! String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "name")
-    }
-  }
-
-  public var icon: String {
-    get {
-      return resultMap["icon"]! as! String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "icon")
+      public var icon: String {
+        get {
+          return resultMap["icon"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "icon")
+        }
+      }
     }
   }
 }
