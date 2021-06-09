@@ -8,7 +8,7 @@ public final class LoadUsedCategoriesQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query loadUsedCategories {
+    query LoadUsedCategories {
       usedCategories(orderBy: name_asc) {
         __typename
         id
@@ -18,7 +18,7 @@ public final class LoadUsedCategoriesQuery: GraphQLQuery {
     }
     """
 
-  public let operationName: String = "loadUsedCategories"
+  public let operationName: String = "LoadUsedCategories"
 
   public init() {
   }
@@ -107,112 +107,6 @@ public final class LoadUsedCategoriesQuery: GraphQLQuery {
         set {
           resultMap.updateValue(newValue, forKey: "icon")
         }
-      }
-    }
-  }
-}
-
-public final class LoadTotalServedCategoryQuery: GraphQLQuery {
-  /// The raw GraphQL definition of this operation.
-  public let operationDefinition: String =
-    """
-    query loadTotalServedCategory($id: ID, $orgID: ID) {
-      totalAtentionCategory(id: $id, orgID: $orgID)
-    }
-    """
-
-  public let operationName: String = "loadTotalServedCategory"
-
-  public var id: GraphQLID?
-  public var orgID: GraphQLID?
-
-  public init(id: GraphQLID? = nil, orgID: GraphQLID? = nil) {
-    self.id = id
-    self.orgID = orgID
-  }
-
-  public var variables: GraphQLMap? {
-    return ["id": id, "orgID": orgID]
-  }
-
-  public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes: [String] = ["Query"]
-
-    public static var selections: [GraphQLSelection] {
-      return [
-        GraphQLField("totalAtentionCategory", arguments: ["id": GraphQLVariable("id"), "orgID": GraphQLVariable("orgID")], type: .scalar(Int.self)),
-      ]
-    }
-
-    public private(set) var resultMap: ResultMap
-
-    public init(unsafeResultMap: ResultMap) {
-      self.resultMap = unsafeResultMap
-    }
-
-    public init(totalAtentionCategory: Int? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "totalAtentionCategory": totalAtentionCategory])
-    }
-
-    public var totalAtentionCategory: Int? {
-      get {
-        return resultMap["totalAtentionCategory"] as? Int
-      }
-      set {
-        resultMap.updateValue(newValue, forKey: "totalAtentionCategory")
-      }
-    }
-  }
-}
-
-public final class LoadTotalServedServiceQuery: GraphQLQuery {
-  /// The raw GraphQL definition of this operation.
-  public let operationDefinition: String =
-    """
-    query loadTotalServedService($id: ID, $orgID: ID) {
-      totalAtentionService(id: $id, orgID: $orgID)
-    }
-    """
-
-  public let operationName: String = "loadTotalServedService"
-
-  public var id: GraphQLID?
-  public var orgID: GraphQLID?
-
-  public init(id: GraphQLID? = nil, orgID: GraphQLID? = nil) {
-    self.id = id
-    self.orgID = orgID
-  }
-
-  public var variables: GraphQLMap? {
-    return ["id": id, "orgID": orgID]
-  }
-
-  public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes: [String] = ["Query"]
-
-    public static var selections: [GraphQLSelection] {
-      return [
-        GraphQLField("totalAtentionService", arguments: ["id": GraphQLVariable("id"), "orgID": GraphQLVariable("orgID")], type: .scalar(Int.self)),
-      ]
-    }
-
-    public private(set) var resultMap: ResultMap
-
-    public init(unsafeResultMap: ResultMap) {
-      self.resultMap = unsafeResultMap
-    }
-
-    public init(totalAtentionService: Int? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "totalAtentionService": totalAtentionService])
-    }
-
-    public var totalAtentionService: Int? {
-      get {
-        return resultMap["totalAtentionService"] as? Int
-      }
-      set {
-        resultMap.updateValue(newValue, forKey: "totalAtentionService")
       }
     }
   }
