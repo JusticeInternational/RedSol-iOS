@@ -36,75 +36,82 @@ struct LoginScreen: View {
         print("Log in w/ google")
     }
     
+    func recuperarContreseña() {
+        print("Recuperar Contreseña")
+    }
+    
+    func continuarSinRegistrarse() {
+        print("Continuar sin registrarse")
+    }
+    
 
     var body: some View {
-            //MARK: - UITextFields
-                VStack(spacing: 110) {
-                    Text(category).onAppear(perform: {
-                        Network.shared.apollo.fetch(query: LoadUsedCategoriesQuery()) { result in
-                            switch result {
-                            case .success(let graphQLResult):
-                                DispatchQueue.main.async {
-                                    if let category = graphQLResult.data?.usedCategories?[0]?.name {
-                                        self.category = category
-                                    }
-                                }
-                            case .failure(let error):
-                                print("Error: \(error)")
-                            }
-                        }
+        VStack(spacing: 110) {
+                    
+//                    Text(category).onAppear(perform: {
+//                        Network.shared.apollo.fetch(query: LoadUsedCategoriesQuery()) { result in
+//                            switch result {
+//                            case .success(let graphQLResult):
+//                                DispatchQueue.main.async {
+//                                    if let category = graphQLResult.data?.usedCategories?[0]?.name {
+//                                        self.category = category
+//                                    }
+//                                }
+//                            case .failure(let error):
+//                                print("Error: \(error)")
+//                            }
+//                        }
+//
+//
+//                    })
+            VStack(spacing:10) {
+                
+                // MARK: - logo, title, Textfields
+                VStack() {
+                    Image("RedSolidariaLogo")
+                        .resizable()
+                        .frame(width: 225, height: 225)
+                        .padding(30)
+                
+                    TextField("Correo o ID", text: $displayName) .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
+                        .scaleEffect(0.85)
+
+                    TextField("Contraseña", text: $email) .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
+                            .scaleEffect(0.85)
+                //MARK: - Sign up Handling
                             
-                        
-                    })
-                        Text("Red Solidaria")
-                            .font(.largeTitle)
-                            .foregroundColor(.primary)
-                            .offset(y: -30)
-                    VStack(spacing:10) {
-                        TextField("Correo o ID", text: $displayName) .padding()
-                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1.0))
-                            .scaleEffect(0.85)
-    //                        .autocapitalization(.none)
-    //                        .disableAutocorrection(.none)
-    //
-                        TextField("Contraseña", text: $email) .padding()
-                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1.0))
-                            .scaleEffect(0.85)
-    //                        .autocapitalization(.none)
-    //
-                        
-    //                        .environmentObject(self.session)
-                        
-                        
-            //MARK: - Sign up Handling
-                        
-                        if (error) {
-                            Text("unable to sign up")
-                        }
+                    if (error) {
+                        Text("unable to sign up")
+                    }
+                }
+                .padding()
                         
             //MARK: - Sign up Options
+                
                 VStack(spacing: 20) {
                     
                     Button(action: signUp) {
                         
-                        
                         Text("Iniciar Sesion")
-                            .frame(width: 335, height: 50)
+                            .frame(width: 320, height: 50)
                             .background(Color.blue)
                             .foregroundColor(.white)
-                            .cornerRadius(15.0)
+                            .cornerRadius(14)
                         
                         NavigationLink(destination: LoginScreen(), isActive: $isActive) {
                             EmptyView()
                         }
                             
                     }
+                    
                     Button(action: { registrate() }) {
                         
                         
                         Text("Registrate")
-                            .frame(width: 335, height: 50)
-                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.blue, lineWidth: 1.0))
+                            .frame(width: 320, height: 50)
+                            .overlay(RoundedRectangle(cornerRadius: 14).stroke(Color.blue, lineWidth: 1.0))
                             .autocapitalization(.none)
                         
                         NavigationLink(destination: LoginScreen(), isActive: $isActive) {
@@ -112,50 +119,56 @@ struct LoginScreen: View {
                         }
                             
                     }
-                
-                    Text("Recuperar Contraseña").foregroundColor(Color.blue).fontWeight(.light)
-                    .underline()
-                    .padding()
+                    
+                    Button(action: { recuperarContreseña() }) {
+                        Text("Recuperar Contreseña")
+                            .underline()
+                    }
                     .font(.system(.subheadline))
-                                
+                    
+                    Button(action: { continuarSinRegistrarse() }) {
+                        Text("Continuar sin registrarse")
+                            .underline()
                     }
-                        
-                        
-                    Button(action: facebookLogIn) {
-                        
-                        
-                        Text("Ingresa con Facebook")
-                            .frame(width: 335, height: 50)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(15.0)
-                        
-                        NavigationLink(destination: LoginScreen(), isActive: $isActive) {
-                            EmptyView()
-                        }
-                                
-                    }
+                    .font(.system(.subheadline))
+                  
+                    VStack(spacing: 10) {
+                        Button(action: { facebookLogIn() }) {
                             
-                    Button(action: googleLogIn) {
-                        
-                        
-                        Text("Ingresa con Google")
-                            .frame(width: 335, height: 50)
-                            .background(Color.red.opacity(0.75))
-                            .foregroundColor(.white)
-                            .cornerRadius(15.0)
-                        
+                            Text("Ingresa con Facebook")
+                                .frame(width: 335, height: 50)
+                                .background(Color(red: 60 / 255, green: 90 / 255, blue: 153 / 255))
+                                .foregroundColor(.white)
+                                .cornerRadius(15.0)
+                                .overlay(Image("FacebookLogo").resizable().frame(width: 50, height: 50).position(x: 35, y: 25))
+                                
+                        }
+                    
                         NavigationLink(destination: LoginScreen(), isActive: $isActive) {
                             EmptyView()
                         }
-                                    
+                                
+                        Button(action: { googleLogIn() }) {
+                            
+                            
+                            Text("Ingresa con Google")
+                                .frame(width: 335, height: 50)
+                                .background(Color(.white))
+                                .foregroundColor(Color(.darkGray))
+                                .cornerRadius(15.0)
+                                .overlay(Image("GoogleLogo").resizable().frame(width: 40, height: 40).position(x: 40, y: 25))
+                                .shadow(radius: 3)
+                            
+                            }
+                        NavigationLink(destination: LoginScreen(), isActive: $isActive) {
+                            EmptyView()
+                        }
                     }
+                    
                 }
-
-                
             }
         }
-    
+    }
 }
 
 struct LoginScreen_Previews: PreviewProvider {
