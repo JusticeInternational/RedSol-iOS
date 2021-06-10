@@ -40,35 +40,39 @@ struct LoginScreen: View {
     var body: some View {
             //MARK: - UITextFields
                 VStack(spacing: 110) {
-                    Text(category).onAppear(perform: {
-                        Network.shared.apollo.fetch(query: LoadUsedCategoriesQuery()) { result in
-                            switch result {
-                            case .success(let graphQLResult):
-                                DispatchQueue.main.async {
-                                    if let category = graphQLResult.data?.usedCategories?[0]?.name {
-                                        self.category = category
-                                    }
-                                }
-                            case .failure(let error):
-                                print("Error: \(error)")
-                            }
-                        }
-                            
-                        
-                    })
-                        Text("Red Solidaria")
-                            .font(.largeTitle)
-                            .foregroundColor(.primary)
-                            .offset(y: -30)
+                    
+//                    Text(category).onAppear(perform: {
+//                        Network.shared.apollo.fetch(query: LoadUsedCategoriesQuery()) { result in
+//                            switch result {
+//                            case .success(let graphQLResult):
+//                                DispatchQueue.main.async {
+//                                    if let category = graphQLResult.data?.usedCategories?[0]?.name {
+//                                        self.category = category
+//                                    }
+//                                }
+//                            case .failure(let error):
+//                                print("Error: \(error)")
+//                            }
+//                        }
+//
+//
+//                    })
                     VStack(spacing:10) {
+                        Image("RedSolidariaLogo")
+                            .resizable()
+                            .frame(width: 225, height: 225)
+                            .padding(30)
+                
+                    
+                    
                         TextField("Correo o ID", text: $displayName) .padding()
-                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1.0))
+                            .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
                             .scaleEffect(0.85)
     //                        .autocapitalization(.none)
     //                        .disableAutocorrection(.none)
     //
                         TextField("Contraseña", text: $email) .padding()
-                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1.0))
+                            .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
                             .scaleEffect(0.85)
     //                        .autocapitalization(.none)
     //
