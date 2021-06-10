@@ -121,7 +121,7 @@ struct LoginScreen: View {
                     }
                     
                     Button(action: { recuperarContreseña() }) {
-                        Text("Recuperar contreseña")
+                        Text("Recuperar Contreseña")
                             .underline()
                     }
                     .font(.system(.subheadline))
@@ -131,19 +131,25 @@ struct LoginScreen: View {
                             .underline()
                     }
                     .font(.system(.subheadline))
-               
-                    Button(action: facebookLogIn) {
-                        
-                        
-                        Text("Ingresa con Facebook")
-                            .frame(width: 335, height: 50)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(15.0)
+                  
+                    
+                    ZStack() {
+                        Button(action: { facebookLogIn() }) {
+                            
+                            Text("Ingresa con Facebook")
+                                .frame(width: 335, height: 50)
+                                .background(Color(red: 60 / 255, green: 90 / 255, blue: 153 / 255))
+                                .foregroundColor(.white)
+                                .cornerRadius(15.0)
+                                .overlay(Image("FacebookLogo").resizable().frame(width: 50, height: 50).position(x: 35, y: 25))
+                                
+                        }
+                    
                         
                         NavigationLink(destination: LoginScreen(), isActive: $isActive) {
                             EmptyView()
                         }
+                        
                                 
                     }
                             
@@ -152,7 +158,7 @@ struct LoginScreen: View {
                         
                         Text("Ingresa con Google")
                             .frame(width: 335, height: 50)
-                            .background(Color.red.opacity(0.75))
+                            .background(Color(red: 219/255, green: 68 / 255, blue: 55/255))
                             .foregroundColor(.white)
                             .cornerRadius(15.0)
                         
