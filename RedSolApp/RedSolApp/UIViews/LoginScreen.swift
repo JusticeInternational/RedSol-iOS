@@ -132,8 +132,7 @@ struct LoginScreen: View {
                     }
                     .font(.system(.subheadline))
                   
-                    
-                    ZStack() {
+                    VStack(spacing: 10) {
                         Button(action: { facebookLogIn() }) {
                             
                             Text("Ingresa con Facebook")
@@ -145,28 +144,27 @@ struct LoginScreen: View {
                                 
                         }
                     
-                        
                         NavigationLink(destination: LoginScreen(), isActive: $isActive) {
                             EmptyView()
                         }
-                        
                                 
-                    }
+                        Button(action: { googleLogIn() }) {
                             
-                    Button(action: googleLogIn) {
-                        
-                        
-                        Text("Ingresa con Google")
-                            .frame(width: 335, height: 50)
-                            .background(Color(red: 219/255, green: 68 / 255, blue: 55/255))
-                            .foregroundColor(.white)
-                            .cornerRadius(15.0)
-                        
+                            
+                            Text("Ingresa con Google")
+                                .frame(width: 335, height: 50)
+                                .background(Color(.white))
+                                .foregroundColor(Color(.darkGray))
+                                .cornerRadius(15.0)
+                                .overlay(Image("GoogleLogo").resizable().frame(width: 40, height: 40).position(x: 40, y: 25))
+                                .shadow(radius: 3)
+                            
+                            }
                         NavigationLink(destination: LoginScreen(), isActive: $isActive) {
                             EmptyView()
                         }
-                                    
                     }
+                    
                 }
             }
         }
