@@ -47,8 +47,7 @@ struct MapView: View {
                     Text("Cerca de mi")
                         .font(.system(size: 16))
                         .foregroundColor(Color(#colorLiteral(red: 0.76, green: 0.76, blue: 0.76, alpha: 1)))
-                   
-                   
+                      
                 }
 //                .padding(.horizontal, 25.0)
                 .frame(width: 291, height: 40)
