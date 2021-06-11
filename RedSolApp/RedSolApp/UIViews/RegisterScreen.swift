@@ -17,7 +17,7 @@ struct RegisterScreen: View {
                 Text("Bienvenido a RedSol")
                 .font(.system(.largeTitle)).fontWeight(.medium).foregroundColor(.white)
             }
-            
+            SUBRegisterForm()
             
         }
             

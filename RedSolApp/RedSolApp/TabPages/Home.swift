@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct home: View {
+struct Home: View {
     var body: some View {
         ScrollView {
             VStack {
@@ -197,8 +197,8 @@ struct home: View {
     
 
 
-struct home_Previews: PreviewProvider {
+struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        home()
+        Home()
     }
 }

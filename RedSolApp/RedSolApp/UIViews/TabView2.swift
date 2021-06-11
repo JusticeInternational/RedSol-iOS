@@ -31,7 +31,7 @@ struct TabView2: View {
 
                 }
             
-            home()
+            Home()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Buscar")
