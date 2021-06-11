@@ -68,7 +68,7 @@ struct LoginScreen: View {
                 
                 // MARK: - logo, title, Textfields
                 VStack() {
-                    Image("RedSolidariaLogo")
+                    Image("RedSolidariaLogo_Title")
                         .resizable()
                         .frame(width: 225, height: 225)
                         .padding(30)
@@ -76,10 +76,14 @@ struct LoginScreen: View {
                     TextField("Correo o ID", text: $displayName) .padding()
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
                         .scaleEffect(0.85)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
 
                     TextField("Contraseña", text: $email) .padding()
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
-                            .scaleEffect(0.85)
+                        .scaleEffect(0.85)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
                 //MARK: - Sign up Handling
                             
                     if (error) {
