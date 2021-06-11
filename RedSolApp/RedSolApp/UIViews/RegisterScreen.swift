@@ -16,8 +16,11 @@ struct RegisterScreen: View {
                 Image("RedSolidariaLogo")
                 Text("Bienvenido a RedSol")
                 .font(.system(.largeTitle)).fontWeight(.medium).foregroundColor(.white)
+                
+                padding(50)
+                SUBRegisterForm()
+
             }
-            SUBRegisterForm()
             
         }
             

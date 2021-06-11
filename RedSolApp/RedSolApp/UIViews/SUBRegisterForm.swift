@@ -24,7 +24,9 @@ struct SUBRegisterForm: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10).foregroundColor(.white).frame(width: 375, height: 550)
+
+            RoundedRectangle(cornerRadius: 10).foregroundColor(.white).frame(width: 375, height: 570)
+                .offset(y: -10)
             
             VStack {
                 VStack(spacing: 20) {
@@ -57,7 +59,7 @@ struct SUBRegisterForm: View {
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                 }
-                .offset(y: -40)     // space from button
+                .offset(y: -25)     // space from button
                 .padding()          // adjust to size of button
                 Button(action: { Register() }) {
                     Text("Iniciar Sesion")
@@ -71,6 +73,19 @@ struct SUBRegisterForm: View {
                     }
                 
                 }
+                
+                
+                Button {
+                    print("Login screen")
+                } label: {
+                    Text("Ya tienes una cuenta? Inicia Sesion").underline()
+                    
+                    NavigationLink(destination: LoginScreen(), isActive: $isActive) {
+                        EmptyView()
+                    }
+                }
+                .padding(50)
+                
             }
             
         }
