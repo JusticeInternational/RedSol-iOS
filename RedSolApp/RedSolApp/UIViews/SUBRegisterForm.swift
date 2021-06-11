@@ -76,7 +76,7 @@ struct SUBRegisterForm: View {
                 
                 
                 Button {
-                    print("Login screen")
+                    //
                 } label: {
                     Text("Ya tienes una cuenta? Inicia Sesion").underline()
                     

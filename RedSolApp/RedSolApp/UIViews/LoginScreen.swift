@@ -26,6 +26,7 @@ struct LoginScreen: View {
     }
     
     func registrate() {
+        self.isActive.toggle()
         print ("registrate")
     }
     
@@ -118,7 +119,7 @@ struct LoginScreen: View {
                             .overlay(RoundedRectangle(cornerRadius: 14).stroke(Color.blue, lineWidth: 1.0))
                             .autocapitalization(.none)
                         
-                        NavigationLink(destination: LoginScreen(), isActive: $isActive) {
+                        NavigationLink(destination: RegisterScreen(), isActive: $isActive) {
                             EmptyView()
                         }
                             
