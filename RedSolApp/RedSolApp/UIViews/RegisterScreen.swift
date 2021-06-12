@@ -27,10 +27,8 @@ struct RegisterScreen: View {
                     
                     
                     Text("Bienvenido a RedSol")
-                    .font(.custom("Roboto-Bold", size: 48))
-
-//                        .bold()
-//                        .foregroundColor(.white)
+                    .font(.custom("Roboto-Bold", size: 30))
+                    .foregroundColor(.white)
                     
                     
                     SUBRegisterForm()
