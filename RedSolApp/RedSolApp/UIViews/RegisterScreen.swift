@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RegisterScreen: View {
+    
+    @State var label: UILabel!
+    
     var body: some View {
             
         ZStack {
@@ -18,10 +21,16 @@ struct RegisterScreen: View {
 
                 .offset(y: -300)
             VStack {
-                Image("RedSolidariaLogo")
+                Image("RedSolidariaLogo_Vector")
                 VStack(spacing: 50) {
+                    
+                    
+                    
                     Text("Bienvenido a RedSol")
-                    .font(.system(.largeTitle)).fontWeight(.medium).foregroundColor(.white)
+                    .font(.custom("Roboto-Bold", size: 48))
+
+//                        .bold()
+//                        .foregroundColor(.white)
                     
                     
                     SUBRegisterForm()
