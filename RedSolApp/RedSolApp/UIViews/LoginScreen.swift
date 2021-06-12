@@ -11,6 +11,7 @@ import Apollo
 
 struct LoginScreen: View {
     @State private var isActive: Bool = false
+//    @State var selectedItem
 
     @State var displayName: String = ""
     @State var email: String = ""
@@ -21,11 +22,12 @@ struct LoginScreen: View {
     // GraphQL
     @State var category = ""
     
+    
     func signUp() {
         print("signed up")
     }
     
-    func registrate() {
+    func register() {
         self.isActive.toggle()
         print ("registrate")
     }
@@ -37,11 +39,11 @@ struct LoginScreen: View {
         print("Log in w/ google")
     }
     
-    func recuperarContreseña() {
+    func resetPassword() {
         print("Recuperar Contreseña")
     }
     
-    func continuarSinRegistrarse() {
+    func continueWithoutRegistering() {
         print("Continuar sin registrarse")
     }
     
@@ -111,7 +113,7 @@ struct LoginScreen: View {
                             
                     }
                     
-                    Button(action: { registrate() }) {
+                    Button(action: { register() }) {
                         
                         
                         Text("Registrate")
@@ -125,13 +127,13 @@ struct LoginScreen: View {
                             
                     }
                     
-                    Button(action: { recuperarContreseña() }) {
+                    Button(action: { resetPassword() }) {
                         Text("Recuperar Contreseña")
                             .underline()
                     }
                     .font(.system(.subheadline))
                     
-                    Button(action: { continuarSinRegistrarse() }) {
+                    Button(action: { continueWithoutRegistering() }) {
                         Text("Continuar sin registrarse")
                             .underline()
                     }

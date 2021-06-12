@@ -21,7 +21,7 @@ struct TabView2: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-            MapView()
+                MapView()
 //            Text("Map Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
@@ -31,13 +31,13 @@ struct TabView2: View {
 
                 }
             
-            Home()
+                Home()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Buscar")
                 }
             
-            Redsol()
+                Redsol()
 //            Text("Video Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
