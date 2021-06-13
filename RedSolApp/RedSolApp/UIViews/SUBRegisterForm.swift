@@ -30,23 +30,29 @@ struct SUBRegisterForm: View {
             
             VStack {
                 VStack(spacing: 20) {
-                    Text("Registrate").font(.title3).bold().foregroundColor(.blue)
+                    Text("Registrate")
+                        .font(.custom("Roboto-Bold", size: 20))
+                        .bold()
+                        .foregroundColor(.blue)
                         .padding()
                     
                     // MARK: - Contents to fill out for form
                     TextField("Nombre y Apellido", text: $fullName) .padding()
+                        .font(.custom("Roboto-Regular", size: 17))
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
                         .scaleEffect(0.85)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
                     TextField("Correo Electronico", text: $email) .padding()
+                        .font(.custom("Roboto-Regular", size: 17))
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
                         .scaleEffect(0.85)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
                     SecureField("Contraseña", text: $password) .padding()
+                        .font(.custom("Roboto-Regular", size: 17))
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
                         .scaleEffect(0.85)
                         .disableAutocorrection(true)
@@ -54,6 +60,7 @@ struct SUBRegisterForm: View {
                         
                     
                     SecureField("Confirmar Contraseña", text: $passwordCopy) .padding()
+                        .font(.custom("Roboto-Regular", size: 17))
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
                         .scaleEffect(0.85)
                         .disableAutocorrection(true)
@@ -63,6 +70,7 @@ struct SUBRegisterForm: View {
                 .padding()          // adjust to size of button
                 Button(action: { Register() }) {
                     Text("Iniciar Sesion")
+                        .font(.custom("Roboto-Bold", size: 20))
                         .frame(width: 320, height: 50)
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -78,7 +86,9 @@ struct SUBRegisterForm: View {
                 Button {
                     //
                 } label: {
-                    Text("Ya tienes una cuenta? Inicia Sesion").underline()
+                    Text("Ya tienes una cuenta? **Inicia Sesion**")
+                    .underline()
+                    .font(.custom("Roboto-Thin", size: 18))
                     
                     NavigationLink(destination: LoginScreen(), isActive: $isActive) {
                         EmptyView()
