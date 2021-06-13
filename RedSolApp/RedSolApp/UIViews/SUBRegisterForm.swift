@@ -25,7 +25,7 @@ struct SUBRegisterForm: View {
     var body: some View {
         ZStack {
 
-            RoundedRectangle(cornerRadius: 10).foregroundColor(.white).frame(width: 375, height: 570)
+            RoundedRectangle(cornerRadius: 10).foregroundColor(.white).frame(width: 375, height: 580)
                 .offset(y: -10)
             
             VStack {
@@ -86,10 +86,11 @@ struct SUBRegisterForm: View {
                 Button {
                     //
                 } label: {
-                    Text("Ya tienes una cuenta? **Inicia Sesion**")
-                    .underline()
-                    .font(.custom("Roboto-Thin", size: 18))
+                    Text("Ya tienes una cuenta?").underline()
+                        .font(.custom("Roboto-Light", size: 18)) + Text(" Inicia Sesion").underline()
+                        .font(.custom("Roboto-Medium", size: 18))
                     
+                
                     NavigationLink(destination: LoginScreen(), isActive: $isActive) {
                         EmptyView()
                     }

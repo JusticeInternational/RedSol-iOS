@@ -19,7 +19,7 @@ struct RegisterScreen: View {
                 .ignoresSafeArea(.all, edges: .top)
                 .frame(width: 415)
 
-                .offset(y: -300)
+                .offset(y: -450)
             VStack {
                 Image("RedSolidariaLogo_Vector")
                 VStack(spacing: 50) {
@@ -37,7 +37,7 @@ struct RegisterScreen: View {
 
             }
             
-        }.offset(y: 30)
+        }.offset(y: 20)
             
             
             
