@@ -13,21 +13,39 @@ struct ProfileView: View {
     @State var userID = "123456"
     @State var email = "johnDoe@gmail.com"
     
-    var body: some View {
+    // Navigation bar blue coloration for every view
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
+
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.red]
         
-        ScrollView {
-            HStack {
-                Image(systemName: "person.crop.circle")
-                    .font(.system(size: 160))
-                VStack {
-                    Text(username).bold()
-                    Text(userID)
-                    Text(email)
-                }
-                
-            }
-        }
+        UINavigationBar.appearance().barTintColor = .red
     }
+    
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                HStack {
+                    Image(systemName: "person.crop.circle")
+                        .font(.system(size: 120))
+                    VStack(alignment: .leading) {
+                        Text(username).bold()
+                        Text("ID: \(userID)")
+                        Text(email)
+                    }
+                    
+                }
+            }
+            .navigationBarTitle("test", displayMode: .inline)
+            
+        }
+        
+        .navigationViewStyle(StackNavigationViewStyle())
+
+    }
+
 }
 
 struct ProfileView_Previews: PreviewProvider {
