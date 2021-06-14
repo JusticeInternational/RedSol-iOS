@@ -13,6 +13,8 @@ struct ProfileView: View {
     @State var userID = "123456"
     @State var email = "johnDoe@gmail.com"
     
+    @State var showMenu = false
+    
     //MARK: - Navigation bar blue coloration for every view
     init() {
         
@@ -58,7 +60,11 @@ struct ProfileView: View {
                     }
                     
                     
-                }.offset(y: 20)
+                }
+                .padding()
+                Divider()
+                
+
                 
             }
             .navigationBarTitle("", displayMode: .inline)
@@ -68,16 +74,16 @@ struct ProfileView: View {
                     Button(action: { test() }) {
                         Image(systemName: "line.horizontal.3")
                             .font(.system(size: 60))
-                            
                     }
                 }
+                
             }
+            
+            
+            
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .accentColor(.white)
-
-        
-        
 
     }
 
