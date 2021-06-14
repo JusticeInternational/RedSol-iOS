@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Servicios: View {
+struct ServicesView: View {
     var body: some View {
         ScrollView {
         HStack {
@@ -202,8 +202,8 @@ struct Servicios: View {
     }
 }
 
-struct Servicios_Previews: PreviewProvider {
+struct ServicesView_Previews: PreviewProvider {
     static var previews: some View {
-        Servicios()
+        ServicesView()
     }
 }

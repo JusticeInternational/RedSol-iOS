@@ -17,7 +17,7 @@ struct SUBRegisterForm: View {
     @State var passwordCopy = ""        // password to be checked against password
     
     // finalize registration
-    func Register() {
+    func register() {
         
     }
     
@@ -68,7 +68,7 @@ struct SUBRegisterForm: View {
                     }
                     .offset(y: -25)     // space from button
                     .padding()          // adjust to size of button
-                    Button(action: { Register() }) {
+                    Button(action: { register() }) {
                         Text("Iniciar Sesion")
                             .font(.custom("Roboto-Bold", size: 20))
                             .frame(width: 320, height: 50)
@@ -76,7 +76,7 @@ struct SUBRegisterForm: View {
                             .foregroundColor(.white)
                             .cornerRadius(14)
                         
-                        NavigationLink(destination: Home(), isActive: $isActive) {
+                        NavigationLink(destination: HomeView(), isActive: $isActive) {
                             EmptyView()
                         }
                     
@@ -91,7 +91,7 @@ struct SUBRegisterForm: View {
                             .font(.custom("Roboto-Medium", size: 18))
                         
                     
-                        NavigationLink(destination: LoginScreen(), isActive: $isActive) {
+                        NavigationLink(destination: LoginView(), isActive: $isActive) {
                             EmptyView()
                         }
                     }

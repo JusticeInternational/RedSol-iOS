@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct card1: View {
+struct OrganizationCardView: View {
     #if os(iOS)
     var cornerRadius: CGFloat = 22
     #else
@@ -41,8 +41,8 @@ struct card1: View {
     }
 }
 
-struct card1_Previews: PreviewProvider {
+struct OrganizationCardView_Previews: PreviewProvider {
     static var previews: some View {
-        card1()
+        OrganizationCardView()
     }
 }

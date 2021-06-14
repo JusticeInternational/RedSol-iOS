@@ -9,7 +9,7 @@
 import SwiftUI
 import Apollo
 
-struct LoginScreen: View {
+struct LoginView: View {
     @State private var isRegisterViewActive: Bool = false
     @State private var isHomeViewActive: Bool = false
     
@@ -102,7 +102,7 @@ struct LoginScreen: View {
                     
                     VStack(spacing: 20) {
                         
-                        Button(action: signUp) {
+                        Button(action: { signUp() }) {
                             
                             Text("Iniciar Sesion")
                                 .frame(width: 320, height: 50)
@@ -110,7 +110,7 @@ struct LoginScreen: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(14)
                             
-                            NavigationLink(destination: Home(), isActive: $isRegisterViewActive) {
+                            NavigationLink(destination: HomeView(), isActive: $isHomeViewActive) {
                                 EmptyView()
                             }
                                 
@@ -124,7 +124,7 @@ struct LoginScreen: View {
                                 .overlay(RoundedRectangle(cornerRadius: 14).stroke(Color.blue, lineWidth: 1.0))
                                 .autocapitalization(.none)
                             
-                            NavigationLink(destination: RegisterScreen(), isActive: $isActive) {
+                            NavigationLink(destination: RegisterScreen(), isActive: $isRegisterViewActive) {
                                 EmptyView()
                             }
                                 
@@ -154,9 +154,9 @@ struct LoginScreen: View {
                                     
                             }
                         
-                            NavigationLink(destination: LoginScreen(), isActive: $isActive) {
-                                EmptyView()
-                            }
+//                            NavigationLink(destination: LoginView(), isActive: $isActive) {
+//                                EmptyView()
+//                            }
                                     
                             Button(action: { googleLogIn() }) {
                                 
@@ -170,7 +170,7 @@ struct LoginScreen: View {
                                     .shadow(radius: 3)
                                 
                                 }
-                            NavigationLink(destination: LoginScreen(), isActive: $isActive) {
+                            NavigationLink(destination: LoginView(), isActive: $isHomeViewActive) {
                                 EmptyView()
                             }
                         }
@@ -186,8 +186,8 @@ struct LoginScreen: View {
         
 }
 
-struct LoginScreen_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginScreen()
+        LoginView()
     }
 }
