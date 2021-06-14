@@ -45,8 +45,7 @@ struct OrganizationNavigationView: View {
                     Text("Redsol")
                 }
          
-            Text("Profile Tab")
-                .font(.system(size: 30, weight: .bold, design: .rounded))
+                ProfileView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Perfil")
