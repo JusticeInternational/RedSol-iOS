@@ -33,17 +33,33 @@ struct ProfileView: View {
         
         
         NavigationView {
+            
             ScrollView {
-                HStack {
+                HStack() {
                     Image(systemName: "person.crop.circle")
                         .font(.system(size: 120))
-                    VStack(alignment: .leading) {
-                        Text(username).bold()
-                        Text("ID: \(userID)")
-                        Text(email)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(username).bold()
+                            Text("ID: \(userID)")
+                            Text(email)
+                            
+                        }
+                        VStack(spacing: 10) {
+                            Image(systemName: "gear")       // need to change to proper option box
+                                .font(.system(size: 30))
+                            Image(systemName: "qrcode.viewfinder")
+                                .font(.system(size: 30))
+
+                            Image(systemName: "qrcode")     // need to change to person w/ info box
+                                .font(.system(size: 30))
+
+                        }
                     }
                     
-                }
+                    
+                }.offset(y: 20)
+                
             }
             .navigationBarTitle("", displayMode: .inline)
             
