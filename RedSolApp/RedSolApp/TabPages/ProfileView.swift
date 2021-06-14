@@ -13,18 +13,25 @@ struct ProfileView: View {
     @State var userID = "123456"
     @State var email = "johnDoe@gmail.com"
     
-    // Navigation bar blue coloration for every view
+    //MARK: - Navigation bar blue coloration for every view
     init() {
-        //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
-
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.red]
         
-        UINavigationBar.appearance().barTintColor = .red
+        //Use this if NavigationBarTitle is with Large Font
+//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
+
+//        Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().barTintColor = UIColor(red: 82 / 255, green: 130 / 255, blue: 240 / 255, alpha: 1.0)
+//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
+    func test() {
+        //
     }
     
     var body: some View {
+        
+        
+        
         NavigationView {
             ScrollView {
                 HStack {
@@ -38,11 +45,23 @@ struct ProfileView: View {
                     
                 }
             }
-            .navigationBarTitle("test", displayMode: .inline)
+            .navigationBarTitle("", displayMode: .inline)
             
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { test() }) {
+                        Image(systemName: "line.horizontal.3")
+                            .font(.system(size: 60))
+                            
+                    }
+                }
+            }
         }
-        
         .navigationViewStyle(StackNavigationViewStyle())
+        .accentColor(.white)
+
+        
+        
 
     }
 
