@@ -10,7 +10,7 @@ import SwiftUI
 //import MessageUI
 import Foundation
 
-struct Redsol: View {
+struct MainOrganizationView: View {
     
     @State private var emailContent = ""
     @State private var porqueNosContactas = ["No anda el app", "Quiero donar y no se como", "Los datos estan incorrectos", "Otra causa"]
@@ -306,9 +306,9 @@ struct Redsol: View {
     }
 }
 
-struct Redsol_Previews: PreviewProvider {
+struct MainOrganizationView_Previews: PreviewProvider {
     static var previews: some View {
-        Redsol()
+        MainOrganizationView()
     }
 }
 

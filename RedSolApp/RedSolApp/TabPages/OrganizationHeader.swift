@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct Organizationdetails: View {
+struct OrganizationHeader: View {
     @StateObject var organizaciones: SampleOrganizations = organizacionez[0]
     @State private var selection = 1
     @State var current = "house.fill"
@@ -156,17 +156,17 @@ struct Organizationdetails: View {
         GeometryReader{_ in
             VStack{
                 if self.selected == 0{
-                    Info()
+                    OrganizationInfoView()
 
                 }
                 else if self.selected == 1{
-                    Servicios()
+                    ServicesView()
                 }
                 else if self.selected == 2{
                     Text("Actividad")
                 }
                 else if self.selected == 3{
-                    Contribuye()
+                    ContributeView()
 
                 }
                 else if self.selected == 4{
@@ -210,8 +210,8 @@ struct Organizationdetails: View {
     
 }
 
-struct Organizationdetails_Previews: PreviewProvider {
+struct OrganizationHeader_Previews: PreviewProvider {
     static var previews: some View {
-        Organizationdetails()
+        OrganizationHeader()
     }
 }

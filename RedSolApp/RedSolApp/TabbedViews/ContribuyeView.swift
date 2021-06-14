@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Contribuye: View {
+struct ContributeView: View {
     var body: some View {
         ScrollView{
         
@@ -118,8 +118,8 @@ struct Contribuye: View {
     }
 }
 
-struct Contribuye_Previews: PreviewProvider {
+struct ContributeView_Previews: PreviewProvider {
     static var previews: some View {
-        Contribuye()
+        ContributeView()
     }
 }

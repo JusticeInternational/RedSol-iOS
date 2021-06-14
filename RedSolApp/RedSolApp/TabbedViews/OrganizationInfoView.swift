@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Info: View {
+struct OrganizationInfoView: View {
     var body: some View {
         
         ScrollView {
@@ -188,8 +188,8 @@ struct Info: View {
     }
 }
 
-struct Info_Previews: PreviewProvider {
+struct OrganizationInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        Info()
+        OrganizationInfoView()
     }
 }

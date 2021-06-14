@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct TabView2: View {
+struct OrganizationNavigationView: View {
     
     var body: some View {
         TabView {
 //            Text("Home Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
             NavigationView {
-                pageHome()
+                HomePageView()
 
                       }
                 .tabItem {
@@ -31,13 +31,13 @@ struct TabView2: View {
 
                 }
             
-                Home()
+                HomeView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Buscar")
                 }
             
-                Redsol()
+                MainOrganizationView()
 //            Text("Video Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
@@ -52,11 +52,15 @@ struct TabView2: View {
                     Text("Perfil")
                 }
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
+    
 }
 
-struct TabView2_Previews: PreviewProvider {
+struct OrganizationNavigationView_Previews: PreviewProvider {
     static var previews: some View {
-        TabView2()
+        OrganizationNavigationView()
     }
 }
