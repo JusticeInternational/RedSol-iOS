@@ -189,10 +189,13 @@ struct HomeView: View {
             }
         }
 //            .padding(.horizontal, 32.0)
-        }
-        
+    .navigationBarTitle("")
+    .navigationBarHidden(true)
+    .navigationBarBackButtonHidden(true)
+    }
+    
       
-        }
+}
        
     
 

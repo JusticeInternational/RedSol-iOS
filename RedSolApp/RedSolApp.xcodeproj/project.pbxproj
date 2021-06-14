@@ -11,7 +11,7 @@
 		167D9B12266EE47600F61BB4 /* LoadUsedCategories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 167D9B11266EE47600F61BB4 /* LoadUsedCategories.graphql */; };
 		16BBB923266F4C46008152C3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB922266F4C46008152C3 /* Network.swift */; };
 		16BBB92626709E4D008152C3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB92526709E4D008152C3 /* API.swift */; };
-		16D086D4267412FB00240C0A /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D086D3267412FB00240C0A /* RegisterScreen.swift */; };
+		16D086D4267412FB00240C0A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D086D3267412FB00240C0A /* RegisterView.swift */; };
 		16D086D6267416A500240C0A /* SUBRegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D086D5267416A500240C0A /* SUBRegisterForm.swift */; };
 		16D547A1267543A60076D7BB /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16D5479B267543930076D7BB /* Roboto-BoldItalic.ttf */; };
 		16D547A2267543A60076D7BB /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16D5479C267543930076D7BB /* Roboto-Light.ttf */; };
@@ -71,7 +71,7 @@
 		167D9B11266EE47600F61BB4 /* LoadUsedCategories.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LoadUsedCategories.graphql; sourceTree = "<group>"; };
 		16BBB922266F4C46008152C3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		16BBB92526709E4D008152C3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = RedSolApp/API.swift; sourceTree = SOURCE_ROOT; };
-		16D086D3267412FB00240C0A /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		16D086D3267412FB00240C0A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		16D086D5267416A500240C0A /* SUBRegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUBRegisterForm.swift; sourceTree = "<group>"; };
 		16D54794267543920076D7BB /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		16D54795267543920076D7BB /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				16F6C0BF266D349E00220E91 /* LoginView.swift */,
-				16D086D3267412FB00240C0A /* RegisterScreen.swift */,
+				16D086D3267412FB00240C0A /* RegisterView.swift */,
 				16D086D5267416A500240C0A /* SUBRegisterForm.swift */,
 				16F6C0C4266D356C00220E91 /* NavigationView.swift */,
 				16F6C0C9266D357D00220E91 /* HomePageView.swift */,
@@ -558,7 +558,7 @@
 				16F6C0C5266D356C00220E91 /* NavigationView.swift in Sources */,
 				16F6C0E5266D361E00220E91 /* SampleOrganizations.swift in Sources */,
 				16F6C0BA266D348400220E91 /* MainOrganizationView.swift in Sources */,
-				16D086D4267412FB00240C0A /* RegisterScreen.swift in Sources */,
+				16D086D4267412FB00240C0A /* RegisterView.swift in Sources */,
 				16D086D6267416A500240C0A /* SUBRegisterForm.swift in Sources */,
 				16F6C096266D33D100220E91 /* ServicesView.swift in Sources */,
 				16F6C0C0266D349E00220E91 /* LoginView.swift in Sources */,

@@ -9,8 +9,11 @@ import SwiftUI
 
 struct SUBRegisterForm: View {
     
-    @State private var isActive: Bool = false
+//    @ObservedObject var presentationMode: Binding<PresentationMode>
     
+    @State private var isHomeViewActive: Bool = false
+    @State private var isLoginViewActive: Bool = false
+
     @State var fullName = ""
     @State var email = ""
     @State var password = ""
@@ -18,6 +21,7 @@ struct SUBRegisterForm: View {
     
     // finalize registration
     func register() {
+        isHomeViewActive.toggle()
         
     }
     
@@ -76,7 +80,7 @@ struct SUBRegisterForm: View {
                             .foregroundColor(.white)
                             .cornerRadius(14)
                         
-                        NavigationLink(destination: HomeView(), isActive: $isActive) {
+                        NavigationLink(destination: HomeView(), isActive: $isHomeViewActive) {
                             EmptyView()
                         }
                     
@@ -85,26 +89,32 @@ struct SUBRegisterForm: View {
                     
                     Button {
                         //
-                    } label: {
+                    }
+                    label: {
                         Text("Ya tienes una cuenta?").underline()
                             .font(.custom("Roboto-Light", size: 18)) + Text(" Inicia Sesion").underline()
                             .font(.custom("Roboto-Medium", size: 18))
                         
                     
-                        NavigationLink(destination: LoginView(), isActive: $isActive) {
+                        NavigationLink(destination: LoginView(), isActive: $isLoginViewActive) {
                             EmptyView()
                         }
+
                     }
+
                     .padding(50)
                     
                 }
                 
                 
             }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+
 
         }
         
-    
             
 }
 

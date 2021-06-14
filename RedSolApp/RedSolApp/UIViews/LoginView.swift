@@ -25,12 +25,13 @@ struct LoginView: View {
     @State var category = ""
     
     
-    func signUp() {
-        print("signed up")
+    func beginSession() {
+        self.isHomeViewActive.toggle()
+        print("Beginning session...")
     }
     
     func register() {
-//        self.isRegisterScreenActive.toggle()
+        self.isRegisterViewActive.toggle()
         print ("registrate")
     }
     
@@ -102,7 +103,7 @@ struct LoginView: View {
                     
                     VStack(spacing: 20) {
                         
-                        Button(action: { signUp() }) {
+                        Button(action: { beginSession() }) {
                             
                             Text("Iniciar Sesion")
                                 .frame(width: 320, height: 50)
@@ -113,6 +114,7 @@ struct LoginView: View {
                             NavigationLink(destination: HomeView(), isActive: $isHomeViewActive) {
                                 EmptyView()
                             }
+                            
                                 
                         }
                         
@@ -124,7 +126,7 @@ struct LoginView: View {
                                 .overlay(RoundedRectangle(cornerRadius: 14).stroke(Color.blue, lineWidth: 1.0))
                                 .autocapitalization(.none)
                             
-                            NavigationLink(destination: RegisterScreen(), isActive: $isRegisterViewActive) {
+                            NavigationLink(destination: RegisterView(), isActive: $isRegisterViewActive) {
                                 EmptyView()
                             }
                                 
@@ -170,9 +172,9 @@ struct LoginView: View {
                                     .shadow(radius: 3)
                                 
                                 }
-                            NavigationLink(destination: LoginView(), isActive: $isHomeViewActive) {
-                                EmptyView()
-                            }
+//                            NavigationLink(destination: LoginView(), isActive: $isHomeViewActive) {
+//                                EmptyView()
+//                            }
                         }
                         
                     }
@@ -180,7 +182,10 @@ struct LoginView: View {
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+
         }
+       
 
     }
         

@@ -7,10 +7,13 @@
 
 import SwiftUI
 
-struct RegisterScreen: View {
+
+
+struct RegisterView: View {
     
     @State var label: UILabel!
-    
+//    @Published(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     var body: some View {
         
         NavigationView {
@@ -33,29 +36,25 @@ struct RegisterScreen: View {
                         
                         
                         SUBRegisterForm()
+
                     }
                     
 
                 }
                 
             }
-            .offset(y: 40)
-            .navigationTitle("")
-            .navigationBarHidden(true)
+ 
+
         }
-        
-            
-            
-            
-            
-                
-        
-        
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
+    
 }
 
-struct RegisterScreen_Previews: PreviewProvider {
+struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterScreen()
+        RegisterView()
     }
 }
