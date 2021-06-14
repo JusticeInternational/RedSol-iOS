@@ -23,7 +23,6 @@ struct SUBRegisterForm: View {
     
     
     var body: some View {
-//        NavigationView {
             ZStack {
 
                 RoundedRectangle(cornerRadius: 10).foregroundColor(.white).frame(width: 375, height: 600)
@@ -100,13 +99,12 @@ struct SUBRegisterForm: View {
                     
                 }
                 
+                
             }
-//            .navigationBarTitle("")
-//            .navigationBarHidden(true)
-            
+
         }
         
-//    }
+    
             
 }
 

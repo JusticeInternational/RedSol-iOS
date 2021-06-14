@@ -10,7 +10,9 @@ import SwiftUI
 import Apollo
 
 struct LoginScreen: View {
-    @State private var isActive: Bool = false
+    @State private var isRegisterViewActive: Bool = false
+    @State private var isHomeViewActive: Bool = false
+    
 //    @State var selectedItem
 
     @State var displayName: String = ""
@@ -28,7 +30,7 @@ struct LoginScreen: View {
     }
     
     func register() {
-        self.isActive.toggle()
+//        self.isRegisterScreenActive.toggle()
         print ("registrate")
     }
     
@@ -108,7 +110,7 @@ struct LoginScreen: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(14)
                             
-                            NavigationLink(destination: LoginScreen(), isActive: $isActive) {
+                            NavigationLink(destination: Home(), isActive: $isRegisterViewActive) {
                                 EmptyView()
                             }
                                 
