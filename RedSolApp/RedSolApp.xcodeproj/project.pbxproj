@@ -39,7 +39,7 @@
 		16F6C0B4266D345100220E91 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0B3266D345100220E91 /* HomeView.swift */; };
 		16F6C0BA266D348400220E91 /* MainOrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0B9266D348400220E91 /* MainOrganizationView.swift */; };
 		16F6C0C0266D349E00220E91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0BF266D349E00220E91 /* LoginView.swift */; };
-		16F6C0C5266D356C00220E91 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0C4266D356C00220E91 /* NavigationView.swift */; };
+		16F6C0C5266D356C00220E91 /* OrganizationNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */; };
 		16F6C0CA266D357D00220E91 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0C9266D357D00220E91 /* HomePageView.swift */; };
 		16F6C0D7266D359900220E91 /* OrganizationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0D6266D359900220E91 /* OrganizationCardView.swift */; };
 		16F6C0DD266D360400220E91 /* JsonPull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0DC266D360400220E91 /* JsonPull.swift */; };
@@ -105,7 +105,7 @@
 		16F6C0B3266D345100220E91 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		16F6C0B9266D348400220E91 /* MainOrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrganizationView.swift; sourceTree = "<group>"; };
 		16F6C0BF266D349E00220E91 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		16F6C0C4266D356C00220E91 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationNavigationView.swift; sourceTree = "<group>"; };
 		16F6C0C9266D357D00220E91 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		16F6C0D6266D359900220E91 /* OrganizationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCardView.swift; sourceTree = "<group>"; };
 		16F6C0DC266D360400220E91 /* JsonPull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPull.swift; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 				16F6C0BF266D349E00220E91 /* LoginView.swift */,
 				16D086D3267412FB00240C0A /* RegisterView.swift */,
 				16D086D5267416A500240C0A /* SUBRegisterForm.swift */,
-				16F6C0C4266D356C00220E91 /* NavigationView.swift */,
+				16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */,
 				16F6C0C9266D357D00220E91 /* HomePageView.swift */,
 				16F6C0D6266D359900220E91 /* OrganizationCardView.swift */,
 			);
@@ -555,7 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16F6C0A7266D342A00220E91 /* OrganizationHeader.swift in Sources */,
-				16F6C0C5266D356C00220E91 /* NavigationView.swift in Sources */,
+				16F6C0C5266D356C00220E91 /* OrganizationNavigationView.swift in Sources */,
 				16F6C0E5266D361E00220E91 /* SampleOrganizations.swift in Sources */,
 				16F6C0BA266D348400220E91 /* MainOrganizationView.swift in Sources */,
 				16D086D4267412FB00240C0A /* RegisterView.swift in Sources */,

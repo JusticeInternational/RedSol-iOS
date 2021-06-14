@@ -52,7 +52,11 @@ struct OrganizationNavigationView: View {
                     Text("Perfil")
                 }
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
+    
 }
 
 struct OrganizationNavigationView_Previews: PreviewProvider {

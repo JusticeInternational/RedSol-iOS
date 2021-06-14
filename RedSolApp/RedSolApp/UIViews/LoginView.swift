@@ -111,7 +111,7 @@ struct LoginView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(14)
                             
-                            NavigationLink(destination: HomeView(), isActive: $isHomeViewActive) {
+                            NavigationLink(destination: OrganizationNavigationView(), isActive: $isHomeViewActive) {
                                 EmptyView()
                             }
                             

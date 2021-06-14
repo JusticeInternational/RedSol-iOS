@@ -12,6 +12,8 @@ struct SUBRegisterForm: View {
 //    @ObservedObject var presentationMode: Binding<PresentationMode>
     
     @State private var isHomeViewActive: Bool = false
+    @State private var isOrganizationNavigationViewActive: Bool = false
+
     @State private var isLoginViewActive: Bool = false
 
     @State var fullName = ""
@@ -21,7 +23,7 @@ struct SUBRegisterForm: View {
     
     // finalize registration
     func register() {
-        isHomeViewActive.toggle()
+        isOrganizationNavigationViewActive.toggle()
         
     }
     
@@ -80,7 +82,7 @@ struct SUBRegisterForm: View {
                             .foregroundColor(.white)
                             .cornerRadius(14)
                         
-                        NavigationLink(destination: HomeView(), isActive: $isHomeViewActive) {
+                        NavigationLink(destination: OrganizationNavigationView(), isActive: $isOrganizationNavigationViewActive) {
                             EmptyView()
                         }
                     
