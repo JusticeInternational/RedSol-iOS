@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ProfileMenuView: View {
+struct ProfileViewMenu: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ProfileMenuView_Previews: PreviewProvider {
+struct ProfileViewMenu_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileMenuView()
+        ProfileViewMenu()
     }
 }
