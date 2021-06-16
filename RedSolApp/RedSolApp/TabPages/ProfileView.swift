@@ -25,7 +25,7 @@ struct ProfileViewNavigation: View {
         return NavigationView {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
-                    ProfileView(showMenu: self.$showMenu)
+                    ProfileView(showMenu: $showMenu)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
@@ -53,16 +53,16 @@ struct ProfileViewNavigation: View {
 }
 
 struct ProfileView: View {
-    
+    @Binding var showMenu: Bool
+
     @State var username = "John Doe"
     @State var userID = "123456"
     @State var email = "johnDoe@gmail.com"
     
-    @Binding var showMenu: Bool
     
     //MARK: - Navigation bar blue coloration for every view
-    init() {
-        
+    init(showMenu: Binding<Bool>) {
+        self._showMenu = showMenu
         //Use this if NavigationBarTitle is with Large Font
 //        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
 
@@ -135,7 +135,6 @@ struct ProfileView: View {
         .accentColor(.white)
 
     }
-
 }
 
 struct ProfileViewNavigation_Previews: PreviewProvider {
