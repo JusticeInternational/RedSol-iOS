@@ -13,7 +13,7 @@ struct ProfileView: View {
     @State var userID = "123456"
     @State var email = "johnDoe@gmail.com"
     
-    @State var showMenu = false
+    @Binding var showMenu: Bool
     
     //MARK: - Navigation bar blue coloration for every view
     init() {
@@ -71,7 +71,9 @@ struct ProfileView: View {
             
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: { test() }) {
+                    Button(action: {
+                        self.showMenu = true
+                    }) {
                         Image(systemName: "line.horizontal.3")
                             .font(.system(size: 60))
                     }
