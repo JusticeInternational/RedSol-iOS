@@ -9,6 +9,12 @@ import SwiftUI
 
 struct OrganizationNavigationView: View {
     
+    
+    // NOTE - look back on this to change to binding possibly?
+    @State var showMenu = false
+    
+    
+    
     var body: some View {
         TabView {
 //            Text("Home Tab")
@@ -45,7 +51,7 @@ struct OrganizationNavigationView: View {
                     Text("Redsol")
                 }
          
-                ProfileView()
+            ProfileView(showMenu: $showMenu)
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Perfil")
