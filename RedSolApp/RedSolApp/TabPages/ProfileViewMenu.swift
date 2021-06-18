@@ -28,7 +28,7 @@ struct ProfileViewMenu: View {
                 VStack(alignment: .center) {
                     
                     Image(systemName: "person.crop.circle")
-                        .font(.system(size: 150))
+                        .font(.system(size: 120))
                         .foregroundColor(.white)
                     
                     Text(firstName + " " + lastName).bold()
@@ -42,7 +42,7 @@ struct ProfileViewMenu: View {
                 
 
             }
-            .padding()
+            .padding(25)
 
             .offset(x: 10, y: -300)
             .frame(maxWidth: .infinity, alignment: .leading)

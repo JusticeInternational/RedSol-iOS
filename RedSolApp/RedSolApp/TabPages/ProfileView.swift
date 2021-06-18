@@ -37,11 +37,11 @@ struct ProfileViewNavigation: View {
                 ZStack(alignment: .leading) {
                     ProfileView(showMenu: $showMenu)
                         .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+//                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
                     if self.showMenu {
                         ProfileViewMenu()
-                            .frame(width: geometry.size.width/2)
+                            .frame(width: geometry.size.width * 0.8)
                             .transition(.move(edge: .leading))
                     }
                 }
