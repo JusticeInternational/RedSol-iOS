@@ -51,7 +51,7 @@ struct OrganizationNavigationView: View {
                     Text("Redsol")
                 }
          
-            ProfileView(showMenu: $showMenu)
+                ProfileViewNavigation()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Perfil")

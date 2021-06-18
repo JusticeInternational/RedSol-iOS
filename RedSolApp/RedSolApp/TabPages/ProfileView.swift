@@ -11,6 +11,16 @@ struct ProfileViewNavigation: View {
     
     @State var showMenu = false
     
+    //MARK: - Navigation bar blue coloration for every view
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
+
+//        Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().barTintColor = UIColor(red: 82 / 255, green: 130 / 255, blue: 240 / 255, alpha: 1.0)
+//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     var body: some View {
         
         let drag = DragGesture()
@@ -31,24 +41,29 @@ struct ProfileViewNavigation: View {
                         .disabled(self.showMenu ? true : false)
                     if self.showMenu {
                         ProfileViewMenu()
-                            .frame(width: geometry.size.width/2)
+                            .frame(width: geometry.size.width / 2)
                             .transition(.move(edge: .leading))
                     }
                 }
-                    .gesture(drag)
+                .gesture(drag)
             }
-                .navigationBarTitle("Side Menu", displayMode: .inline)
-                .navigationBarItems(leading: (
-                    Button(action: {
-                        withAnimation {
-                            self.showMenu.toggle()
-                        }
-                    }) {
-                        Image(systemName: "line.horizontal.3")
-                            .imageScale(.large)
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(leading: (
+                Button(action: {
+                    withAnimation {
+                        self.showMenu.toggle()
                     }
-                ))
+                }) {
+                    Image(systemName: "line.horizontal.3")
+                        .imageScale(.large)
+                }
+            ))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .accentColor(.white)
+
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(true)
     }
 }
 
@@ -60,81 +75,65 @@ struct ProfileView: View {
     @State var email = "johnDoe@gmail.com"
     
     
-    //MARK: - Navigation bar blue coloration for every view
-    init(showMenu: Binding<Bool>) {
-        self._showMenu = showMenu
-        //Use this if NavigationBarTitle is with Large Font
-//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
-
-//        Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().barTintColor = UIColor(red: 82 / 255, green: 130 / 255, blue: 240 / 255, alpha: 1.0)
-//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-    }
-    
     func test() {
         //
     }
     
     var body: some View {
         
-        
-        
-        NavigationView {
-            
-            ScrollView {
-                HStack() {
-                    Image(systemName: "person.crop.circle")
-                        .font(.system(size: 120))
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(username).bold()
-                            Text("ID: \(userID)")
-                            Text(email)
-                            
-                        }
-                        VStack(spacing: 10) {
-                            Image(systemName: "gear")       // need to change to proper option box
-                                .font(.system(size: 30))
-                            Image(systemName: "qrcode.viewfinder")
-                                .font(.system(size: 30))
-
-                            Image(systemName: "qrcode")     // need to change to person w/ info box
-                                .font(.system(size: 30))
-
-                        }
+        ScrollView {
+            HStack() {
+                Image(systemName: "person.crop.circle")
+                    .font(.system(size: 120))
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(username).bold()
+                        Text("ID: \(userID)")
+                        Text(email)
+                        
                     }
-                    
-                    
-                }
-                .padding()
-                Divider()
-                
+                    VStack(spacing: 10) {
+                        Image(systemName: "gear")       // need to change to proper option box
+                            .font(.system(size: 30))
+                        Image(systemName: "qrcode.viewfinder")
+                            .font(.system(size: 30))
 
-                
-            }
-            .navigationBarTitle("", displayMode: .inline)
-            
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        withAnimation {
-                            self.showMenu = true
-                        }
-                    }) {
-                        Image(systemName: "line.horizontal.3")
-                            .font(.system(size: 60))
+                        Image(systemName: "qrcode")     // need to change to person w/ info box
+                            .font(.system(size: 30))
+
                     }
                 }
                 
+                
             }
+            .padding()
+            Divider()
             
-            
+
             
         }
-        .navigationViewStyle(StackNavigationViewStyle())
-        .accentColor(.white)
-
+        
+        
+        
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    withAnimation {
+                        self.showMenu = true
+                    }
+                }) {
+                    Image(systemName: "line.horizontal.3")
+                        .font(.system(size: 60))
+                }
+            }
+            
+        }
+        
+        
+        
     }
+
+
 }
 
 struct ProfileViewNavigation_Previews: PreviewProvider {
