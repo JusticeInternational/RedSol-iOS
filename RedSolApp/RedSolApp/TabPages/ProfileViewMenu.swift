@@ -15,27 +15,42 @@ struct ProfileViewMenu: View {
     var blueColor: Color = Color(red: 82 / 255, green: 130 / 255, blue: 240 / 255)
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .frame(width: .infinity, height: 200)
-                .foregroundColor(blueColor)
-            
-            VStack(alignment: .center) {
+        
+        VStack {
+            ZStack(alignment: .leading) {
                 
-                Image(systemName: "person.crop.circle")
-                    .font(.system(size: 150))
-                    .foregroundColor(.black)        // change to white later
+                Rectangle()
+                    .frame(width: .infinity, height: 400)
+                    .foregroundColor(blueColor)
+                    .edgesIgnoringSafeArea(.all)
+                    .offset(x: -50)     // to cover left edge
                 
-                Text(firstName + " " + lastName).bold()
-                Text(email)
-            }
-            
+                VStack(alignment: .center) {
+                    
+                    Image(systemName: "person.crop.circle")
+                        .font(.system(size: 150))
+                        .foregroundColor(.white)
+                    
+                    Text(firstName + " " + lastName).bold()
+                        .font(.custom("Roboto-Bold", size: 25))
+                        .foregroundColor(.white)
+                    Text(email)
+                        .font(.custom("Roboto-Regular", size: 18))
+                        .foregroundColor(.white)
 
+                }
+                
+
+            }
+            .padding()
+
+            .offset(x: 10, y: -300)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    //        .background(Color(red: 32/255, green: 32/255, blue: 32/255))
+            .edgesIgnoringSafeArea(.all)
         }
-        .offset(x: 10, y: -300)
-        .frame(maxWidth: .infinity, alignment: .leading)
-//        .background(Color(red: 32/255, green: 32/255, blue: 32/255))
-        .edgesIgnoringSafeArea(.all)
+        .offset(y: 100)
+        
     
     }
     
