@@ -9,8 +9,16 @@ import SwiftUI
 
 struct ProfileViewMenu: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("Hello World!")
+        }
+        .offset(x: 10, y: -300)
+        .frame(maxWidth: .infinity, alignment: .leading)
+//        .background(Color(red: 32/255, green: 32/255, blue: 32/255))
+        .edgesIgnoringSafeArea(.all)
+    
     }
+    
 }
 
 struct ProfileViewMenu_Previews: PreviewProvider {
