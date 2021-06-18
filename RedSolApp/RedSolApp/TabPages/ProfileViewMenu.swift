@@ -16,44 +16,40 @@ struct ProfileViewMenu: View {
     
     var body: some View {
         
-        VStack {
-            ZStack(alignment: .leading) {
-                
-                Rectangle()
-                    .frame(width: .infinity, height: 400)
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: "person.fill")
                     .foregroundColor(blueColor)
-                    .edgesIgnoringSafeArea(.all)
-                    .offset(x: -50)     // to cover left edge
-                
-                VStack(alignment: .center) {
-                    
-                    Image(systemName: "person.crop.circle")
-                        .font(.system(size: 120))
-                        .foregroundColor(.white)
-                    
-                    Text(firstName + " " + lastName).bold()
-                        .font(.custom("Roboto-Bold", size: 25))
-                        .foregroundColor(.white)
-                    Text(email)
-                        .font(.custom("Roboto-Regular", size: 18))
-                        .foregroundColor(.white)
-
-                }
-                
-
+                    .imageScale(.large)
+                Text("Profile")
+                    .foregroundColor(.gray)
+                    .font(.headline)
             }
-            .padding(25)
-
-            .offset(x: 10, y: -300)
-            .frame(maxWidth: .infinity, alignment: .leading)
-    //        .background(Color(red: 32/255, green: 32/255, blue: 32/255))
-            .edgesIgnoringSafeArea(.all)
+            .padding(.top, 100)
+            HStack {
+                Image(systemName: "envelope")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                Text("Messages")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
+                .padding(.top, 30)
+            HStack {
+                Image(systemName: "gear")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                Text("Settings")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
+            .padding(.top, 30)
+            Spacer()
         }
-        .offset(y: 100)
-        
-    
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .edgesIgnoringSafeArea(.all)
     }
-    
 }
 
 struct ProfileViewMenu_Previews: PreviewProvider {
