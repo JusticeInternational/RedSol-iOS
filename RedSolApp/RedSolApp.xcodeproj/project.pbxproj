@@ -11,7 +11,6 @@
 		167D9B12266EE47600F61BB4 /* LoadUsedCategories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 167D9B11266EE47600F61BB4 /* LoadUsedCategories.graphql */; };
 		168525A62679CE5F005EA71C /* ProfileViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168525A52679CE5F005EA71C /* ProfileViewMenu.swift */; };
 		1686CF2426771EBB0088A564 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686CF2326771EBB0088A564 /* ProfileView.swift */; };
-		1686CF26267722FC0088A564 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686CF25267722FC0088A564 /* NavigationConfigurator.swift */; };
 		16BBB923266F4C46008152C3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB922266F4C46008152C3 /* Network.swift */; };
 		16BBB92626709E4D008152C3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB92526709E4D008152C3 /* API.swift */; };
 		16D086D4267412FB00240C0A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D086D3267412FB00240C0A /* RegisterView.swift */; };
@@ -75,7 +74,6 @@
 		167D9B11266EE47600F61BB4 /* LoadUsedCategories.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LoadUsedCategories.graphql; sourceTree = "<group>"; };
 		168525A52679CE5F005EA71C /* ProfileViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewMenu.swift; sourceTree = "<group>"; };
 		1686CF2326771EBB0088A564 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		1686CF25267722FC0088A564 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		16BBB922266F4C46008152C3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		16BBB92526709E4D008152C3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = RedSolApp/API.swift; sourceTree = SOURCE_ROOT; };
 		16D086D3267412FB00240C0A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -285,7 +283,6 @@
 				16F6C0AE266D343F00220E91 /* MapView.swift */,
 				16F6C0B3266D345100220E91 /* HomeView.swift */,
 				16F6C0B9266D348400220E91 /* MainOrganizationView.swift */,
-				1686CF25267722FC0088A564 /* NavigationConfigurator.swift */,
 				1686CF2326771EBB0088A564 /* ProfileView.swift */,
 				168525A52679CE5F005EA71C /* ProfileViewMenu.swift */,
 				16E7DD882677F2130065AB11 /* SUBSideView.swift */,
@@ -584,7 +581,6 @@
 				16F6C0AF266D343F00220E91 /* MapView.swift in Sources */,
 				16F6C0DD266D360400220E91 /* JsonPull.swift in Sources */,
 				16F6C091266D33BD00220E91 /* OrganizationInfoView.swift in Sources */,
-				1686CF26267722FC0088A564 /* NavigationConfigurator.swift in Sources */,
 				1686CF2426771EBB0088A564 /* ProfileView.swift in Sources */,
 				16BBB92626709E4D008152C3 /* API.swift in Sources */,
 				16F6C0B4266D345100220E91 /* HomeView.swift in Sources */,
