@@ -14,6 +14,8 @@ struct MapViewOrganizations: View {
     let organizations = [       // note that this should be replaced with data from GraphQL
         "1", "2", "3"
     ]
+    @State var searchInput = ""
+    @State var searching = false
     
     var body: some View {
         
@@ -24,6 +26,13 @@ struct MapViewOrganizations: View {
         }
         .listStyle(GroupedListStyle())
 //        .navigationTitle("My Organizations")
+        .toolbar {
+            if searching {
+                Button("Cancel") {
+                    searchInput = ""
+                }
+            }
+        }
     }
 }
 

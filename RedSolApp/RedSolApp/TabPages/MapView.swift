@@ -9,12 +9,6 @@ import SwiftUI
 
 struct MapView: View {
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.50007773, longitude: -0.1246402) , span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-
-    @State var searchInput: String = ""
-    
-    let organizations = [       // note that this should be replaced with data from GraphQL
-        "1", "2", "3"
-    ]
     
     
     var body: some View {
@@ -22,20 +16,7 @@ struct MapView: View {
             VStack {
                 
                 //Buscar
-                ZStack {
-                    
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                        TextField("Search...", text:$searchInput)
-                    }.foregroundColor(.gray)
-                    .padding(.leading, 13)
-                    
-                    Rectangle()
-                        .foregroundColor(Color(.systemGray5))
-                }
-                .frame(height: 40)
-                .cornerRadius(13)
-                .padding()
+                
 
             
                     
@@ -87,6 +68,32 @@ struct MapView: View {
         }
     }
         
+}
+
+struct SearchBar: View {
+    
+    @Binding var searchInput: String
+    @Binding var searching: Bool
+    
+    var body: some View {
+        
+        ZStack {
+            
+            Rectangle()
+                .foregroundColor(Color(.systemGray6))
+            
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Search...", text:$searchInput)
+            }.foregroundColor(.gray)
+            .padding(.leading, 13)
+            
+            
+        }
+        .frame(height: 40)
+        .cornerRadius(13)
+        .padding()
+    }
 }
       
 
