@@ -11,39 +11,47 @@ import SwiftUI
 
 struct MapViewOrganizations: View {
     
+    @State var searchInput = ""
+    @State var searching = false
+    
     let organizations = [       // note that this should be replaced with data from GraphQL
         "1", "2", "3"
     ]
     
-    @State var searchInput = ""
-    @State var searching = false
     
     var body: some View {
         
-        List {
-            ForEach(organizations, id: \.self) { organization in
-                Text(organization)
-            }
-        }
-        .listStyle(GroupedListStyle())
-//        .navigationTitle("My Organizations")
-        .toolbar {
-            if searching {
-                Button("Cancel") {
-                    searchInput = ""
-                    withAnimation {
-                        searching = false
-                        UIApplication.shared.dismissKeyboard()
+        NavigationView {
+            VStack(alignment: .leading) {
+                SearchBar(searchInput: $searchInput, searching: $searching)
+                List {
+                    ForEach(organizations, id: \.self) { organization in
+                        Text(organization)
                     }
                 }
+                .listStyle(GroupedListStyle())
+        //        .navigationTitle("My Organizations")
+                .toolbar {
+                    if searching {
+                        Button("Cancel") {
+                            searchInput = ""
+                            withAnimation {
+                                searching = false
+                                UIApplication.shared.dismissKeyboard()
+                            }
+                        }
+                    }
+                }
+                .gesture(DragGesture()
+                    .onChanged({ _ in
+                    
+                    UIApplication.shared.dismissKeyboard()
+                    })
+               )
             }
-        }
-        .gesture(DragGesture()
-            .onChanged({ _ in
             
-            UIApplication.shared.dismissKeyboard()
-            })
-       )
+        }
+        
     }
 }
 
@@ -69,8 +77,19 @@ struct SearchBar: View {
             
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search...", text:$searchInput)
-            }.foregroundColor(.gray)
+                TextField("Search...", text:$searchInput) { startedEditing in
+                    if startedEditing {
+                        withAnimation {
+                            searching = true
+                        }
+                    }
+                } onCommit: {
+                    withAnimation {
+                        searching = false
+                    }
+                }
+            }
+            .foregroundColor(.gray)
             .padding(.leading, 13)
             
             
