@@ -16,15 +16,19 @@ struct MapView: View {
             VStack {
                 SearchBar(searchInput: $globalSearching.searchInput, searching: $globalSearching.searching)
                         
-                            if self.globalSearching.searching == true {
-                                MapViewOrganizations()
-                            }
-                            else {
-                                
-                                MapViewMapDisplay()
-                            }
+                if self.globalSearching.searching == true {
+                    MapViewOrganizations()
+                }
+                else {
+                    
+                    MapViewMapDisplay()
+                }
             }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
+        
     }
         
 }
