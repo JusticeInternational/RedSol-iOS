@@ -8,6 +8,7 @@ import SwiftUI
 
 struct MapView: View {
     
+    @StateObject 
     
     var body: some View {
         MapViewOrganizations()

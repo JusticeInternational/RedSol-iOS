@@ -9,10 +9,15 @@ import SwiftUI
 
 // responsible for organizations list that comes up after selecting the search/near me bar
 
+class GlobalSearching: ObservableObject {
+    @Published var searching = false
+}
+
+
 struct MapViewOrganizations: View {
     
     @State var searchInput = ""
-    @State var searching = false
+    @StateObject var globalSearching = GlobalSearching()
     
     let organizations = [       // note that this should be replaced with data from GraphQL
         "1", "2", "3"
@@ -23,20 +28,19 @@ struct MapViewOrganizations: View {
         
         NavigationView {
             VStack(alignment: .leading) {
-                SearchBar(searchInput: $searchInput, searching: $searching)
+                SearchBar(searchInput: $searchInput, searching: $globalSearching.searching)
                 List {
                     ForEach(organizations, id: \.self) { organization in
                         Text(organization)
                     }
                 }
                 .listStyle(GroupedListStyle())
-        //        .navigationTitle("My Organizations")
                 .toolbar {
-                    if searching {
+                    if self.globalSearching.searching {
                         Button("Cancel") {
                             searchInput = ""
                             withAnimation {
-                                searching = false
+                                self.globalSearching.searching = false
                                 UIApplication.shared.dismissKeyboard()
                             }
                         }
@@ -81,7 +85,7 @@ struct SearchBar: View {
             
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search...", text:$searchInput) { startedEditing in
+                TextField("Search...", text: $searchInput) { startedEditing in
                     if startedEditing {
                         withAnimation {
                             searching = true
