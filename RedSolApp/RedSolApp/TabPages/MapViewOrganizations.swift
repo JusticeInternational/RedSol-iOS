@@ -28,7 +28,6 @@ struct MapViewOrganizations: View {
         
         NavigationView {
             VStack(alignment: .leading) {
-//                SearchBar(searchInput: $globalSearching.searchInput, searching: $globalSearching.searching)
                 List {
                     ForEach(organizations, id: \.self) { organization in
                         Text(organization)

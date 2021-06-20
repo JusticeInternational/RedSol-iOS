@@ -16,10 +16,8 @@ struct MapViewMapDisplay: View {
     
     var body: some View {
         VStack {
-            
-//            SearchBar(searchInput: $searchInput, searching: $globalSearching.searching)
             Map(coordinateRegion: $region)
-                      .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)
         }
         
         // code for 2nd button
