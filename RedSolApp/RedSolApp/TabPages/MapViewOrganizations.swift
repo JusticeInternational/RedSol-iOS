@@ -16,13 +16,14 @@ struct MapViewOrganizations: View {
     ]
     
     var body: some View {
+        
         List {
             ForEach(organizations, id: \.self) { organization in
                 Text(organization)
             }
         }
         .listStyle(GroupedListStyle())
-        .navigationTitle("My Organizations")
+//        .navigationTitle("My Organizations")
     }
 }
 

@@ -15,79 +15,78 @@ struct MapView: View {
     let organizations = [       // note that this should be replaced with data from GraphQL
         "1", "2", "3"
     ]
-    var body: some View {
-        VStack {
-            
-            //Buscar
-            HStack(alignment: .center, spacing: 1) {
-                Image(systemName: "magnifyingglass")
-                    .font(.system(size: 20))
-                    .offset(x: 20)
-                    
-
-                TextField("Buscar", text: $searchInput)
-                    
-                    .font(.custom("Roboto-Regular", size: 17))
-                    .scaleEffect(0.85)
-                    .disableAutocorrection(true)
-                    .autocapitalization(.none)
-                    .multilineTextAlignment(.center)
-
-            }
-            .padding(.vertical, 10)
-
-            .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
-            
-            
-            .frame(width: 291, height: 40)
-
-        
-                
-//                RoundedRectangle(cornerRadius: 60)
-//                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-//
-//                RoundedRectangle(cornerRadius: 60)
-//                .strokeBorder(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)), lineWidth: 1)
-//
-//                HStack {
-//                    Text("Buscar")
-//                        .font(.system(size: 16))
-//                        .foregroundColor(Color(#colorLiteral(red: 0.76, green: 0.76, blue: 0.76, alpha: 1)))
-//                    Spacer()
-//                    Image(systemName: "magnifyingglass")
-//                }
-//                .padding(.horizontal, 25.0)
-
-        
-        
-        // Cerca de mi
-            ZStack {
-                RoundedRectangle(cornerRadius: 60)
-                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-
-                RoundedRectangle(cornerRadius: 60)
-                .strokeBorder(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)), lineWidth: 1)
-                
-                HStack {
-                    Image(systemName: "mappin.and.ellipse")
-                    
-                    Text("Cerca de mi")
-                        .font(.system(size: 16))
-                        .foregroundColor(Color(#colorLiteral(red: 0.76, green: 0.76, blue: 0.76, alpha: 1)))
-                      
-                }
-//                .padding(.horizontal, 25.0)
-                .frame(width: 291, height: 40)
-            }
-            .frame(width: 291, height: 40)
-
-            
-        //Map
     
-            Map(coordinateRegion: $region)
-                      .edgesIgnoringSafeArea(.all)
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                
+                //Buscar
+                ZStack {
+                    
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                        TextField("Search...", text:$searchInput)
+                    }.foregroundColor(.gray)
+                    .padding(.leading, 13)
+                    
+                    Rectangle()
+                        .foregroundColor(Color(.systemGray5))
+                }
+                .frame(height: 40)
+                .cornerRadius(13)
+                .padding()
+
+            
+                    
+    //                RoundedRectangle(cornerRadius: 60)
+    //                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+    //
+    //                RoundedRectangle(cornerRadius: 60)
+    //                .strokeBorder(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)), lineWidth: 1)
+    //
+    //                HStack {
+    //                    Text("Buscar")
+    //                        .font(.system(size: 16))
+    //                        .foregroundColor(Color(#colorLiteral(red: 0.76, green: 0.76, blue: 0.76, alpha: 1)))
+    //                    Spacer()
+    //                    Image(systemName: "magnifyingglass")
+    //                }
+    //                .padding(.horizontal, 25.0)
+
+            
+            
+            // Cerca de mi
+                ZStack {
+                    RoundedRectangle(cornerRadius: 60)
+                    .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+
+                    RoundedRectangle(cornerRadius: 60)
+                    .strokeBorder(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)), lineWidth: 1)
+                    
+                    HStack {
+                        Image(systemName: "mappin.and.ellipse")
+                        
+                        Text("Cerca de mi")
+                            .font(.system(size: 16))
+                            .foregroundColor(Color(#colorLiteral(red: 0.76, green: 0.76, blue: 0.76, alpha: 1)))
+                          
+                    }
+    //                .padding(.horizontal, 25.0)
+                    .frame(width: 291, height: 40)
+                }
+                .frame(width: 291, height: 40)
+
+                
+            //Map
+        
+                Map(coordinateRegion: $region)
+                          .edgesIgnoringSafeArea(.all)
+            }
+        
         }
     }
+        
 }
       
 
