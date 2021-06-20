@@ -12,6 +12,9 @@ struct MapView: View {
 
     @State var searchInput: String = ""
     
+    let organizations = [       // note that this should be replaced with data from GraphQL
+        "1", "2", "3"
+    ]
     var body: some View {
         VStack {
             
