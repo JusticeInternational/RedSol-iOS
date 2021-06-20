@@ -14,6 +14,7 @@ struct MapViewOrganizations: View {
     let organizations = [       // note that this should be replaced with data from GraphQL
         "1", "2", "3"
     ]
+    
     @State var searchInput = ""
     @State var searching = false
     
@@ -30,14 +31,59 @@ struct MapViewOrganizations: View {
             if searching {
                 Button("Cancel") {
                     searchInput = ""
+                    withAnimation {
+                        searching = false
+                        UIApplication.shared.dismissKeyboard()
+                    }
                 }
             }
         }
+        .gesture(DragGesture()
+            .onChanged({ _ in
+            
+            UIApplication.shared.dismissKeyboard()
+            })
+       )
     }
 }
 
 struct MapViewOrganizations_Previews: PreviewProvider {
     static var previews: some View {
         MapViewOrganizations()
+    }
+}
+
+// MARK: - searchbar
+
+struct SearchBar: View {
+    
+    @Binding var searchInput: String
+    @Binding var searching: Bool
+    
+    var body: some View {
+        
+        ZStack {
+            
+            Rectangle()
+                .foregroundColor(Color(.systemGray6))
+            
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Search...", text:$searchInput)
+            }.foregroundColor(.gray)
+            .padding(.leading, 13)
+            
+            
+        }
+        .frame(height: 40)
+        .cornerRadius(13)
+        .padding()
+    }
+}
+      
+
+extension UIApplication {
+    func dismissKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

@@ -70,32 +70,6 @@ struct MapView: View {
         
 }
 
-struct SearchBar: View {
-    
-    @Binding var searchInput: String
-    @Binding var searching: Bool
-    
-    var body: some View {
-        
-        ZStack {
-            
-            Rectangle()
-                .foregroundColor(Color(.systemGray6))
-            
-            HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("Search...", text:$searchInput)
-            }.foregroundColor(.gray)
-            .padding(.leading, 13)
-            
-            
-        }
-        .frame(height: 40)
-        .cornerRadius(13)
-        .padding()
-    }
-}
-      
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
