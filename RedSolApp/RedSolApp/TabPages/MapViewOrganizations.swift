@@ -49,8 +49,12 @@ struct MapViewOrganizations: View {
                     })
                )
             }
-            
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
+        
+        
         
     }
 }
