@@ -11,12 +11,12 @@ import SwiftUI
 
 class GlobalSearching: ObservableObject {
     @Published var searching = false
+    @Published var searchInput = ""
 }
 
 
 struct MapViewOrganizations: View {
     
-    @State var searchInput = ""
     @StateObject var globalSearching = GlobalSearching()
     
     let organizations = [       // note that this should be replaced with data from GraphQL
@@ -28,7 +28,7 @@ struct MapViewOrganizations: View {
         
         NavigationView {
             VStack(alignment: .leading) {
-                SearchBar(searchInput: $searchInput, searching: $globalSearching.searching)
+//                SearchBar(searchInput: $globalSearching.searchInput, searching: $globalSearching.searching)
                 List {
                     ForEach(organizations, id: \.self) { organization in
                         Text(organization)
@@ -38,7 +38,7 @@ struct MapViewOrganizations: View {
                 .toolbar {
                     if self.globalSearching.searching {
                         Button("Cancel") {
-                            searchInput = ""
+                            self.globalSearching.searchInput = ""
                             withAnimation {
                                 self.globalSearching.searching = false
                                 UIApplication.shared.dismissKeyboard()

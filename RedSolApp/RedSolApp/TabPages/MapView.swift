@@ -11,15 +11,22 @@ struct MapView: View {
     @StateObject var globalSearching = GlobalSearching()
     
     var body: some View {
-        
-        if self.globalSearching.searching == true {
-            MapViewOrganizations()
-        }
-        else {
-            MapViewMapDisplay()
-        }
+        NavigationView {
+            
+            VStack {
+                SearchBar(searchInput: $globalSearching.searchInput, searching: $globalSearching.searching)
+                        
+                            if self.globalSearching.searching == true {
+                                MapViewOrganizations()
+                            }
+                            else {
+                                
+                                MapViewMapDisplay()
+                            }
+            }
+            
 //            VStack {
-                
+        }
                 //Buscar
                 
 

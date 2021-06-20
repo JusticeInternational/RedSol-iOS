@@ -9,11 +9,15 @@ import SwiftUI
 
 struct MapViewMapDisplay: View {
     
+//    @StateObject var globalSearching = GlobalSearching()
+    
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.50007773, longitude:  -0.1246402) , span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
     
     var body: some View {
         VStack {
+            
+//            SearchBar(searchInput: $searchInput, searching: $globalSearching.searching)
             Map(coordinateRegion: $region)
                       .edgesIgnoringSafeArea(.all)
         }
