@@ -8,10 +8,16 @@ import SwiftUI
 
 struct MapView: View {
     
-    @StateObject 
+    @StateObject var globalSearching = GlobalSearching()
     
     var body: some View {
-        MapViewOrganizations()
+        
+        if self.globalSearching.searching == true {
+            MapViewOrganizations()
+        }
+        else {
+            MapViewMapDisplay()
+        }
 //            VStack {
                 
                 //Buscar
