@@ -18,15 +18,15 @@ struct ProfileViewMenu: View {
         
         VStack(alignment: .leading) {
             
-            HStack {
-                Image(systemName: "person.fill")
-                    .foregroundColor(customBlue)
-                    .imageScale(.large)
-                Text("Mi perfil")
-                    .foregroundColor(.gray)
-                    .font(.headline)
-            }
-            .padding(.top, 100)
+//            HStack {
+//                Image(systemName: "person.fill")
+//                    .foregroundColor(customBlue)
+//                    .imageScale(.large)
+//                Text("Mi perfil")
+//                    .foregroundColor(.gray)
+//                    .font(.headline)
+//            }
+//            .padding(.top, 100)
             
             HStack {
                 Image(systemName: "slider.horizontal.3")
@@ -36,7 +36,7 @@ struct ProfileViewMenu: View {
                     .foregroundColor(.gray)
                     .font(.headline)
             }
-            .padding(.top, 30)
+            .padding(.top, 100)
 
             HStack {
                 Image(systemName: "envelope.fill")
@@ -56,6 +56,17 @@ struct ProfileViewMenu: View {
                     .font(.headline)
             }
                 .padding(.top, 30)
+            HStack {
+                Image(systemName: "arrow.right.square.fill")
+                    .foregroundColor(customBlue)
+                    .imageScale(.large)
+                Text("Iniciar Sesión")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
+            .offset(y: 500)
+
+                
             
             Spacer()
         }
