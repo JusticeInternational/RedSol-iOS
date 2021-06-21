@@ -5,25 +5,60 @@
 //  Created by Pablo Carrega on 2/12/21.
 //
 import SwiftUI
+import MapKit
 
 struct MapView: View {
     
+    // search bar variables
     @State var isSearching: Bool = false
     @State var searchInput: String = ""
     
+    //Map view map display variables
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.50007773, longitude:  -0.1246402) , span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+
+    
+    // Map view organizations variables
+    let organizations = [       // note that this should be replaced with data from GraphQL
+        "apple", "banna", "pear"
+    ]
     
     var body: some View {
         
         NavigationView {
             VStack {
-                MapViewMapDisplay()
-//                if isSearching == true {
-//                    MapViewOrganizations(isSearching: isSearching, searchInput: searchInput)
-//                }
-//                else {
-//
-//                    MapViewMapDisplay()
-//                }
+
+                SearchBar(searchInput: $searchInput, isSearching: $isSearching)
+
+                if isSearching == true {
+                    VStack(alignment: .leading) {
+
+                        List {
+                            Text(self.searchInput)
+        //                    ForEach(organizations.filter({ (organization: String) -> Bool in
+        //                        return organization.hasPrefix(searchInput) || searchInput == ""
+        //                     }), id: \.self) { organization in
+        //                         Text(organization)
+        //                     }
+                        }
+                        .listStyle(GroupedListStyle())
+                        
+                        
+                        .gesture(DragGesture()
+                            .onChanged({ _ in
+                            
+                            UIApplication.shared.dismissKeyboard()
+                            })
+                       )
+                    }
+//                    .navigationBarTitle("")
+//                    .navigationBarHidden(true)
+//                    .navigationBarBackButtonHidden(true)
+                }
+                else {
+
+                    Map(coordinateRegion: $region)
+                        .edgesIgnoringSafeArea(.all)
+                }
             }.toolbar {
                 if isSearching {
                     Button("Cancel") {
@@ -37,9 +72,9 @@ struct MapView: View {
             }
         }
         
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarTitle("")
+//        .navigationBarHidden(true)
+//        .navigationBarBackButtonHidden(true)
         
     }
         
