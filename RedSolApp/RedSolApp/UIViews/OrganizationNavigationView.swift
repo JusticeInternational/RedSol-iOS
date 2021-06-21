@@ -43,13 +43,13 @@ struct OrganizationNavigationView: View {
                     Text("Buscar")
                 }
             
-                MainOrganizationView()
-//            Text("Video Tab")
-//                .font(.system(size: 30, weight: .bold, design: .rounded))
-                .tabItem {
-                    Image(systemName: "sun.max")
-                    Text("Redsol")
-                }
+//                MainOrganizationView()
+////            Text("Video Tab")
+////                .font(.system(size: 30, weight: .bold, design: .rounded))
+//                .tabItem {
+//                    Image(systemName: "sun.max")
+//                    Text("Redsol")
+//                }
          
                 ProfileViewNavigation()
                 .tabItem {
