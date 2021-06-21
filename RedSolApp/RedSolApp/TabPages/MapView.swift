@@ -8,8 +8,8 @@ import SwiftUI
 
 struct MapView: View {
     
-    @State var isSearching: Bool
-    @State var searchInput: String
+    @State var isSearching: Bool = false
+    @State var searchInput: String = ""
     
     
     var body: some View {

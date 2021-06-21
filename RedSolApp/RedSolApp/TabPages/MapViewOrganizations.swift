@@ -12,12 +12,14 @@ import SwiftUI
 
 struct MapViewOrganizations: View {
     
-    @State var isSearching: Bool
-    @State var searchInput: String
+    @State var isSearching: Bool = false
+    @State var searchInput: String = ""
     
     let organizations = [       // note that this should be replaced with data from GraphQL
         "apple", "banna", "pear"
     ]
+    
+    
     
     
     var body: some View {
@@ -25,11 +27,12 @@ struct MapViewOrganizations: View {
         NavigationView {
             VStack(alignment: .leading) {
                 List {
-                    ForEach(organizations.filter({ (organization: String) -> Bool in
-                        return organization.hasPrefix(searchInput) || searchInput == ""
-                     }), id: \.self) { organization in
-                         Text(organization)
-                     }
+                    Text(self.searchInput)
+//                    ForEach(organizations.filter({ (organization: String) -> Bool in
+//                        return organization.hasPrefix(searchInput) || searchInput == ""
+//                     }), id: \.self) { organization in
+//                         Text(organization)
+//                     }
                 }
                 .listStyle(GroupedListStyle())
                 
@@ -53,7 +56,7 @@ struct MapViewOrganizations: View {
 
 struct MapViewOrganizations_Previews: PreviewProvider {
     static var previews: some View {
-        MapViewOrganizations(isSearching: false, searchInput: "")
+        MapViewOrganizations()
     }
 }
 
@@ -79,11 +82,14 @@ struct SearchBar: View {
                             isSearching = true
                         }
                     }
-                } onCommit: {
-                    withAnimation {
-                        isSearching = false
-                    }
                 }
+//                onCommit: {
+//                    withAnimation {
+//                        isSearching = false
+//                    }
+//                }
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
             }
             .foregroundColor(.gray)
             .padding(.leading, 13)
