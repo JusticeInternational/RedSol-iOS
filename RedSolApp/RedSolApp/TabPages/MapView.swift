@@ -19,7 +19,9 @@ struct MapView: View {
     
     // Map view organizations variables
     let organizations = [       // note that this should be replaced with data from GraphQL
-        "apple", "banna", "pear"
+        "Ayuda Humanitaria Venezuela",
+        "Asociación Venezolana en Chile",
+        "Somos Panas Colombia"
     ]
     
     var body: some View {
@@ -33,12 +35,12 @@ struct MapView: View {
                     VStack(alignment: .leading) {
 
                         List {
-                            Text(self.searchInput)
-        //                    ForEach(organizations.filter({ (organization: String) -> Bool in
-        //                        return organization.hasPrefix(searchInput) || searchInput == ""
-        //                     }), id: \.self) { organization in
-        //                         Text(organization)
-        //                     }
+                            
+                            ForEach(organizations.filter({ (organization: String) -> Bool in
+                                return organization.localizedCaseInsensitiveContains(searchInput) || searchInput == ""
+                             }), id: \.self) { organization in
+                                 Text(organization)
+                             }
                         }
                         .listStyle(GroupedListStyle())
                         
@@ -50,9 +52,6 @@ struct MapView: View {
                             })
                        )
                     }
-//                    .navigationBarTitle("")
-//                    .navigationBarHidden(true)
-//                    .navigationBarBackButtonHidden(true)
                 }
                 else {
 
@@ -72,9 +71,9 @@ struct MapView: View {
             }
         }
         
-//        .navigationBarTitle("")
-//        .navigationBarHidden(true)
-//        .navigationBarBackButtonHidden(true)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         
     }
         
