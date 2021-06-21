@@ -9,42 +9,36 @@ import SwiftUI
 
 // responsible for organizations list that comes up after selecting the search/near me bar
 
-class GlobalSearching: ObservableObject {
-    @Published var searching = false
-    @Published var searchInput = ""
-}
-
 
 struct MapViewOrganizations: View {
     
-    @StateObject var globalSearching = GlobalSearching()
+    @State var isSearching: Bool = false
+    @State var searchInput: String = ""
     
     let organizations = [       // note that this should be replaced with data from GraphQL
-        "1", "2", "3"
+        "apple", "banna", "pear"
     ]
+    
+    
     
     
     var body: some View {
         
         NavigationView {
             VStack(alignment: .leading) {
+                SearchBar(searchInput: $searchInput, isSearching: $isSearching)
+
                 List {
-                    ForEach(organizations, id: \.self) { organization in
-                        Text(organization)
-                    }
+                    Text(self.searchInput)
+//                    ForEach(organizations.filter({ (organization: String) -> Bool in
+//                        return organization.hasPrefix(searchInput) || searchInput == ""
+//                     }), id: \.self) { organization in
+//                         Text(organization)
+//                     }
                 }
                 .listStyle(GroupedListStyle())
-                .toolbar {
-                    if self.globalSearching.searching {
-                        Button("Cancel") {
-                            self.globalSearching.searchInput = ""
-                            withAnimation {
-                                self.globalSearching.searching = false
-                                UIApplication.shared.dismissKeyboard()
-                            }
-                        }
-                    }
-                }
+                
+                
                 .gesture(DragGesture()
                     .onChanged({ _ in
                     
@@ -73,7 +67,7 @@ struct MapViewOrganizations_Previews: PreviewProvider {
 struct SearchBar: View {
     
     @Binding var searchInput: String
-    @Binding var searching: Bool
+    @Binding var isSearching: Bool
     
     var body: some View {
         
@@ -87,14 +81,17 @@ struct SearchBar: View {
                 TextField("Search...", text: $searchInput) { startedEditing in
                     if startedEditing {
                         withAnimation {
-                            searching = true
+                            isSearching = true
                         }
                     }
-                } onCommit: {
-                    withAnimation {
-                        searching = false
-                    }
                 }
+//                onCommit: {
+//                    withAnimation {
+//                        isSearching = false
+//                    }
+//                }
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
             }
             .foregroundColor(.gray)
             .padding(.leading, 13)

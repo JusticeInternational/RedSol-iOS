@@ -8,26 +8,38 @@ import SwiftUI
 
 struct MapView: View {
     
-    @StateObject var globalSearching = GlobalSearching()
+    @State var isSearching: Bool = false
+    @State var searchInput: String = ""
+    
     
     var body: some View {
+        
         NavigationView {
-            
             VStack {
-                SearchBar(searchInput: $globalSearching.searchInput, searching: $globalSearching.searching)
-                        
-                if self.globalSearching.searching == true {
-                    MapViewOrganizations()
-                }
-                else {
-                    
-                    MapViewMapDisplay()
+                MapViewMapDisplay()
+//                if isSearching == true {
+//                    MapViewOrganizations(isSearching: isSearching, searchInput: searchInput)
+//                }
+//                else {
+//
+//                    MapViewMapDisplay()
+//                }
+            }.toolbar {
+                if isSearching {
+                    Button("Cancel") {
+                        searchInput = ""
+                        withAnimation {
+                            isSearching = false
+                            UIApplication.shared.dismissKeyboard()
+                        }
+                    }
                 }
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
         }
+        
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         
     }
         
@@ -37,6 +49,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(isSearching: false, searchInput: "")
     }
 }
