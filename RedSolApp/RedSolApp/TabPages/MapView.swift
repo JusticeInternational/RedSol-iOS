@@ -14,9 +14,9 @@ struct MapView: View {
         
         NavigationView {
             VStack {
-                SearchBar(searchInput: $globalSearching.searchInput, searching: $globalSearching.searching)
+                SearchBar()
                         
-                if self.globalSearching.searching == true {
+                if self.globalSearching.isSearching == true {
                     MapViewOrganizations()
                 }
                 else {
@@ -24,11 +24,11 @@ struct MapView: View {
                     MapViewMapDisplay()
                 }
             }.toolbar {
-                if self.globalSearching.searching {
+                if self.globalSearching.isSearching {
                     Button("Cancel") {
                         self.globalSearching.searchInput = ""
                         withAnimation {
-                            self.globalSearching.searching = false
+                            self.globalSearching.isSearching = false
                             UIApplication.shared.dismissKeyboard()
                         }
                     }

@@ -9,18 +9,13 @@ import SwiftUI
 
 // responsible for organizations list that comes up after selecting the search/near me bar
 
-class GlobalSearching: ObservableObject {
-    @Published var searching = false
-    @Published var searchInput = ""
-}
-
 
 struct MapViewOrganizations: View {
     
-    @StateObject var globalSearching = GlobalSearching()
+    @S
     
     let organizations = [       // note that this should be replaced with data from GraphQL
-        "1", "2", "3"
+        "apple", "banna", "pear"
     ]
     
     
@@ -29,9 +24,11 @@ struct MapViewOrganizations: View {
         NavigationView {
             VStack(alignment: .leading) {
                 List {
-                    ForEach(organizations, id: \.self) { organization in
-                        Text(organization)
-                    }
+                    ForEach(organizations.filter({ (organization: String) -> Bool in
+                        return organization.hasPrefix(globalSearching.searchInput) || self.globalSearching.searchInput == ""
+                     }), id: \.self) { organization in
+                         Text(organization)
+                     }
                 }
                 .listStyle(GroupedListStyle())
                 
@@ -64,7 +61,7 @@ struct MapViewOrganizations_Previews: PreviewProvider {
 struct SearchBar: View {
     
     @Binding var searchInput: String
-    @Binding var searching: Bool
+    @Binding var isSearching: Bool
     
     var body: some View {
         
@@ -75,15 +72,15 @@ struct SearchBar: View {
             
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search...", text: $searchInput) { startedEditing in
+                TextField("Search...", text: $globalSearching.searchInput) { startedEditing in
                     if startedEditing {
                         withAnimation {
-                            searching = true
+                            self.globalSearching.isSearching = true
                         }
                     }
                 } onCommit: {
                     withAnimation {
-                        searching = false
+                        self.globalSearching.isSearching = false
                     }
                 }
             }
