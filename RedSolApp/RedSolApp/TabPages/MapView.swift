@@ -16,15 +16,14 @@ struct MapView: View {
         
         NavigationView {
             VStack {
-                SearchBar(searchInput: $searchInput, isSearching: $isSearching)
-                        
-                if isSearching == true {
-                    MapViewOrganizations(isSearching: isSearching, searchInput: searchInput)
-                }
-                else {
-                    
-                    MapViewMapDisplay()
-                }
+                MapViewMapDisplay()
+//                if isSearching == true {
+//                    MapViewOrganizations(isSearching: isSearching, searchInput: searchInput)
+//                }
+//                else {
+//
+//                    MapViewMapDisplay()
+//                }
             }.toolbar {
                 if isSearching {
                     Button("Cancel") {

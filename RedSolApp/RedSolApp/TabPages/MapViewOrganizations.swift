@@ -26,6 +26,8 @@ struct MapViewOrganizations: View {
         
         NavigationView {
             VStack(alignment: .leading) {
+                SearchBar(searchInput: $searchInput, isSearching: $isSearching)
+
                 List {
                     Text(self.searchInput)
 //                    ForEach(organizations.filter({ (organization: String) -> Bool in
