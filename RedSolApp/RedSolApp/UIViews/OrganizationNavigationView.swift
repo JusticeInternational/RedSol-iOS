@@ -24,8 +24,8 @@ struct OrganizationNavigationView: View {
 
                       }
                 .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                    Image(systemName: "house.fill")     
+                    Text("Mis Recursos")
                 }
                 MapView()
 //            Text("Map Tab")
@@ -37,11 +37,11 @@ struct OrganizationNavigationView: View {
 
                 }
             
-                HomeView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Buscar")
-                }
+//                HomeView()
+//                .tabItem {
+//                    Image(systemName: "magnifyingglass")
+//                    Text("Buscar")
+//                }
             
 //                MainOrganizationView()
 ////            Text("Video Tab")
