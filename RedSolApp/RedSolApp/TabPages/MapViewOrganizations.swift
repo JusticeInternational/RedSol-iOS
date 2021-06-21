@@ -12,7 +12,8 @@ import SwiftUI
 
 struct MapViewOrganizations: View {
     
-    @S
+    @State var isSearching: Bool
+    @State var searchInput: String
     
     let organizations = [       // note that this should be replaced with data from GraphQL
         "apple", "banna", "pear"
@@ -25,7 +26,7 @@ struct MapViewOrganizations: View {
             VStack(alignment: .leading) {
                 List {
                     ForEach(organizations.filter({ (organization: String) -> Bool in
-                        return organization.hasPrefix(globalSearching.searchInput) || self.globalSearching.searchInput == ""
+                        return organization.hasPrefix(searchInput) || searchInput == ""
                      }), id: \.self) { organization in
                          Text(organization)
                      }
@@ -52,7 +53,7 @@ struct MapViewOrganizations: View {
 
 struct MapViewOrganizations_Previews: PreviewProvider {
     static var previews: some View {
-        MapViewOrganizations()
+        MapViewOrganizations(isSearching: false, searchInput: "")
     }
 }
 
@@ -72,15 +73,15 @@ struct SearchBar: View {
             
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search...", text: $globalSearching.searchInput) { startedEditing in
+                TextField("Search...", text: $searchInput) { startedEditing in
                     if startedEditing {
                         withAnimation {
-                            self.globalSearching.isSearching = true
+                            isSearching = true
                         }
                     }
                 } onCommit: {
                     withAnimation {
-                        self.globalSearching.isSearching = false
+                        isSearching = false
                     }
                 }
             }

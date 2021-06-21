@@ -27,7 +27,7 @@ struct OrganizationNavigationView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-                MapView()
+                MapView(isSearching: false, searchInput: "")
 //            Text("Map Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
