@@ -14,6 +14,22 @@ struct ProfileViewMenu: View {
     var email: String = "correo@correo.com"
     var customBlue: Color = Color(red: 82 / 255, green: 130 / 255, blue: 240 / 255)
     
+    func configuration() {
+        print("configuration")
+    }
+    
+    func contactUs() {
+        print("contact us")
+    }
+    
+    func suggestResources() {
+        print("suggest resources")
+    }
+    
+    func login() {
+        print("login")
+    }
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -29,41 +45,55 @@ struct ProfileViewMenu: View {
 //            .padding(.top, 100)
             
             HStack {
-                Image(systemName: "slider.horizontal.3")
-                    .foregroundColor(customBlue)
-                    .imageScale(.large)
-                Text("Configuración")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+                
+                Button(action: { configuration() }) {
+                    Image(systemName: "slider.horizontal.3")
+                        .foregroundColor(customBlue)
+                        .imageScale(.large)
+                    Text("Configuración")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
             }
             .padding(.top, 100)
 
             HStack {
-                Image(systemName: "envelope.fill")
-                    .foregroundColor(customBlue)
-                    .imageScale(.large)
-                Text("Contáctanos")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+                
+                Button(action: { contactUs() } ) {
+                    Image(systemName: "envelope.fill")
+                        .foregroundColor(customBlue)
+                        .imageScale(.large)
+                    Text("Contáctanos")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
             }
-                .padding(.top, 30)
+            .padding(.top, 30)
+            
             HStack {
-                Image(systemName: "flag.fill")
-                    .foregroundColor(customBlue)
-                    .imageScale(.large)
-                Text("Sugerir Recursos")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+                
+                Button(action: { suggestResources() }) {
+                    Image(systemName: "flag.fill")
+                        .foregroundColor(customBlue)
+                        .imageScale(.large)
+                    Text("Sugerir Recursos")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
             }
-                .padding(.top, 30)
-            HStack {
-                Image(systemName: "arrow.right.square.fill")
-                    .foregroundColor(customBlue)
-                    .imageScale(.large)
-                Text("Iniciar Sesión")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+            .padding(.top, 30)
+            
+            Button(action: { login() }) {
+                HStack {
+                    Image(systemName: "arrow.right.square.fill")
+                        .foregroundColor(customBlue)
+                        .imageScale(.large)
+                    Text("Iniciar Sesión")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
             }
+            
             .offset(y: 500)
 
                 
