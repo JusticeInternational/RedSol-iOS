@@ -12,38 +12,51 @@ struct ProfileViewMenu: View {
     var firstName: String = "Nombre"
     var lastName: String = "Apellido"
     var email: String = "correo@correo.com"
-    var blueColor: Color = Color(red: 82 / 255, green: 130 / 255, blue: 240 / 255)
+    var customBlue: Color = Color(red: 82 / 255, green: 130 / 255, blue: 240 / 255)
     
     var body: some View {
         
         VStack(alignment: .leading) {
+            
             HStack {
                 Image(systemName: "person.fill")
-                    .foregroundColor(blueColor)
+                    .foregroundColor(customBlue)
                     .imageScale(.large)
-                Text("Profile")
+                Text("Mi perfil")
                     .foregroundColor(.gray)
                     .font(.headline)
             }
             .padding(.top, 100)
+            
             HStack {
-                Image(systemName: "envelope")
-                    .foregroundColor(.gray)
+                Image(systemName: "slider.horizontal.3")
+                    .foregroundColor(customBlue)
                     .imageScale(.large)
-                Text("Messages")
+                Text("Configuración")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
+            .padding(.top, 30)
+
+            HStack {
+                Image(systemName: "envelope.fill")
+                    .foregroundColor(customBlue)
+                    .imageScale(.large)
+                Text("Contáctanos")
                     .foregroundColor(.gray)
                     .font(.headline)
             }
                 .padding(.top, 30)
             HStack {
-                Image(systemName: "gear")
-                    .foregroundColor(.gray)
+                Image(systemName: "flag.fill")
+                    .foregroundColor(customBlue)
                     .imageScale(.large)
-                Text("Settings")
+                Text("Sugerir Recursos")
                     .foregroundColor(.gray)
                     .font(.headline)
             }
-            .padding(.top, 30)
+                .padding(.top, 30)
+            
             Spacer()
         }
         .padding()
