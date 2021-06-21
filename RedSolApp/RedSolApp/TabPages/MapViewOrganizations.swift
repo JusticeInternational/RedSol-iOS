@@ -34,17 +34,8 @@ struct MapViewOrganizations: View {
                     }
                 }
                 .listStyle(GroupedListStyle())
-                .toolbar {
-                    if self.globalSearching.searching {
-                        Button("Cancel") {
-                            self.globalSearching.searchInput = ""
-                            withAnimation {
-                                self.globalSearching.searching = false
-                                UIApplication.shared.dismissKeyboard()
-                            }
-                        }
-                    }
-                }
+                
+                
                 .gesture(DragGesture()
                     .onChanged({ _ in
                     

@@ -11,8 +11,8 @@ struct MapView: View {
     @StateObject var globalSearching = GlobalSearching()
     
     var body: some View {
+        
         NavigationView {
-            
             VStack {
                 SearchBar(searchInput: $globalSearching.searchInput, searching: $globalSearching.searching)
                         
@@ -23,11 +23,22 @@ struct MapView: View {
                     
                     MapViewMapDisplay()
                 }
+            }.toolbar {
+                if self.globalSearching.searching {
+                    Button("Cancel") {
+                        self.globalSearching.searchInput = ""
+                        withAnimation {
+                            self.globalSearching.searching = false
+                            UIApplication.shared.dismissKeyboard()
+                        }
+                    }
+                }
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
         }
+        
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         
     }
         
