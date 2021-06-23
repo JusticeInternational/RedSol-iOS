@@ -31,7 +31,7 @@ struct OrganizationNavigationView: View {
 //            Text("Map Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
-                    Image(systemName: "map")
+                    Image(systemName: "magnifyingglass")
                     Text("Mapa")
                    
 
@@ -51,11 +51,11 @@ struct OrganizationNavigationView: View {
 //                    Text("Redsol")
 //                }
          
-                ProfileViewNavigation()
-                .tabItem {
-                    Image(systemName: "person.crop.circle")
-                    Text("Perfil")
-                }
+//                ProfileViewNavigation()
+//                .tabItem {
+//                    Image(systemName: "person.crop.circle")
+//                    Text("Perfil")
+//                }
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)

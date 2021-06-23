@@ -27,6 +27,7 @@ struct MapView: View {
     var body: some View {
         
         NavigationView {
+            ProfileViewNavigation()
             VStack {
 
                 SearchBar(searchInput: $searchInput, isSearching: $isSearching)
@@ -71,9 +72,9 @@ struct MapView: View {
             }
         }
         
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarTitle("", displayMode: .inline)
+//        .navigationBarHidden(true)
+//        .navigationBarBackButtonHidden(true)
         
     }
         
@@ -83,6 +84,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(isSearching: false, searchInput: "")
+        MapView()
     }
 }
