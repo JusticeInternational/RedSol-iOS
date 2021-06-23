@@ -24,7 +24,7 @@ struct OrganizationNavigationView: View {
 
                       }
                 .tabItem {
-                    Image(systemName: "house.fill")     
+                    Image(systemName: "house.fill")         // NOTE/TODO: modify for organizations logo?
                     Text("Mis Recursos")
                 }
                 MapView()

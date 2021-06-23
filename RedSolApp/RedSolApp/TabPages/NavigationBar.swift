@@ -9,17 +9,19 @@ import SwiftUI
 
 struct NavigationBar: View {
     
-    @State var showMenu = false
-    @State var currentMenu = ""
+    @Binding var showMenu: Bool
+    @Binding var currentMenu: String
     
     //MARK: - Navigation bar blue coloration for every view
-    init() {
+    init(showMenu: Binding<Bool>, currentMenu: Binding<String>) {
         //Use this if NavigationBarTitle is with Large Font
 //        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
 
 //        Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().barTintColor = UIColor(red: 82 / 255, green: 130 / 255, blue: 240 / 255, alpha: 1.0)
 //        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        self._showMenu = showMenu
+        self._currentMenu = currentMenu
     }
     
     var body: some View {
@@ -38,23 +40,23 @@ struct NavigationBar: View {
                 ZStack(alignment: .leading) {
                     
                     if currentMenu == "MyResources" {
-                        ProfileView(showMenu: $showMenu)
+                        MyResources()
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                             .disabled(self.showMenu ? true : false)
                         if self.showMenu {
-                            ProfileViewMenu()
+                            MyResources()
                                 .frame(width: geometry.size.width / 2)
                                 .transition(.move(edge: .leading))
                         }
                     }
                     else if currentMenu == "MapView" {
-                        ProfileView(showMenu: $showMenu)
+                        MapView()
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                             .disabled(self.showMenu ? true : false)
                         if self.showMenu {
-                            ProfileViewMenu()
+                            MapView()
                                 .frame(width: geometry.size.width / 2)
                                 .transition(.move(edge: .leading))
                         }
@@ -83,8 +85,8 @@ struct NavigationBar: View {
     }
 }
 
-struct NavigationBar_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationBar()
-    }
-}
+//struct NavigationBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationBar()
+//    }
+//}

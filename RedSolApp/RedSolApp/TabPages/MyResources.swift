@@ -7,7 +7,12 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct MyResources: View {
+    
+    // NAVIGATION BAR VARIABLES
+    @State var showMenu = false
+    // no
+
     var body: some View {
         ScrollView {
             VStack {
@@ -200,8 +205,8 @@ struct HomeView: View {
     
 
 
-struct HomeView_Previews: PreviewProvider {
+struct MyResources_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        MyResources()
     }
 }

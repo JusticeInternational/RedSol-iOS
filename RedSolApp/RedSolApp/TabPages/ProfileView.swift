@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @Binding var showMenu: Bool
+    @State var showMenu: Bool = false
 
     @State var username = "John Doe"
     @State var userID = "123456"

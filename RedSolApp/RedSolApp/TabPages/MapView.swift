@@ -9,6 +9,9 @@ import MapKit
 
 struct MapView: View {
     
+    // navigation bar variables
+    @State var showMenu: Bool = false
+    
     // search bar variables
     @State var isSearching: Bool = false
     @State var searchInput: String = ""
