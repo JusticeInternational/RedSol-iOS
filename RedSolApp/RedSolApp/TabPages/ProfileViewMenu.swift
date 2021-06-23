@@ -43,6 +43,18 @@ struct ProfileViewMenu: View {
 //                    .font(.headline)
 //            }
 //            .padding(.top, 100)
+            HStack {
+                
+                Button(action: { contactUs() } ) {
+                    Image(systemName: "person.fill")
+                        .foregroundColor(customBlue)
+                        .imageScale(.large)
+                    Text("My Profil")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
+            }
+            .padding(.top, 100)
             
             HStack {
                 
@@ -55,7 +67,7 @@ struct ProfileViewMenu: View {
                         .font(.headline)
                 }
             }
-            .padding(.top, 100)
+            .padding(.top, 30)
 
             HStack {
                 
