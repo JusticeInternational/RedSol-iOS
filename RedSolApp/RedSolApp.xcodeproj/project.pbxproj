@@ -15,6 +15,7 @@
 		1686CF2426771EBB0088A564 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686CF2326771EBB0088A564 /* ProfileView.swift */; };
 		16BBB923266F4C46008152C3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB922266F4C46008152C3 /* Network.swift */; };
 		16BBB92626709E4D008152C3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB92526709E4D008152C3 /* API.swift */; };
+		16C4B4CA268312EA0078945E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4B4C9268312EA0078945E /* NavigationBar.swift */; };
 		16D086D4267412FB00240C0A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D086D3267412FB00240C0A /* RegisterView.swift */; };
 		16D086D6267416A500240C0A /* SUBRegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D086D5267416A500240C0A /* SUBRegisterForm.swift */; };
 		16D547A1267543A60076D7BB /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16D5479B267543930076D7BB /* Roboto-BoldItalic.ttf */; };
@@ -43,7 +44,7 @@
 		16F6C09B266D33DE00220E91 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C09A266D33DE00220E91 /* ContributeView.swift */; };
 		16F6C0A7266D342A00220E91 /* OrganizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0A6266D342A00220E91 /* OrganizationHeader.swift */; };
 		16F6C0AF266D343F00220E91 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0AE266D343F00220E91 /* MapView.swift */; };
-		16F6C0B4266D345100220E91 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0B3266D345100220E91 /* HomeView.swift */; };
+		16F6C0B4266D345100220E91 /* MyResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0B3266D345100220E91 /* MyResources.swift */; };
 		16F6C0BA266D348400220E91 /* MainOrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0B9266D348400220E91 /* MainOrganizationView.swift */; };
 		16F6C0C0266D349E00220E91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0BF266D349E00220E91 /* LoginView.swift */; };
 		16F6C0C5266D356C00220E91 /* OrganizationNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */; };
@@ -82,6 +83,7 @@
 		1686CF2326771EBB0088A564 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		16BBB922266F4C46008152C3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		16BBB92526709E4D008152C3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = RedSolApp/API.swift; sourceTree = SOURCE_ROOT; };
+		16C4B4C9268312EA0078945E /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		16D086D3267412FB00240C0A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		16D086D5267416A500240C0A /* SUBRegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUBRegisterForm.swift; sourceTree = "<group>"; };
 		16D54794267543920076D7BB /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
@@ -116,7 +118,7 @@
 		16F6C09A266D33DE00220E91 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		16F6C0A6266D342A00220E91 /* OrganizationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationHeader.swift; sourceTree = "<group>"; };
 		16F6C0AE266D343F00220E91 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		16F6C0B3266D345100220E91 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		16F6C0B3266D345100220E91 /* MyResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResources.swift; sourceTree = "<group>"; };
 		16F6C0B9266D348400220E91 /* MainOrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrganizationView.swift; sourceTree = "<group>"; };
 		16F6C0BF266D349E00220E91 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationNavigationView.swift; sourceTree = "<group>"; };
@@ -302,9 +304,10 @@
 				16F6C0AE266D343F00220E91 /* MapView.swift */,
 				1611DA44267F15AD00286841 /* SearchBar.swift */,
 				1611DA46267F22E600286841 /* MapViewMapDisplay.swift */,
-				16F6C0B3266D345100220E91 /* HomeView.swift */,
+				16F6C0B3266D345100220E91 /* MyResources.swift */,
 				16F6C0B9266D348400220E91 /* MainOrganizationView.swift */,
 				1686CF2326771EBB0088A564 /* ProfileView.swift */,
+				16C4B4C9268312EA0078945E /* NavigationBar.swift */,
 				168525A52679CE5F005EA71C /* ProfileViewMenu.swift */,
 			);
 			path = TabPages;
@@ -605,9 +608,10 @@
 				16F6C091266D33BD00220E91 /* OrganizationInfoView.swift in Sources */,
 				1611DA45267F15AD00286841 /* SearchBar.swift in Sources */,
 				1686CF2426771EBB0088A564 /* ProfileView.swift in Sources */,
+				16C4B4CA268312EA0078945E /* NavigationBar.swift in Sources */,
 				16D6907726814C8000145AB3 /* Configuration.swift in Sources */,
 				16BBB92626709E4D008152C3 /* API.swift in Sources */,
-				16F6C0B4266D345100220E91 /* HomeView.swift in Sources */,
+				16F6C0B4266D345100220E91 /* MyResources.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
