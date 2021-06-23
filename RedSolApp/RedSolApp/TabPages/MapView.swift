@@ -11,6 +11,7 @@ struct MapView: View {
     
     // navigation bar variables
     @State var showMenu: Bool = false
+    @State var currentMenu: String = "Map View"
     
     // search bar variables
     @State var isSearching: Bool = false
@@ -30,49 +31,54 @@ struct MapView: View {
     var body: some View {
         
         NavigationView {
-        
-            VStack {
+            ZStack {
+                NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
+                    
+                VStack {
+                    
+                    SearchBar(searchInput: $searchInput, isSearching: $isSearching)
 
-                SearchBar(searchInput: $searchInput, isSearching: $isSearching)
+                    if isSearching == true {
+                        VStack(alignment: .leading) {
 
-                if isSearching == true {
-                    VStack(alignment: .leading) {
-
-                        List {
+                            List {
+                                
+                                ForEach(organizations.filter({ (organization: String) -> Bool in
+                                    return organization.localizedCaseInsensitiveContains(searchInput) || searchInput == ""
+                                 }), id: \.self) { organization in
+                                     Text(organization)
+                                 }
+                            }
+                            .listStyle(GroupedListStyle())
                             
-                            ForEach(organizations.filter({ (organization: String) -> Bool in
-                                return organization.localizedCaseInsensitiveContains(searchInput) || searchInput == ""
-                             }), id: \.self) { organization in
-                                 Text(organization)
-                             }
-                        }
-                        .listStyle(GroupedListStyle())
-                        
-                        
-                        .gesture(DragGesture()
-                            .onChanged({ _ in
                             
-                            UIApplication.shared.dismissKeyboard()
-                            })
-                       )
-                    }
-                }
-                else {
-
-                    Map(coordinateRegion: $region)
-                        .edgesIgnoringSafeArea(.all)
-                }
-            }.toolbar {
-                if isSearching {
-                    Button("Cancel") {
-                        searchInput = ""
-                        withAnimation {
-                            isSearching = false
-                            UIApplication.shared.dismissKeyboard()
+                            .gesture(DragGesture()
+                                .onChanged({ _ in
+                                
+                                UIApplication.shared.dismissKeyboard()
+                                })
+                           )
                         }
                     }
+                    else {
+
+                        Map(coordinateRegion: $region)
+                            .edgesIgnoringSafeArea(.all)
+                    }
+                }.toolbar {
+                    if isSearching {
+                        Button("Cancel") {
+                            searchInput = ""
+                            withAnimation {
+                                isSearching = false
+                                UIApplication.shared.dismissKeyboard()
+                            }
+                        }
+                    }
                 }
+                .offset(y: 60)
             }
+            
         }
         
 //        .navigationBarTitle("", displayMode: .inline)

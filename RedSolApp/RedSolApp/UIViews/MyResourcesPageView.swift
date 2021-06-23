@@ -13,15 +13,14 @@ struct MyResourcesPageView: View {
     
     // navigation bar variables
     @State var showMenu: Bool = false
-    @State var currentMenu: String = ""
+    @State var currentMenu: String = "My Resources"
     
     // local data variables
     
     @StateObject var organizaciones: SampleOrganizations = organizacionez[0]
     
     var body: some View {
-        ZStack {
-            NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
+        ZStack {            
             ScrollView {
                 VStack(spacing: 0) {
                     LazyVGrid(
@@ -48,9 +47,11 @@ struct MyResourcesPageView: View {
                     .padding([.top, .leading, .trailing], 15.0)
                 }
             }
+            
+            
+        }
         }
         
-    }
     
 }
 struct MyResourcesPageView_Previews: PreviewProvider {

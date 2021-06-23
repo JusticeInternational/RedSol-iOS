@@ -39,18 +39,18 @@ struct NavigationBar: View {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     
-                    if currentMenu == "MyResources" {
-                        MyResources()
+                    if currentMenu == "My Resources" {
+                        OrganizationNavigationView()
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                             .disabled(self.showMenu ? true : false)
                         if self.showMenu {
-                            MyResources()
+                            OrganizationNavigationView()
                                 .frame(width: geometry.size.width / 2)
                                 .transition(.move(edge: .leading))
                         }
                     }
-                    else if currentMenu == "MapView" {
+                    else if currentMenu == "Map View" {
                         MapView()
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .offset(x: self.showMenu ? geometry.size.width/2 : 0)
