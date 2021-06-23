@@ -12,7 +12,7 @@ struct OrganizationNavigationView: View {
     
     // NOTE - look back on this to change to binding possibly?
     @State var showMenu = false
-    
+    @State var currentMenu = ""
     
     
     var body: some View {
@@ -20,14 +20,17 @@ struct OrganizationNavigationView: View {
 //            Text("Home Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
             NavigationView {
-                HomePageView()
-
-                      }
+                HomePageView().onAppear(perform: {
+                    currentMenu = "My Resources"
+                    })
+            }
                 .tabItem {
                     Image(systemName: "house.fill")         // NOTE/TODO: modify for organizations logo?
                     Text("Mis Recursos")
                 }
-                MapView()
+            MapView().onAppear(perform: {
+                currentMenu = "Map View"
+            })
 //            Text("Map Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
