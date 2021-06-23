@@ -20,7 +20,7 @@ struct OrganizationNavigationView: View {
 //            Text("Home Tab")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
             NavigationView {
-                HomePageView().onAppear(perform: {
+                MyResourcesPageView().onAppear(perform: {
                     currentMenu = "My Resources"
                     })
             }

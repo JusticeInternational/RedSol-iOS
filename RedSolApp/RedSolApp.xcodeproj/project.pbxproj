@@ -48,7 +48,7 @@
 		16F6C0BA266D348400220E91 /* MainOrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0B9266D348400220E91 /* MainOrganizationView.swift */; };
 		16F6C0C0266D349E00220E91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0BF266D349E00220E91 /* LoginView.swift */; };
 		16F6C0C5266D356C00220E91 /* OrganizationNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */; };
-		16F6C0CA266D357D00220E91 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0C9266D357D00220E91 /* HomePageView.swift */; };
+		16F6C0CA266D357D00220E91 /* MyResourcesPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0C9266D357D00220E91 /* MyResourcesPageView.swift */; };
 		16F6C0D7266D359900220E91 /* OrganizationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0D6266D359900220E91 /* OrganizationCardView.swift */; };
 		16F6C0DD266D360400220E91 /* JsonPull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0DC266D360400220E91 /* JsonPull.swift */; };
 		16F6C0E5266D361E00220E91 /* SampleOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C0E4266D361E00220E91 /* SampleOrganizations.swift */; };
@@ -122,7 +122,7 @@
 		16F6C0B9266D348400220E91 /* MainOrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrganizationView.swift; sourceTree = "<group>"; };
 		16F6C0BF266D349E00220E91 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationNavigationView.swift; sourceTree = "<group>"; };
-		16F6C0C9266D357D00220E91 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		16F6C0C9266D357D00220E91 /* MyResourcesPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResourcesPageView.swift; sourceTree = "<group>"; };
 		16F6C0D6266D359900220E91 /* OrganizationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCardView.swift; sourceTree = "<group>"; };
 		16F6C0DC266D360400220E91 /* JsonPull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPull.swift; sourceTree = "<group>"; };
 		16F6C0E4266D361E00220E91 /* SampleOrganizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOrganizations.swift; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 				16D086D3267412FB00240C0A /* RegisterView.swift */,
 				16D086D5267416A500240C0A /* SUBRegisterForm.swift */,
 				16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */,
-				16F6C0C9266D357D00220E91 /* HomePageView.swift */,
+				16F6C0C9266D357D00220E91 /* MyResourcesPageView.swift */,
 				16F6C0D6266D359900220E91 /* OrganizationCardView.swift */,
 			);
 			path = UIViews;
@@ -600,7 +600,7 @@
 				168525A62679CE5F005EA71C /* ProfileViewMenu.swift in Sources */,
 				16F6C05F266D336000220E91 /* RedSolApp_iOSApp.swift in Sources */,
 				16F6C09B266D33DE00220E91 /* ContributeView.swift in Sources */,
-				16F6C0CA266D357D00220E91 /* HomePageView.swift in Sources */,
+				16F6C0CA266D357D00220E91 /* MyResourcesPageView.swift in Sources */,
 				16D6907926814C8F00145AB3 /* ContactUs.swift in Sources */,
 				16F6C0AF266D343F00220E91 /* MapView.swift in Sources */,
 				16F6C0DD266D360400220E91 /* JsonPull.swift in Sources */,
