@@ -10,6 +10,8 @@ import SwiftUI
 //import MessageUI
 import Foundation
 
+// NOTE: this should be moved under the hamburger menu
+
 struct MainOrganizationView: View {
     
     @State private var emailContent = ""

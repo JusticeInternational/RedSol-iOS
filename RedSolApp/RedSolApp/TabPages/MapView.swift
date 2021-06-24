@@ -9,6 +9,10 @@ import MapKit
 
 struct MapView: View {
     
+    // navigation bar variables
+    @State var showMenu: Bool = false
+    @State var currentMenu: String = "Map View"
+    
     // search bar variables
     @State var isSearching: Bool = false
     @State var searchInput: String = ""
@@ -26,9 +30,10 @@ struct MapView: View {
     
     var body: some View {
         
-        NavigationView {
-            VStack {
-
+//        NavigationView {
+//            NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
+        VStack {
+                
                 SearchBar(searchInput: $searchInput, isSearching: $isSearching)
 
                 if isSearching == true {
@@ -58,22 +63,24 @@ struct MapView: View {
                     Map(coordinateRegion: $region)
                         .edgesIgnoringSafeArea(.all)
                 }
-            }.toolbar {
+            }
+            .toolbar {
                 if isSearching {
                     Button("Cancel") {
                         searchInput = ""
                         withAnimation {
                             isSearching = false
                             UIApplication.shared.dismissKeyboard()
-                        }
                     }
                 }
             }
+//            .offset(y: 60)
+            
         }
         
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarTitle("", displayMode: .inline)
+//        .navigationBarHidden(true)
+//        .navigationBarBackButtonHidden(true)
         
     }
         
@@ -83,6 +90,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(isSearching: false, searchInput: "")
+        MapView()
     }
 }
