@@ -26,17 +26,13 @@ struct OrganizationNavigationView: View {
                 .tabItem {
                     Image(systemName: "house.fill")         // NOTE/TODO: modify for organizations logo?
                     Text("Mis Recursos")
-                }.onAppear(perform: {
-                    self.currentMenu = "My Resources"
-                })
+                }
                 MapView()
                     .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Mapa")
 
-                }.onAppear(perform: {
-                    self.currentMenu = "Map View"
-                })
+                }
             }
             .padding(.top, 60)
             .navigationBarTitle("")
