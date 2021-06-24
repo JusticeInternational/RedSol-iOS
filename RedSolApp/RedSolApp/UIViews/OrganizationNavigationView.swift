@@ -14,58 +14,31 @@ struct OrganizationNavigationView: View {
     @State var currentMenu: String = ""
 
     var body: some View {
-        VStack {
+
+        ZStack {
             NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
-            VStack {
-                TabView {
-        //            Text("Home Tab")
-        //                .font(.system(size: 30, weight: .bold, design: .rounded))
-                    NavigationView {
-                        MyResourcesPageView()
-                    }
-                        .tabItem {
-                            Image(systemName: "house.fill")         // NOTE/TODO: modify for organizations logo?
-                            Text("Mis Recursos")
-                        }
-                    MapView()
-        //            Text("Map Tab")
-        //                .font(.system(size: 30, weight: .bold, design: .rounded))
-                        .tabItem {
-                            Image(systemName: "magnifyingglass")
-                            Text("Mapa")
-                           
 
-                    }
-                    
-        //                HomeView()
-        //                .tabItem {
-        //                    Image(systemName: "magnifyingglass")
-        //                    Text("Buscar")
-        //                }
-                    
-        //                MainOrganizationView()
-        ////            Text("Video Tab")
-        ////                .font(.system(size: 30, weight: .bold, design: .rounded))
-        //                .tabItem {
-        //                    Image(systemName: "sun.max")
-        //                    Text("Redsol")
-        //                }
-                 
-        //                ProfileViewNavigation()
-        //                .tabItem {
-        //                    Image(systemName: "person.crop.circle")
-        //                    Text("Perfil")
-        //                }
+            TabView {
+//                NavigationView {
+                        
+//                }
+                MyResourcesPageView()
+                .tabItem {
+                    Image(systemName: "house.fill")         // NOTE/TODO: modify for organizations logo?
+                    Text("Mis Recursos")
                 }
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+                MapView()
+                    .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Mapa")
 
+                }
             }
-                
+            .padding(.top, 60)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
-        
-        
     }
     
 }
