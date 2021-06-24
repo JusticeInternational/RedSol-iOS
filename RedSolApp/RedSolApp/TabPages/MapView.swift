@@ -30,54 +30,51 @@ struct MapView: View {
     
     var body: some View {
         
-        NavigationView {
-            ZStack {
-                NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
-                    
-                VStack {
-                    
-                    SearchBar(searchInput: $searchInput, isSearching: $isSearching)
+//        NavigationView {
+//            NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
+        VStack {
+                
+                SearchBar(searchInput: $searchInput, isSearching: $isSearching)
 
-                    if isSearching == true {
-                        VStack(alignment: .leading) {
+                if isSearching == true {
+                    VStack(alignment: .leading) {
 
-                            List {
-                                
-                                ForEach(organizations.filter({ (organization: String) -> Bool in
-                                    return organization.localizedCaseInsensitiveContains(searchInput) || searchInput == ""
-                                 }), id: \.self) { organization in
-                                     Text(organization)
-                                 }
-                            }
-                            .listStyle(GroupedListStyle())
+                        List {
                             
+                            ForEach(organizations.filter({ (organization: String) -> Bool in
+                                return organization.localizedCaseInsensitiveContains(searchInput) || searchInput == ""
+                             }), id: \.self) { organization in
+                                 Text(organization)
+                             }
+                        }
+                        .listStyle(GroupedListStyle())
+                        
+                        
+                        .gesture(DragGesture()
+                            .onChanged({ _ in
                             
-                            .gesture(DragGesture()
-                                .onChanged({ _ in
-                                
-                                UIApplication.shared.dismissKeyboard()
-                                })
-                           )
-                        }
-                    }
-                    else {
-
-                        Map(coordinateRegion: $region)
-                            .edgesIgnoringSafeArea(.all)
-                    }
-                }.toolbar {
-                    if isSearching {
-                        Button("Cancel") {
-                            searchInput = ""
-                            withAnimation {
-                                isSearching = false
-                                UIApplication.shared.dismissKeyboard()
-                            }
-                        }
+                            UIApplication.shared.dismissKeyboard()
+                            })
+                       )
                     }
                 }
-                .offset(y: 60)
+                else {
+
+                    Map(coordinateRegion: $region)
+                        .edgesIgnoringSafeArea(.all)
+                }
             }
+            .toolbar {
+                if isSearching {
+                    Button("Cancel") {
+                        searchInput = ""
+                        withAnimation {
+                            isSearching = false
+                            UIApplication.shared.dismissKeyboard()
+                    }
+                }
+            }
+//            .offset(y: 60)
             
         }
         
