@@ -77,6 +77,7 @@ struct NavigationBar: View {
                 }
             ))
         }
+
         .navigationViewStyle(StackNavigationViewStyle())
         .accentColor(.white)
 
@@ -85,8 +86,8 @@ struct NavigationBar: View {
     }
 }
 
-//struct NavigationBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationBar()
-//    }
-//}
+struct NavigationBar_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationBar(showMenu: .constant(false), currentMenu: .constant(""))
+    }
+}
