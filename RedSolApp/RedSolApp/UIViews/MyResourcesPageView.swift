@@ -17,7 +17,7 @@ struct MyResourcesPageView: View {
     
     var body: some View {
         ZStack {            
-            ScrollView {
+            List {
                 VStack(spacing: 0) {
                     LazyVGrid(
                         columns: [
