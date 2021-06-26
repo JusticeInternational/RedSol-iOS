@@ -24,6 +24,10 @@ struct NavigationBar: View {
         self._currentMenu = currentMenu
     }
     
+    func printthing() {
+        print("menu changed")
+    }
+    
     var body: some View {
         
         let drag = DragGesture()
@@ -40,6 +44,8 @@ struct NavigationBar: View {
                 ZStack(alignment: .leading) {
                     
                     if currentMenu == "My Resources" {
+//                        printthing()
+
                         OrganizationNavigationView()
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .offset(x: self.showMenu ? geometry.size.width/2 : 0)
