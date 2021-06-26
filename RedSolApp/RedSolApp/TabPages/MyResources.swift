@@ -9,10 +9,6 @@ import SwiftUI
 
 struct MyResources: View {
     
-    // NAVIGATION BAR VARIABLES
-    @State var showMenu = false
-    // no
-
     var body: some View {
         ScrollView {
             VStack {
