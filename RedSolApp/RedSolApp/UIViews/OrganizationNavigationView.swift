@@ -16,22 +16,14 @@ struct OrganizationNavigationView: View {
     var body: some View {
 
         ZStack {
-//            NavigationBar(showMenu: $showMenu)
-
             TabView {
-//                NavigationView {
-                        
-//                }
-//                OrganizationNavigationView(showMenu: showMenu)
+
                 NavigationBar(currentMenu: _myResources)
-//                NavigationBar(showMenu: $showMenu)
                 .tabItem {
                     Image(systemName: "house.fill")         // NOTE/TODO: modify for organizations logo?
                     Text("Mis Recursos")
                 }
-//                    .onAppear(perform: {
-//                    currentMenu = "My Resources"
-//                })
+
                 NavigationBar(currentMenu: _mapView)
                     .tabItem {
                     Image(systemName: "magnifyingglass")

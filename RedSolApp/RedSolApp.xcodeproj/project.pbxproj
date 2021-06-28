@@ -226,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				1611DA44267F15AD00286841 /* SearchBar.swift */,
-				16C4B4C9268312EA0078945E /* NavigationBar.swift */,
+				16D72AFD2689A81C00E6B3DC /* NavigationBar */,
 			);
 			path = NavigationFeatures;
 			sourceTree = "<group>";
@@ -235,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				1686CF2326771EBB0088A564 /* ProfileView.swift */,
-				168525A52679CE5F005EA71C /* HamburgerMenu.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -275,6 +274,15 @@
 				16F6C0D6266D359900220E91 /* OrganizationCardView.swift */,
 			);
 			path = MyResourcesView;
+			sourceTree = "<group>";
+		};
+		16D72AFD2689A81C00E6B3DC /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				16C4B4C9268312EA0078945E /* NavigationBar.swift */,
+				168525A52679CE5F005EA71C /* HamburgerMenu.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		16F6C052266D336000220E91 = {

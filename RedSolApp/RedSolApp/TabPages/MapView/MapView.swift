@@ -29,8 +29,6 @@ struct MapView: View {
     
     var body: some View {
         
-//        NavigationView {
-//            NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
         VStack {
                 
                 SearchBar(searchInput: $searchInput, isSearching: $isSearching)
@@ -73,18 +71,9 @@ struct MapView: View {
                     }
                 }
             }
-//            .offset(y: 60)
-            
         }
-        
-//        .navigationBarTitle("", displayMode: .inline)
-//        .navigationBarHidden(true)
-//        .navigationBarBackButtonHidden(true)
-        
     }
-        
 }
-
 
 
 struct MapView_Previews: PreviewProvider {
