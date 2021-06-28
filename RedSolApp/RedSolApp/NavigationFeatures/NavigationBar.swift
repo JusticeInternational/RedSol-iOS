@@ -10,10 +10,10 @@ import SwiftUI
 struct NavigationBar: View {
     
     @State var showMenu: Bool = false
-    @State var currentMenu: String = ""
+    @State var currentMenu: String
     
     //MARK: - Navigation bar blue coloration for every view
-    init() {
+    init(currentMenu: State<String>) {
         //Use this if NavigationBarTitle is with Large Font
 //        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
 
@@ -21,6 +21,7 @@ struct NavigationBar: View {
         UINavigationBar.appearance().barTintColor = UIColor(red: 82 / 255, green: 130 / 255, blue: 240 / 255, alpha: 1.0)
 //        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
        
+        self._currentMenu = currentMenu
 
     }
     
@@ -43,16 +44,32 @@ struct NavigationBar: View {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     
-                    
-                    MyResourcesPageView(showMenu: $showMenu, currentMenu: $currentMenu)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                        .disabled(self.showMenu ? true : false)
-                    if self.showMenu {
-                        HamburgerMenu()
-                            .frame(width: geometry.size.width / 2)
-                            .transition(.move(edge: .leading))
+                    if (currentMenu == "My Resources") {
+                        MyResourcesPageView(showMenuMyResources: $showMenu)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                            .disabled(self.showMenu ? true : false)
+                        if self.showMenu {
+                            HamburgerMenu()
+                                .frame(width: geometry.size.width / 2)
+                                .transition(.move(edge: .leading))
+                        }
                     }
+                    else if (currentMenu == "Map View") {
+                        MapView(showMenuMapView: $showMenu)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                            .disabled(self.showMenu ? true : false)
+                        if self.showMenu {
+                            HamburgerMenu()
+                                .frame(width: geometry.size.width / 2)
+                                .transition(.move(edge: .leading))
+                        }
+                    }
+                    
+                    
+                    
+                    
                     
                     
                     

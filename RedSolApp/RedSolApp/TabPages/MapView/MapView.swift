@@ -9,6 +9,9 @@ import MapKit
 
 struct MapView: View {
     
+    // navigation bar variables
+    @Binding var showMenuMapView: Bool
+    
     // search bar variables
     @State var isSearching: Bool = false
     @State var searchInput: String = ""
@@ -86,6 +89,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(showMenuMapView: .constant(false))
     }
 }

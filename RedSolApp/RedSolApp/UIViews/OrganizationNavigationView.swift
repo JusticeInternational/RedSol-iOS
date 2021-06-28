@@ -10,7 +10,8 @@ import SwiftUI
 struct OrganizationNavigationView: View {
     
     // navigation bar variables
-
+    @State var myResources = "My Resources"
+    @State var mapView = "Map View"
 
     var body: some View {
 
@@ -22,7 +23,7 @@ struct OrganizationNavigationView: View {
                         
 //                }
 //                OrganizationNavigationView(showMenu: showMenu)
-                NavigationBar()
+                NavigationBar(currentMenu: _myResources)
 //                NavigationBar(showMenu: $showMenu)
                 .tabItem {
                     Image(systemName: "house.fill")         // NOTE/TODO: modify for organizations logo?
@@ -31,7 +32,7 @@ struct OrganizationNavigationView: View {
 //                    .onAppear(perform: {
 //                    currentMenu = "My Resources"
 //                })
-                MapView()
+                NavigationBar(currentMenu: _mapView)
                     .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Mapa")
