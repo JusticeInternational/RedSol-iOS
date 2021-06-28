@@ -1,5 +1,5 @@
 //
-//  Configuration.swift
+//  SuggestResources.swift
 //  RedSolApp
 //
 //  Created by Ashley Raigosa on 6/21/21.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct Configuration: View {
+struct SuggestResourcesView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct Configuration_Previews: PreviewProvider {
+struct SuggestResourcesView_Previews: PreviewProvider {
     static var previews: some View {
-        Configuration()
+        SuggestResourcesView()
     }
 }

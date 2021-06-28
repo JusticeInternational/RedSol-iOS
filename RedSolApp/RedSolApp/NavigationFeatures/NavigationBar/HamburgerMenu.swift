@@ -9,10 +9,22 @@ import SwiftUI
 
 struct HamburgerMenu: View {
     
+    // Navigation View button variables
+    @State var isProfileViewActive = false
+    @State var isConfigurationViewActive = false
+    @State var isContactUs
+    
+    // profile view variables
     var firstName: String = "Nombre"
     var lastName: String = "Apellido"
     var email: String = "correo@correo.com"
     var customBlue: Color = Color(red: 82 / 255, green: 130 / 255, blue: 240 / 255)
+    
+    
+    // side menu button functions
+    func myProfile() {
+        isProfileViewActive.toggle()
+    }
     
     func configuration() {
         print("configuration")
@@ -30,6 +42,7 @@ struct HamburgerMenu: View {
         print("login")
     }
     
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -45,13 +58,19 @@ struct HamburgerMenu: View {
 //            .padding(.top, 100)
             HStack {
                 
-                Button(action: { contactUs() } ) {
+                Button(action: { myProfile() } ) {
                     Image(systemName: "person.fill")
                         .foregroundColor(customBlue)
                         .imageScale(.large)
                     Text("My Profil")
                         .foregroundColor(.gray)
                         .font(.headline)
+                    
+                    
+                
+                }
+                NavigationLink(destination: ProfileView(), isActive: $isProfileViewActive) {
+                    EmptyView()
                 }
             }
             .padding(.top, 100)

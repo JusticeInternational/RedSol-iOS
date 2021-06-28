@@ -31,9 +31,9 @@
 		16D547AB267543A60076D7BB /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16D54798267543930076D7BB /* Roboto-Bold.ttf */; };
 		16D547AC267543A60076D7BB /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16D5479F267543930076D7BB /* Roboto-ThinItalic.ttf */; };
 		16D547AE267548BE0076D7BB /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 16D547AD267548BE0076D7BB /* LICENSE.txt */; };
-		16D6907726814C8000145AB3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907626814C8000145AB3 /* Configuration.swift */; };
-		16D6907926814C8F00145AB3 /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907826814C8F00145AB3 /* ContactUs.swift */; };
-		16D6907B26814C9B00145AB3 /* SuggestResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907A26814C9B00145AB3 /* SuggestResources.swift */; };
+		16D6907726814C8000145AB3 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907626814C8000145AB3 /* ConfigurationView.swift */; };
+		16D6907926814C8F00145AB3 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907826814C8F00145AB3 /* ContactUsView.swift */; };
+		16D6907B26814C9B00145AB3 /* SuggestResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907A26814C9B00145AB3 /* SuggestResourcesView.swift */; };
 		16F6C05F266D336000220E91 /* RedSolApp_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C05E266D336000220E91 /* RedSolApp_iOSApp.swift */; };
 		16F6C063266D336100220E91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F6C062266D336100220E91 /* Assets.xcassets */; };
 		16F6C066266D336100220E91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F6C065266D336100220E91 /* Preview Assets.xcassets */; };
@@ -99,9 +99,9 @@
 		16D5479E267543930076D7BB /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		16D5479F267543930076D7BB /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		16D547AD267548BE0076D7BB /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		16D6907626814C8000145AB3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		16D6907826814C8F00145AB3 /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
-		16D6907A26814C9B00145AB3 /* SuggestResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestResources.swift; sourceTree = "<group>"; };
+		16D6907626814C8000145AB3 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
+		16D6907826814C8F00145AB3 /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
+		16D6907A26814C9B00145AB3 /* SuggestResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestResourcesView.swift; sourceTree = "<group>"; };
 		16F6C05B266D336000220E91 /* RedSolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedSolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F6C05E266D336000220E91 /* RedSolApp_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedSolApp_iOSApp.swift; sourceTree = "<group>"; };
 		16F6C062266D336100220E91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,9 +215,9 @@
 		16D6907526814C6600145AB3 /* HamburgerMenuPages */ = {
 			isa = PBXGroup;
 			children = (
-				16D6907626814C8000145AB3 /* Configuration.swift */,
-				16D6907826814C8F00145AB3 /* ContactUs.swift */,
-				16D6907A26814C9B00145AB3 /* SuggestResources.swift */,
+				16D6907626814C8000145AB3 /* ConfigurationView.swift */,
+				16D6907826814C8F00145AB3 /* ContactUsView.swift */,
+				16D6907A26814C9B00145AB3 /* SuggestResourcesView.swift */,
 			);
 			path = HamburgerMenuPages;
 			sourceTree = "<group>";
@@ -646,7 +646,7 @@
 				16F6C0C5266D356C00220E91 /* OrganizationNavigationView.swift in Sources */,
 				16F6C0E5266D361E00220E91 /* SampleOrganizations.swift in Sources */,
 				16F6C0BA266D348400220E91 /* MainOrganizationView.swift in Sources */,
-				16D6907B26814C9B00145AB3 /* SuggestResources.swift in Sources */,
+				16D6907B26814C9B00145AB3 /* SuggestResourcesView.swift in Sources */,
 				16D086D4267412FB00240C0A /* RegisterView.swift in Sources */,
 				16D086D6267416A500240C0A /* SUBRegisterForm.swift in Sources */,
 				16F6C096266D33D100220E91 /* ServicesView.swift in Sources */,
@@ -657,7 +657,7 @@
 				16F6C05F266D336000220E91 /* RedSolApp_iOSApp.swift in Sources */,
 				16F6C09B266D33DE00220E91 /* ContributeView.swift in Sources */,
 				16F6C0CA266D357D00220E91 /* MyResourcesPageView.swift in Sources */,
-				16D6907926814C8F00145AB3 /* ContactUs.swift in Sources */,
+				16D6907926814C8F00145AB3 /* ContactUsView.swift in Sources */,
 				16F6C0AF266D343F00220E91 /* MapView.swift in Sources */,
 				16F6C0DD266D360400220E91 /* JsonPull.swift in Sources */,
 				1611DA47267F22E600286841 /* MapViewMapDisplay.swift in Sources */,
@@ -665,7 +665,7 @@
 				1611DA45267F15AD00286841 /* SearchBar.swift in Sources */,
 				1686CF2426771EBB0088A564 /* ProfileView.swift in Sources */,
 				16C4B4CA268312EA0078945E /* NavigationBar.swift in Sources */,
-				16D6907726814C8000145AB3 /* Configuration.swift in Sources */,
+				16D6907726814C8000145AB3 /* ConfigurationView.swift in Sources */,
 				16BBB92626709E4D008152C3 /* API.swift in Sources */,
 				16F6C0B4266D345100220E91 /* MyResources.swift in Sources */,
 			);
