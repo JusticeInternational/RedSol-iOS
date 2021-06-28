@@ -10,7 +10,7 @@ import SwiftUI
 struct SuggestResourcesView: View {
     
     // resizable text field variables
-    @State var height: CGFloat = 30
+    @State var height: CGFloat = 100
     @State var keyboardHeight: CGFloat = 0
     // Text Field variables and functions
     @State var organizationName: String = ""
@@ -85,13 +85,13 @@ struct SuggestResourcesView: View {
 
             }
             
-            ScrollView(.vertical, showsIndicators: false) {
-                
-                // chat content
-                Text("")
-            }
-            
-            
+//            ScrollView(.vertical, showsIndicators: false) {
+//
+//                // chat content
+//                Text("")
+//            }
+                        
+                        
             VStack(alignment: .leading) {
                 Text("Descripción")
                     .font(.custom("Roboto-Regular", size: 18))
@@ -99,8 +99,8 @@ struct SuggestResourcesView: View {
                 VStack(spacing: 8) {
                     
                     ResizableTF(text: self.$description, height: self.$height)
-                        .frame(height: self.height < 150 ? self.height: 150 )
-                        .padding()
+
+                        .frame(height: self.height < 150 ? self.height: 150)
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
                         
                         .font(.custom("Roboto-Regular", size: 18))
@@ -108,8 +108,13 @@ struct SuggestResourcesView: View {
                         .cornerRadius(15)
 //                        .padding(.horizontal)
                 }
-            }.offset(y: -100)
+                
+            }
             
+//            .offset(y: -80)
+            .onTapGesture {
+                UIApplication.shared.windows.first?.rootViewController?.view.endEditing(true)
+            }
             .onAppear {
                 NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (data) in
                     
@@ -117,19 +122,12 @@ struct SuggestResourcesView: View {
                     
                     self.keyboardHeight = height1.cgRectValue.height - 20
                 }
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: .main) { (_) in
+                    
+                    self.keyboardHeight = 0
+                }
             }
-//            VStack(alignment: .leading) {
-//                Text("Descripción")
-//                    .font(.custom("Roboto-Regular", size: 18))
-//                    .foregroundColor(Color.gray)
-//
-//                TextField("", text: $description)
-//                    .frame(height: 100)
-//                    .padding()
-//                    .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
-//                    .disableAutocorrection(true)
-//                    .autocapitalization(.none)
-//            }
+                
             
             HStack(spacing: 10) {
                 Button(action: { sendInformation() }) {
@@ -148,10 +146,12 @@ struct SuggestResourcesView: View {
                         .autocapitalization(.none)
                 }
             }
-            .offset(y: -75)
-            .padding()
             
+            .padding()
+            .padding(.bottom, self.keyboardHeight)
+
         }
+
         .padding()
         
         
@@ -186,6 +186,7 @@ struct ResizableTF: UIViewRepresentable {
         view.textColor = .gray
         view.backgroundColor = .clear
         view.delegate = context.coordinator
+        view.font = .systemFont(ofSize: 18)
         
         return view
     }
@@ -210,6 +211,14 @@ struct ResizableTF: UIViewRepresentable {
             if self.parent.text == "" {
                 textView.text = ""
                 textView.textColor = .black
+            }
+        }
+        
+        func textViewDidEndEditing(_ textView: UITextView) {
+            
+            if self.parent.text == "" {
+                textView.text = ""
+                textView.textColor = .gray
             }
         }
         
