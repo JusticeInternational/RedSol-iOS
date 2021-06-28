@@ -39,7 +39,6 @@ struct OrganizationNavigationView: View {
 
                 }
             }
-            .padding(.top, 60)
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)

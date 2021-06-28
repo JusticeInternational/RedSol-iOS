@@ -10,7 +10,7 @@ import SwiftUI
 struct NavigationBar: View {
     
     @State var showMenu: Bool = false
-    @State var currentMenu: String
+    @State var currentMenu: String = ""
     
     //MARK: - Navigation bar blue coloration for every view
     init(currentMenu: State<String>) {
@@ -97,8 +97,8 @@ struct NavigationBar: View {
     }
 }
 
-//struct NavigationBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationBar()
-//    }
-//}
+struct NavigationBar_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationBar(currentMenu: .init(initialValue: ""))
+    }
+}
