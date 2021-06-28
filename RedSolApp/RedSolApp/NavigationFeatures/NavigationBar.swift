@@ -9,19 +9,18 @@ import SwiftUI
 
 struct NavigationBar: View {
     
-    @Binding var showMenu: Bool
-//    @Binding var currentMenu: String
+    @State var showMenu: Bool = false
+    @State var currentMenu: String = ""
     
     //MARK: - Navigation bar blue coloration for every view
-    init(showMenu: Binding<Bool>) {
+    init() {
         //Use this if NavigationBarTitle is with Large Font
 //        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
 
 //        Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().barTintColor = UIColor(red: 82 / 255, green: 130 / 255, blue: 240 / 255, alpha: 1.0)
 //        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-        self._showMenu = showMenu
-//        self._currentMenu = currentMenu
+       
 
     }
     
@@ -45,16 +44,15 @@ struct NavigationBar: View {
                 ZStack(alignment: .leading) {
                     
                     
-
-                        OrganizationNavigationView()
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                            .offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                            .disabled(self.showMenu ? true : false)
-                        if self.showMenu {
-                            OrganizationNavigationView()
-                                .frame(width: geometry.size.width / 2)
-                                .transition(.move(edge: .leading))
-                        }
+                    MyResourcesPageView(showMenu: $showMenu, currentMenu: $currentMenu)
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                        .disabled(self.showMenu ? true : false)
+                    if self.showMenu {
+                        HamburgerMenu()
+                            .frame(width: geometry.size.width / 2)
+                            .transition(.move(edge: .leading))
+                    }
                     
                     
                     
@@ -82,8 +80,8 @@ struct NavigationBar: View {
     }
 }
 
-struct NavigationBar_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationBar(showMenu: .constant(false))
-    }
-}
+//struct NavigationBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationBar()
+//    }
+//}

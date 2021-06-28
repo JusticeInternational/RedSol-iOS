@@ -10,19 +10,20 @@ import SwiftUI
 struct OrganizationNavigationView: View {
     
     // navigation bar variables
-//    @State var showMenu: Bool = false
-//    @State var currentMenu: String = ""
+
 
     var body: some View {
 
         ZStack {
-//            NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
+//            NavigationBar(showMenu: $showMenu)
 
             TabView {
 //                NavigationView {
                         
 //                }
-                MyResourcesPageView()
+//                OrganizationNavigationView(showMenu: showMenu)
+                NavigationBar()
+//                NavigationBar(showMenu: $showMenu)
                 .tabItem {
                     Image(systemName: "house.fill")         // NOTE/TODO: modify for organizations logo?
                     Text("Mis Recursos")

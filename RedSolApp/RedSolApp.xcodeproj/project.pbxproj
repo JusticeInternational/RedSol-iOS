@@ -11,7 +11,7 @@
 		1611DA45267F15AD00286841 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611DA44267F15AD00286841 /* SearchBar.swift */; };
 		1611DA47267F22E600286841 /* MapViewMapDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611DA46267F22E600286841 /* MapViewMapDisplay.swift */; };
 		167D9B12266EE47600F61BB4 /* LoadUsedCategories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 167D9B11266EE47600F61BB4 /* LoadUsedCategories.graphql */; };
-		168525A62679CE5F005EA71C /* ProfileViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168525A52679CE5F005EA71C /* ProfileViewMenu.swift */; };
+		168525A62679CE5F005EA71C /* HamburgerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168525A52679CE5F005EA71C /* HamburgerMenu.swift */; };
 		1686CF2426771EBB0088A564 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686CF2326771EBB0088A564 /* ProfileView.swift */; };
 		16BBB923266F4C46008152C3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB922266F4C46008152C3 /* Network.swift */; };
 		16BBB92626709E4D008152C3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB92526709E4D008152C3 /* API.swift */; };
@@ -79,7 +79,7 @@
 		1611DA46267F22E600286841 /* MapViewMapDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewMapDisplay.swift; sourceTree = "<group>"; };
 		167D9B0E266EE07100F61BB4 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		167D9B11266EE47600F61BB4 /* LoadUsedCategories.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LoadUsedCategories.graphql; sourceTree = "<group>"; };
-		168525A52679CE5F005EA71C /* ProfileViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewMenu.swift; sourceTree = "<group>"; };
+		168525A52679CE5F005EA71C /* HamburgerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenu.swift; sourceTree = "<group>"; };
 		1686CF2326771EBB0088A564 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		16BBB922266F4C46008152C3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		16BBB92526709E4D008152C3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = RedSolApp/API.swift; sourceTree = SOURCE_ROOT; };
@@ -235,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				1686CF2326771EBB0088A564 /* ProfileView.swift */,
-				168525A52679CE5F005EA71C /* ProfileViewMenu.swift */,
+				168525A52679CE5F005EA71C /* HamburgerMenu.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -645,7 +645,7 @@
 				16F6C0C0266D349E00220E91 /* LoginView.swift in Sources */,
 				16F6C0D7266D359900220E91 /* OrganizationCardView.swift in Sources */,
 				16BBB923266F4C46008152C3 /* Network.swift in Sources */,
-				168525A62679CE5F005EA71C /* ProfileViewMenu.swift in Sources */,
+				168525A62679CE5F005EA71C /* HamburgerMenu.swift in Sources */,
 				16F6C05F266D336000220E91 /* RedSolApp_iOSApp.swift in Sources */,
 				16F6C09B266D33DE00220E91 /* ContributeView.swift in Sources */,
 				16F6C0CA266D357D00220E91 /* MyResourcesPageView.swift in Sources */,
