@@ -222,6 +222,61 @@
 			path = HamburgerMenuPages;
 			sourceTree = "<group>";
 		};
+		16D72AF72689905800E6B3DC /* NavigationFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				1611DA44267F15AD00286841 /* SearchBar.swift */,
+				16C4B4C9268312EA0078945E /* NavigationBar.swift */,
+			);
+			path = NavigationFeatures;
+			sourceTree = "<group>";
+		};
+		16D72AF8268990A200E6B3DC /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				1686CF2326771EBB0088A564 /* ProfileView.swift */,
+				168525A52679CE5F005EA71C /* ProfileViewMenu.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		16D72AF9268990B400E6B3DC /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				16F6C0AE266D343F00220E91 /* MapView.swift */,
+				1611DA46267F22E600286841 /* MapViewMapDisplay.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		16D72AFA268990E000E6B3DC /* OrganizationView */ = {
+			isa = PBXGroup;
+			children = (
+				16F6C0A6266D342A00220E91 /* OrganizationHeader.swift */,
+				16F6C0B3266D345100220E91 /* MyResources.swift */,
+				16F6C0B9266D348400220E91 /* MainOrganizationView.swift */,
+			);
+			path = OrganizationView;
+			sourceTree = "<group>";
+		};
+		16D72AFB268990F600E6B3DC /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				16D086D3267412FB00240C0A /* RegisterView.swift */,
+				16D086D5267416A500240C0A /* SUBRegisterForm.swift */,
+			);
+			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		16D72AFC2689911200E6B3DC /* MyResourcesView */ = {
+			isa = PBXGroup;
+			children = (
+				16F6C0D6266D359900220E91 /* OrganizationCardView.swift */,
+				16F6C0C9266D357D00220E91 /* MyResourcesPageView.swift */,
+			);
+			path = MyResourcesView;
+			sourceTree = "<group>";
+		};
 		16F6C052266D336000220E91 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +307,7 @@
 				16BBB924266F5194008152C3 /* UIViewFramework */,
 				16F6C0BE266D348E00220E91 /* UIViews */,
 				16D6907526814C6600145AB3 /* HamburgerMenuPages */,
+				16D72AF72689905800E6B3DC /* NavigationFeatures */,
 				16F6C0A2266D33FE00220E91 /* TabPages */,
 				16F6C08F266D33A700220E91 /* SUBTabViews */,
 				16F6C062266D336100220E91 /* Assets.xcassets */,
@@ -300,15 +356,9 @@
 		16F6C0A2266D33FE00220E91 /* TabPages */ = {
 			isa = PBXGroup;
 			children = (
-				16F6C0A6266D342A00220E91 /* OrganizationHeader.swift */,
-				16F6C0AE266D343F00220E91 /* MapView.swift */,
-				1611DA44267F15AD00286841 /* SearchBar.swift */,
-				1611DA46267F22E600286841 /* MapViewMapDisplay.swift */,
-				16F6C0B3266D345100220E91 /* MyResources.swift */,
-				16F6C0B9266D348400220E91 /* MainOrganizationView.swift */,
-				1686CF2326771EBB0088A564 /* ProfileView.swift */,
-				16C4B4C9268312EA0078945E /* NavigationBar.swift */,
-				168525A52679CE5F005EA71C /* ProfileViewMenu.swift */,
+				16D72AFA268990E000E6B3DC /* OrganizationView */,
+				16D72AF9268990B400E6B3DC /* MapView */,
+				16D72AF8268990A200E6B3DC /* ProfileView */,
 			);
 			path = TabPages;
 			sourceTree = "<group>";
@@ -316,12 +366,10 @@
 		16F6C0BE266D348E00220E91 /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
-				16F6C0BF266D349E00220E91 /* LoginView.swift */,
-				16D086D3267412FB00240C0A /* RegisterView.swift */,
-				16D086D5267416A500240C0A /* SUBRegisterForm.swift */,
 				16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */,
-				16F6C0C9266D357D00220E91 /* MyResourcesPageView.swift */,
-				16F6C0D6266D359900220E91 /* OrganizationCardView.swift */,
+				16F6C0BF266D349E00220E91 /* LoginView.swift */,
+				16D72AFB268990F600E6B3DC /* RegisterView */,
+				16D72AFC2689911200E6B3DC /* MyResourcesView */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
