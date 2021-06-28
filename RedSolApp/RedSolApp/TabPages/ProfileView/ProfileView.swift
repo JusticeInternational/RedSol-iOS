@@ -33,7 +33,7 @@ struct ProfileView: View {
                         Text(email)
                         
                     }
-                        
+                        // old images with QR code stuff...
     //                    VStack(spacing: 10) {
     //                        Image(systemName: "gear")       // need to change to proper option box
     //                            .font(.system(size: 30))
