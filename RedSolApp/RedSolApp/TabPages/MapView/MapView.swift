@@ -9,6 +9,9 @@ import MapKit
 
 struct MapView: View {
     
+    // navigation bar variables
+    @Binding var showMenuMapView: Bool
+    
     // search bar variables
     @State var isSearching: Bool = false
     @State var searchInput: String = ""
@@ -26,8 +29,6 @@ struct MapView: View {
     
     var body: some View {
         
-//        NavigationView {
-//            NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
         VStack {
                 
                 SearchBar(searchInput: $searchInput, isSearching: $isSearching)
@@ -70,22 +71,13 @@ struct MapView: View {
                     }
                 }
             }
-//            .offset(y: 60)
-            
         }
-        
-//        .navigationBarTitle("", displayMode: .inline)
-//        .navigationBarHidden(true)
-//        .navigationBarBackButtonHidden(true)
-        
     }
-        
 }
-
 
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(showMenuMapView: .constant(false))
     }
 }

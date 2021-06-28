@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileViewMenu: View {
+struct HamburgerMenu: View {
     
     var firstName: String = "Nombre"
     var lastName: String = "Apellido"
@@ -118,8 +118,8 @@ struct ProfileViewMenu: View {
     }
 }
 
-struct ProfileViewMenu_Previews: PreviewProvider {
+struct HamburgerMenu_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileViewMenu()
+        HamburgerMenu()
     }
 }
