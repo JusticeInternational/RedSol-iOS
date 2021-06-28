@@ -51,25 +51,15 @@ struct HamburgerMenu: View {
     
     var body: some View {
         
-//        NavigationView {
             VStack(alignment: .leading) {
-                
-    //            HStack {
-    //                Image(systemName: "person.fill")
-    //                    .foregroundColor(customBlue)
-    //                    .imageScale(.large)
-    //                Text("Mi perfil")
-    //                    .foregroundColor(.gray)
-    //                    .font(.headline)
-    //            }
-    //            .padding(.top, 100)
+
                 HStack {
                     
                     Button(action: { myProfile() } ) {
                         Image(systemName: "person.fill")
                             .foregroundColor(customBlue)
                             .imageScale(.large)
-                        Text("My Profil")
+                        Text("Mi Perfil")
                             .foregroundColor(.gray)
                             .font(.headline)
                         
@@ -152,7 +142,7 @@ struct HamburgerMenu: View {
                     }
                 }
                 
-                .offset(y: 500)
+                .offset(y: 465)
 
                     
                 
@@ -162,8 +152,6 @@ struct HamburgerMenu: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .edgesIgnoringSafeArea(.all)
             
-//        }
-        .navigationViewStyle((StackNavigationViewStyle()))
 
         
     }
