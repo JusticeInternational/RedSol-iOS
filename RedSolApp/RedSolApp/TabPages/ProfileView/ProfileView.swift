@@ -53,7 +53,7 @@ struct ProfileView: View {
             }
             ZStack {
                 Rectangle()
-                    .foregroundColor(Color(UIColor.systemGray5))
+                    .foregroundColor(Color(UIColor.systemGray6))
                     .frame(width: 300, height: 300)
                     .cornerRadius(15)
                 Image(systemName: "qrcode")     // todo: replace with real QR code
