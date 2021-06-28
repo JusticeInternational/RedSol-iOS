@@ -10,8 +10,8 @@ import SwiftUI
 struct SuggestResourcesView: View {
     
     // resizable text field variables
-    @State var height: CGFloat = 20
-    
+    @State var height: CGFloat = 30
+    @State var keyboardHeight: CGFloat = 0
     // Text Field variables and functions
     @State var organizationName: String = ""
     @State var webPage: String = ""
@@ -91,10 +91,33 @@ struct SuggestResourcesView: View {
                 Text("")
             }
             
-            ResizableTF(text: self.$description, height: self.$height)
-                .frame(height: self.height)
-                .font(.custom("Roboto-Regular", size: 18))
             
+            VStack(alignment: .leading) {
+                Text("Descripción")
+                    .font(.custom("Roboto-Regular", size: 18))
+                    .foregroundColor(Color.gray)
+                VStack(spacing: 8) {
+                    
+                    ResizableTF(text: self.$description, height: self.$height)
+                        .frame(height: self.height < 150 ? self.height: 150 )
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 1.0))
+                        
+                        .font(.custom("Roboto-Regular", size: 18))
+                        .background(Color.white)
+                        .cornerRadius(15)
+//                        .padding(.horizontal)
+                }
+            }.offset(y: -100)
+            
+            .onAppear {
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (data) in
+                    
+                    let height1 = data.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+                    
+                    self.keyboardHeight = height1.cgRectValue.height - 20
+                }
+            }
 //            VStack(alignment: .leading) {
 //                Text("Descripción")
 //                    .font(.custom("Roboto-Regular", size: 18))
@@ -125,7 +148,9 @@ struct SuggestResourcesView: View {
                         .autocapitalization(.none)
                 }
             }
-            .padding(25)
+            .offset(y: -75)
+            .padding()
+            
         }
         .padding()
         
@@ -157,15 +182,19 @@ struct ResizableTF: UIViewRepresentable {
         let view = UITextView()
         view.isEditable = true
         view.isScrollEnabled = true
-        view.text = "Description"
+ 
         view.textColor = .gray
+        view.backgroundColor = .clear
         view.delegate = context.coordinator
         
         return view
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        
+        DispatchQueue.main.async {
+            
+            self.height = uiView.contentSize.height
+        }
     }
     
     class Coordinator: NSObject, UITextViewDelegate {
