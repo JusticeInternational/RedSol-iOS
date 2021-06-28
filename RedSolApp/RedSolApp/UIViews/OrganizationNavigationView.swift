@@ -10,13 +10,13 @@ import SwiftUI
 struct OrganizationNavigationView: View {
     
     // navigation bar variables
-    @State var showMenu: Bool = false
-    @State var currentMenu: String = ""
+//    @State var showMenu: Bool = false
+//    @State var currentMenu: String = ""
 
     var body: some View {
 
         ZStack {
-            NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
+//            NavigationBar(showMenu: $showMenu, currentMenu: $currentMenu)
 
             TabView {
 //                NavigationView {
@@ -35,9 +35,7 @@ struct OrganizationNavigationView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Mapa")
 
-                }.onAppear(perform: {
-                    currentMenu = "Map View"
-                })
+                }
             }
             .padding(.top, 60)
             .navigationBarTitle("")

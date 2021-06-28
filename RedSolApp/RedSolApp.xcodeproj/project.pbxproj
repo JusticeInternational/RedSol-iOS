@@ -271,8 +271,8 @@
 		16D72AFC2689911200E6B3DC /* MyResourcesView */ = {
 			isa = PBXGroup;
 			children = (
-				16F6C0D6266D359900220E91 /* OrganizationCardView.swift */,
 				16F6C0C9266D357D00220E91 /* MyResourcesPageView.swift */,
+				16F6C0D6266D359900220E91 /* OrganizationCardView.swift */,
 			);
 			path = MyResourcesView;
 			sourceTree = "<group>";
@@ -356,6 +356,7 @@
 		16F6C0A2266D33FE00220E91 /* TabPages */ = {
 			isa = PBXGroup;
 			children = (
+				16D72AFC2689911200E6B3DC /* MyResourcesView */,
 				16D72AFA268990E000E6B3DC /* OrganizationView */,
 				16D72AF9268990B400E6B3DC /* MapView */,
 				16D72AF8268990A200E6B3DC /* ProfileView */,
@@ -369,7 +370,6 @@
 				16F6C0C4266D356C00220E91 /* OrganizationNavigationView.swift */,
 				16F6C0BF266D349E00220E91 /* LoginView.swift */,
 				16D72AFB268990F600E6B3DC /* RegisterView */,
-				16D72AFC2689911200E6B3DC /* MyResourcesView */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";

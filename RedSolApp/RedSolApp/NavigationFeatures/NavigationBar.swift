@@ -10,10 +10,10 @@ import SwiftUI
 struct NavigationBar: View {
     
     @Binding var showMenu: Bool
-    @Binding var currentMenu: String
+//    @Binding var currentMenu: String
     
     //MARK: - Navigation bar blue coloration for every view
-    init(showMenu: Binding<Bool>, currentMenu: Binding<String>) {
+    init(showMenu: Binding<Bool>) {
         //Use this if NavigationBarTitle is with Large Font
 //        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
 
@@ -21,14 +21,14 @@ struct NavigationBar: View {
         UINavigationBar.appearance().barTintColor = UIColor(red: 82 / 255, green: 130 / 255, blue: 240 / 255, alpha: 1.0)
 //        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         self._showMenu = showMenu
-        self._currentMenu = currentMenu
+//        self._currentMenu = currentMenu
+
     }
     
     func printthing() {
         print("menu changed")
     }
     
-    @ViewBuilder
     var body: some View {
         
         let drag = DragGesture()
@@ -40,11 +40,11 @@ struct NavigationBar: View {
                 }
             }
         
-        NavigationView {
+        return NavigationView {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     
-                    if currentMenu == "My Resources" {
+                    
 
                         OrganizationNavigationView()
                             .frame(width: geometry.size.width, height: geometry.size.height)
@@ -55,18 +55,8 @@ struct NavigationBar: View {
                                 .frame(width: geometry.size.width / 2)
                                 .transition(.move(edge: .leading))
                         }
-                    }
-                    else if currentMenu == "Map View" {
-                        MapView()
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                            .offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                            .disabled(self.showMenu ? true : false)
-                        if self.showMenu {
-                            MapView()
-                                .frame(width: geometry.size.width / 2)
-                                .transition(.move(edge: .leading))
-                        }
-                    }
+                    
+                    
                     
                 }
                 .gesture(drag)
@@ -94,6 +84,6 @@ struct NavigationBar: View {
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBar(showMenu: .constant(false), currentMenu: .constant(""))
+        NavigationBar(showMenu: .constant(false))
     }
 }
