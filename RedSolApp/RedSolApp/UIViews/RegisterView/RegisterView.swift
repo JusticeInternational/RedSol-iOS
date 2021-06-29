@@ -36,6 +36,7 @@ struct RegisterView: View {
                         
                         
                         SUBRegisterForm()
+                            .offset(y: -15)
 
                     }
                     

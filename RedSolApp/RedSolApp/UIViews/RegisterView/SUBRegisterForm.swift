@@ -76,7 +76,7 @@ struct SUBRegisterForm: View {
                             .disableAutocorrection(true)
                             .autocapitalization(.none)
                     }
-                    .offset(y: -25)     // space from button
+                    .offset(y: -15)     // space from button
                     .padding()          // adjust to size of button
                     Button(action: { register() }) {
                         Text("Iniciar Sesion")
