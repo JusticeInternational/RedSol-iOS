@@ -68,7 +68,7 @@ struct ContactUsView: View {
                         Image(systemName: "envelope.fill")
                         
                     }.alert(isPresented: $alertNoEmail) {
-                        Alert(title: Text("Unable to send email"), message: Text("Please sign in"), dismissButton: .default(Text("Got it!")))
+                        Alert(title: Text("Error al enviar el contacto"), message: Text("Debes iniciar sesión para utilizar esta función"), dismissButton: .default(Text("Ok")))
                     }
                     
                     
