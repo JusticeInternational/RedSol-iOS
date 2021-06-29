@@ -11,6 +11,13 @@ struct SUBRegisterForm: View {
     
 //    @ObservedObject var presentationMode: Binding<PresentationMode>
     
+    func linkToTermsAndCondition() {
+        print("link")
+    }
+    
+    // check box variables
+    @State private var checked = false
+    
     @State private var isHomeViewActive: Bool = false
     @State private var isOrganizationNavigationViewActive: Bool = false
 
@@ -88,7 +95,24 @@ struct SUBRegisterForm: View {
                     
                     }
                     
-                    
+                    HStack(spacing: 0) {
+                        CheckBoxView(checked: $checked)
+                        Text("He leido y acepto")
+                        Button(action: { linkToTermsAndCondition() }) {
+                            Text(" Terminos y Condiciones")
+
+                        }
+                    }
+                    .padding()
+                    HStack(spacing: 0) {
+                        CheckBoxView(checked: $checked)
+                        Text("Entiendo y acepto las")
+                        Button(action: { linkToTermsAndCondition() }) {
+                            Text(" Politicas de Privacidad")
+                        }
+                    }
+                    .padding()
+
                     Button {
                         //
                     }

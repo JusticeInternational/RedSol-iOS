@@ -85,11 +85,11 @@ struct SuggestResourcesView: View {
 
             }
             
-//            ScrollView(.vertical, showsIndicators: false) {
-//
-//                // chat content
-//                Text("")
-//            }
+            ScrollView(.vertical, showsIndicators: false) {
+
+                // chat content
+                Text("")
+            }.offset(y: 30)
                         
                         
             VStack(alignment: .leading) {
@@ -106,6 +106,7 @@ struct SuggestResourcesView: View {
                         .font(.custom("Roboto-Regular", size: 18))
                         .background(Color.white)
                         .cornerRadius(15)
+                        
 //                        .padding(.horizontal)
                 }
                 
@@ -182,11 +183,11 @@ struct ResizableTF: UIViewRepresentable {
         let view = UITextView()
         view.isEditable = true
         view.isScrollEnabled = true
- 
         view.textColor = .gray
         view.backgroundColor = .clear
         view.delegate = context.coordinator
         view.font = .systemFont(ofSize: 18)
+//        view.frame = frame(height: 50)
         
         return view
     }
