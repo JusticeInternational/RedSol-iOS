@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct Configuration: View {
+struct ConfigurationView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Text("Cambio de contraseña")
     }
 }
 
-struct Configuration_Previews: PreviewProvider {
+struct ConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
-        Configuration()
+        ConfigurationView()
     }
 }

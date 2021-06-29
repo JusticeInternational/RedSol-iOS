@@ -11,6 +11,10 @@ struct SUBRegisterForm: View {
     
 //    @ObservedObject var presentationMode: Binding<PresentationMode>
     
+    // check box variables
+    @State private var checkedTermsAndConditions = false
+    @State private var checkedPrivacyPolicy = false
+    
     @State private var isHomeViewActive: Bool = false
     @State private var isOrganizationNavigationViewActive: Bool = false
 
@@ -72,7 +76,7 @@ struct SUBRegisterForm: View {
                             .disableAutocorrection(true)
                             .autocapitalization(.none)
                     }
-                    .offset(y: -25)     // space from button
+                    .offset(y: -15)     // space from button
                     .padding()          // adjust to size of button
                     Button(action: { register() }) {
                         Text("Iniciar Sesion")
@@ -88,14 +92,33 @@ struct SUBRegisterForm: View {
                     
                     }
                     
+                    VStack(alignment: .leading, spacing: 20) {
+                        HStack(spacing: 0) {
+                            CheckBoxView(checked: $checkedTermsAndConditions)
+                            Text("He leido y acepto")
+                            
+                            Link(" Terminos y Condiciones", destination: URL(string: "https://gmail.com")!)
+                        }
+                        
+                        
+                        HStack(spacing: 0) {
+                            CheckBoxView(checked: $checkedPrivacyPolicy)
+                            Text("Entiendo y acepto las")
+                            Link(" Politicas de Privacidad", destination: URL(string: "https://gmail.com")!)
+                        }
+
+                    }
+                    .padding()
+                    .scaleEffect(0.95)
                     
+
                     Button {
                         //
                     }
                     label: {
                         Text("Ya tienes una cuenta?").underline()
-                            .font(.custom("Roboto-Light", size: 18)) + Text(" Inicia Sesion").underline()
-                            .font(.custom("Roboto-Medium", size: 18))
+                            .font(.custom("Roboto-Light", size: 16)) + Text(" Inicia Sesion").underline()
+                            .font(.custom("Roboto-Medium", size: 16))
                         
                     
                         NavigationLink(destination: LoginView(), isActive: $isLoginViewActive) {
@@ -104,7 +127,7 @@ struct SUBRegisterForm: View {
 
                     }
 
-                    .padding(50)
+                    .padding(20)
                     
                 }
                 

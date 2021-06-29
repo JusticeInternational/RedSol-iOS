@@ -13,7 +13,7 @@ struct RegisterView: View {
     
     @State var label: UILabel!
 //    @Published(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
+    
     var body: some View {
         
         NavigationView {
@@ -36,6 +36,7 @@ struct RegisterView: View {
                         
                         
                         SUBRegisterForm()
+                            .offset(y: -15)
 
                     }
                     
@@ -58,3 +59,7 @@ struct RegisterView_Previews: PreviewProvider {
         RegisterView()
     }
 }
+
+// checkbox
+
+

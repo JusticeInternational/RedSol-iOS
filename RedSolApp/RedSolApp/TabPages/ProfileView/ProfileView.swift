@@ -22,62 +22,53 @@ struct ProfileView: View {
     var body: some View {
         
         ScrollView {
-            HStack() {
-                Image(systemName: "person.crop.circle")
-                    .font(.system(size: 120))
-                HStack {
+            VStack {
+                HStack() {
+                    Image(systemName: "person.crop.circle")
+                        .font(.system(size: 120))
+                    
                     VStack(alignment: .leading) {
                         Text(username).bold()
                         Text("ID: \(userID)")
                         Text(email)
                         
                     }
-                    VStack(spacing: 10) {
-                        Image(systemName: "gear")       // need to change to proper option box
-                            .font(.system(size: 30))
-                        Image(systemName: "qrcode.viewfinder")
-                            .font(.system(size: 30))
-
-                        Image(systemName: "qrcode")     // need to change to person w/ info box
-                            .font(.system(size: 30))
-
-                    }
+                        // old images with QR code stuff...
+    //                    VStack(spacing: 10) {
+    //                        Image(systemName: "gear")       // need to change to proper option box
+    //                            .font(.system(size: 30))
+    //                        Image(systemName: "qrcode.viewfinder")
+    //                            .font(.system(size: 30))
+    //
+    //                        Image(systemName: "qrcode")     // need to change to person w/ info box
+    //                            .font(.system(size: 30))
+    //
+    //                    }
+                        
+                
+                    
                 }
-                
-                
+                .padding(50)
+                Divider()
             }
-            .padding()
-            Divider()
-            
-
+            ZStack {
+                Rectangle()
+                    .foregroundColor(Color(UIColor.systemGray6))
+                    .frame(width: 300, height: 300)
+                    .cornerRadius(15)
+                Image(systemName: "qrcode")     // todo: replace with real QR code
+                    .font(.system(size: 300))
+            }
+           
             
         }
-        
-        
-        
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    withAnimation {
-                        self.showMenu = true
-                    }
-                }) {
-                    Image(systemName: "line.horizontal.3")
-                        .font(.system(size: 60))
-                }
-            }
-            
-        }
-        
-        
-        
+
     }
-
 
 }
 
-//struct ProfileView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfileView()
-//    }
-//}
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
+    }
+}
