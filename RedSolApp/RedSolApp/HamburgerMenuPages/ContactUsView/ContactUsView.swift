@@ -6,19 +6,21 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct ContactUsView: View {
     
+    // open mail variables
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
+    @State var alertNoEmail = false
+    // UI variables
     @State var customBlue = Color(red: 82 / 256, green: 130 / 256, blue: 240 / 256, opacity: 1.0)
     
     // contact buttons
     
     func llamar() {
         print("llamar")
-    }
-    
-    func email() {
-        print("email")
     }
     
     var body: some View {
@@ -48,12 +50,40 @@ struct ContactUsView: View {
                 
                 HStack {
                     
-                    Button(action: { email() }) {
+                    Button(action: {
+                        
+                        if !(MFMailComposeViewController.canSendMail()) {
+                            self.isShowingMailView.toggle()
+                            self.alertNoEmail.toggle()
+                            
+                        }
+                        
+                        if self.alertNoEmail == true {
+                            print("can't send")
+                        }
+                        
+                    }) {
+                        
                         Text("Correo")
                         Image(systemName: "envelope.fill")
+                        
+                    }.alert(isPresented: $alertNoEmail) {
+                        Alert(title: Text("Error al enviar el contacto"), message: Text("Debes iniciar sesión para utilizar esta función"), dismissButton: .default(Text("Ok")))
                     }
                     
+                    
+//                    .onTapGesture {
+//
+//                        MFMailComposeViewController.canSendMail() ? self.alertNoEmail.toggle() : self.alertNoEmail.toggle()
+//                    }
+//                    .disabled(!MFMailComposeViewController.canSendMail())
+//                    .sheet(isPresented: $isShowingMailView) {
+//                        SUBMailView(result: self.$result)
+//                    }
+                    
+                    
                 }
+                
             }
                 
 

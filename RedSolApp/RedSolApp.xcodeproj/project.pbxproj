@@ -35,6 +35,7 @@
 		16D6907726814C8000145AB3 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907626814C8000145AB3 /* ConfigurationView.swift */; };
 		16D6907926814C8F00145AB3 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907826814C8F00145AB3 /* ContactUsView.swift */; };
 		16D6907B26814C9B00145AB3 /* SuggestResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6907A26814C9B00145AB3 /* SuggestResourcesView.swift */; };
+		16DF4D23268BA1A300B8D168 /* SUBMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF4D22268BA1A300B8D168 /* SUBMailView.swift */; };
 		16F6C05F266D336000220E91 /* RedSolApp_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F6C05E266D336000220E91 /* RedSolApp_iOSApp.swift */; };
 		16F6C063266D336100220E91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F6C062266D336100220E91 /* Assets.xcassets */; };
 		16F6C066266D336100220E91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F6C065266D336100220E91 /* Preview Assets.xcassets */; };
@@ -104,6 +105,7 @@
 		16D6907626814C8000145AB3 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		16D6907826814C8F00145AB3 /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
 		16D6907A26814C9B00145AB3 /* SuggestResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestResourcesView.swift; sourceTree = "<group>"; };
+		16DF4D22268BA1A300B8D168 /* SUBMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUBMailView.swift; sourceTree = "<group>"; };
 		16F6C05B266D336000220E91 /* RedSolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedSolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F6C05E266D336000220E91 /* RedSolApp_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedSolApp_iOSApp.swift; sourceTree = "<group>"; };
 		16F6C062266D336100220E91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				16D6907626814C8000145AB3 /* ConfigurationView.swift */,
-				16D6907826814C8F00145AB3 /* ContactUsView.swift */,
+				16DF4D24268BA35900B8D168 /* ContactUsView */,
 				16D6907A26814C9B00145AB3 /* SuggestResourcesView.swift */,
 			);
 			path = HamburgerMenuPages;
@@ -286,6 +288,15 @@
 				168525A52679CE5F005EA71C /* HamburgerMenu.swift */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		16DF4D24268BA35900B8D168 /* ContactUsView */ = {
+			isa = PBXGroup;
+			children = (
+				16D6907826814C8F00145AB3 /* ContactUsView.swift */,
+				16DF4D22268BA1A300B8D168 /* SUBMailView.swift */,
+			);
+			path = ContactUsView;
 			sourceTree = "<group>";
 		};
 		16F6C052266D336000220E91 = {
@@ -649,6 +660,7 @@
 				16F6C0C5266D356C00220E91 /* OrganizationNavigationView.swift in Sources */,
 				16F6C0E5266D361E00220E91 /* SampleOrganizations.swift in Sources */,
 				16F6C0BA266D348400220E91 /* MainOrganizationView.swift in Sources */,
+				16DF4D23268BA1A300B8D168 /* SUBMailView.swift in Sources */,
 				16D6907B26814C9B00145AB3 /* SuggestResourcesView.swift in Sources */,
 				16D086D4267412FB00240C0A /* RegisterView.swift in Sources */,
 				16D086D6267416A500240C0A /* SUBRegisterForm.swift in Sources */,
