@@ -12,8 +12,8 @@ struct ContactUsView: View {
     
     // open mail variables
     @State var result: Result<MFMailComposeResult, Error>? = nil
-    @State var isShowingMailView = true
-    @State var alertNoEmail = true
+    @State var isShowingMailView = false
+    @State var alertNoEmail = false
     // UI variables
     @State var customBlue = Color(red: 82 / 256, green: 130 / 256, blue: 240 / 256, opacity: 1.0)
     
@@ -52,7 +52,7 @@ struct ContactUsView: View {
                     
                     Button(action: {
                         
-                        if MFMailComposeViewController.canSendMail() {
+                        if !(MFMailComposeViewController.canSendMail()) {
                             self.isShowingMailView.toggle()
                             self.alertNoEmail.toggle()
                             
@@ -66,8 +66,9 @@ struct ContactUsView: View {
                         
                         Text("Correo")
                         Image(systemName: "envelope.fill")
+                        
                     }.alert(isPresented: $alertNoEmail) {
-                        Alert(title: Text("Unable to send email"), message: Text("Please Sign in"), dismissButton: .default(Text("Got it!")))
+                        Alert(title: Text("Unable to send email"), message: Text("Please sign in"), dismissButton: .default(Text("Got it!")))
                     }
                     
                     
