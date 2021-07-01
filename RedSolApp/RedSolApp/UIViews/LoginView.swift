@@ -180,12 +180,14 @@ struct LoginView: View {
                     }
                 }
             }
+            
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
-
         }
-       
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
 
     }
         

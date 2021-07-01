@@ -31,7 +31,7 @@ struct ContactUsView: View {
                             .bold()
                             .foregroundColor(customBlue)
                             .font(.custom("Roboto-Bold", size: 30))
-                        Text("De parte del equipo de Red Solidaria nos gustaría conocer ccomo ayudarte, puedes dejar aquí cualquier comentario, duda o sugerencia.")
+                        Text("De parte del equipo de Red Solidaria nos gustaría conocer como ayudarte, puedes dejar aquí cualquier comentario, duda o sugerencia.")
                             .font(.custom("Roboto-Regular", size: 18))
                             
                             .padding(30)
@@ -51,6 +51,7 @@ struct ContactUsView: View {
                 HStack {
                     
                     Button(action: {
+//                        MFMailComposeViewController.
                         
                         if !(MFMailComposeViewController.canSendMail()) {
                             self.isShowingMailView.toggle()
