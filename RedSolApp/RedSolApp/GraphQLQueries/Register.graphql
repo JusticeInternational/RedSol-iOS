@@ -1,2 +1,9 @@
 # fill withgraphql queries
 
+mutation logInUser($username: String!, $password: String!){
+  users{
+	logIn(username: $username, password: $password){
+	  sessionToken
+	}
+  }
+}
