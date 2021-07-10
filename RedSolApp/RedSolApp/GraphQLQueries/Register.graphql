@@ -7,3 +7,5 @@ mutation logInUser($username: String!, $password: String!){
 	}
   }
 }
+
+# will add mutation for register
